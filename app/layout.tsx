@@ -1,6 +1,8 @@
 import { Inconsolata } from "next/font/google";
 import "./globals.css";
 import { generateDynamicMetadata } from "@/lib/Metadata";
+import Footer from "@/components/Footer/Footer";
+import NavbarWrapper from "@/components/Navbar/NavbarWrapper";
 
 const inconsolata = Inconsolata({
   variable: "--font-inconsolata",
@@ -21,7 +23,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inconsolata.className} antialiased`}>{children}</body>
+      <body
+        className={`${inconsolata.className} flex flex-col min-h-screen relative antialiased`}
+      >
+        <NavbarWrapper />
+        <section className="flex-grow mx-auto w-full">{children}</section>
+        <Footer />
+      </body>
     </html>
   );
 }
