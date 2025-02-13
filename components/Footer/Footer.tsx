@@ -43,7 +43,7 @@ const socialLinks = [
 function Footer() {
   return (
     <div className="w-full flex flex-col pt-10 gap-6">
-      <div className="w-full container mx-auto px-2 md:px-4 flex flex-col">
+      <div className="w-full container mx-auto px-4 flex flex-col">
         <div className="grid grid-cols-1 md:grid-cols-[1.75fr_1fr_1fr_1fr] gap-10 md:gap-0">
           {/* Logo Section */}
           <div>
@@ -93,7 +93,7 @@ function Footer() {
         </div>
       </div>
       <div className="border-t border-[#ffffff]/25 flex">
-        <div className="container mx-auto flex flex-col md:flex-row px-2 md:px-4">
+        <div className="container mx-auto flex flex-col md:flex-row px-4">
           <div className="w-full md:border-r border-[#ffffff]/25 py-20 flex flex-col gap-6">
             <div className="flex gap-10">
               {socialLinks.map((link, index) => (
