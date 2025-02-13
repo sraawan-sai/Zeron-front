@@ -3,6 +3,7 @@ import "./globals.css";
 import { generateDynamicMetadata } from "@/lib/Metadata";
 import Footer from "@/components/Footer/Footer";
 import NavbarWrapper from "@/components/Navbar/NavbarWrapper";
+import SmoothScroll from "@/utils/SmoothScroll";
 
 const inconsolata = Inconsolata({
   variable: "--font-inconsolata",
@@ -27,7 +28,9 @@ export default function RootLayout({
         className={`${inconsolata.className} flex flex-col min-h-screen relative antialiased`}
       >
         <NavbarWrapper />
-        <section className="flex-grow mx-auto w-full">{children}</section>
+        <SmoothScroll>
+          <section className="flex-grow mx-auto w-full">{children}</section>
+        </SmoothScroll>
         <Footer />
       </body>
     </html>

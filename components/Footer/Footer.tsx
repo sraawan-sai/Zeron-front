@@ -120,7 +120,7 @@ function Footer() {
                   />
                   <button
                     type="submit"
-                    className="px-3 rounded-[6px] bg-[#003CF5] text-white flex items-center justify-center h-[40px]"
+                    className="px-3 rounded-[6px] bg-[#003CF5] text-white flex items-center justify-center h-[40px] cursor-pointer"
                   >
                     <FaArrowRight size={18} />
                   </button>
