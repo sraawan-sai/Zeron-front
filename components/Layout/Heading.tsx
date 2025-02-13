@@ -22,7 +22,7 @@ HeadingProps) {
       <p className={`text-[2.875rem] leading-[40px] font-medium`}>{title}</p>
       {subtitle && (
         <div
-          className={`flex items-center gap-2 ${subtitleSize} leading-[36px]`}
+          className={`flex flex-col md:flex-row items-center gap-2 ${subtitleSize} leading-[36px]`}
         >
           {subtitle.split("|").map((text, index, arr) => (
             <React.Fragment key={index}>
@@ -30,7 +30,7 @@ HeadingProps) {
                 {text.trim()}
               </span>
               {index < arr.length - 1 && (
-                <span className="text-[#6100FF]">|</span>
+                <span className="hidden md:block text-[#6100FF]">|</span>
               )}
             </React.Fragment>
           ))}

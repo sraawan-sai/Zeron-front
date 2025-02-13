@@ -16,7 +16,7 @@ const navLinks = [
 function Navbar() {
   return (
     <div className="w-full py-4 transition-all duration-300 bg-[#040C26]/90 border-b border-[#6100FF]/10">
-      <div className="w-full container mx-auto px-2 md:px-4">
+      <div className="w-full container mx-auto px-4">
         <div className="grid grid-cols-2 md:grid-cols-3">
           <div className="">
             <Image src="/Logo.svg" alt="ZERON" width={120} height={25} />
