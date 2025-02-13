@@ -5,6 +5,7 @@ import React from "react";
 interface HeadingProps {
   title: string;
   subtitle?: string;
+  subtitleSize?: string;
   description?: string;
   // hoverColor?: string;
 }
@@ -12,6 +13,7 @@ interface HeadingProps {
 function Heading({
   title,
   subtitle,
+  subtitleSize = "text-[2.625rem]",
   description,
 }: // hoverColor = "#fff",
 HeadingProps) {
@@ -19,11 +21,20 @@ HeadingProps) {
     <div className="w-full flex flex-col items-center justify-center text-center gap-4">
       <p className={`text-[2.875rem] leading-[40px] font-medium`}>{title}</p>
       {subtitle && (
-        <p
-          className={`cursor-default text-[2.625rem] leading-[36px] text-[#6100FF] hover:text-[#fff] transform transition-colors duration-500`}
+        <div
+          className={`flex items-center gap-2 ${subtitleSize} leading-[36px]`}
         >
-          {subtitle}
-        </p>
+          {subtitle.split("|").map((text, index, arr) => (
+            <React.Fragment key={index}>
+              <span className="cursor-default text-[#6100FF] hover:text-[#fff] transition-colors duration-300">
+                {text.trim()}
+              </span>
+              {index < arr.length - 1 && (
+                <span className="text-[#6100FF]">|</span>
+              )}
+            </React.Fragment>
+          ))}
+        </div>
       )}
       <div className="max-w-[1000px]">
         {description && (
