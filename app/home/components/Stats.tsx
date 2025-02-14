@@ -15,7 +15,7 @@ const statsData = [
 
 function Stats() {
   return (
-    <div className="flex flex-col items-center justify-center container mx-auto gap-16 px-4 py-10">
+    <div className="flex flex-col items-center justify-center container mx-auto gap-16 px-4 py-20">
       <Heading
         title="Single Point of Truth for Cyber Risk Management"
         subtitle="Quantifying Risks | Prioritizing Action | Achieve Resilience"
