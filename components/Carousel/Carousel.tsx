@@ -117,9 +117,7 @@ const Carousel: React.FC<PropType> = ({ testimonials, options }) => {
             >
               <div className="px-2 md:px-5 py-8 bg-[#19133F] w-full h-full flex flex-col gap-5 text-center items-center justify-between border border-[#292929] rounded-[12px]">
                 <div className="flex flex-grow items-center justify-center">
-                  <p className={`text-[1.125rem] leading-[18px]`}>
-                    {testimonial.review}
-                  </p>
+                  <p className={`text-[1.125rem] `}>{testimonial.review}</p>
                 </div>
                 <div className="flex flex-col items-center justify-center gap-5 w-full">
                   <span className="w-full h-[1px] bg-[#5BB0FF]"></span>
