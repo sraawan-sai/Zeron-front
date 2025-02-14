@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { FaSearch } from "react-icons/fa";
+import GradientButton from "../Buttons/GradientButton";
 
 const navLinks = [
   { label: "Products", href: "/" },
@@ -33,6 +34,11 @@ function Navbar() {
           <div className="flex justify-end items-center gap-6">
             <FaSearch size={16} />
             <p>Log in</p>
+            <GradientButton
+              text="Get a Demo"
+              href="/"
+              className="px-5 py-2 text-[0.875rem] font-medium rounded-md cursor-pointer bg-gradient-to-r from-[#1C76FD] to-[#5721F0]"
+            />
           </div>
         </div>
       </div>
