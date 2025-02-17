@@ -8,6 +8,8 @@ interface HeadingProps {
   subtitleSize?: string;
   description?: string;
   // hoverColor?: string;
+  descWidth?: string;
+  subWidth?: string;
 }
 
 function Heading({
@@ -15,6 +17,8 @@ function Heading({
   subtitle,
   subtitleSize = "text-[2.625rem]",
   description,
+  descWidth = "max-w-[950px]",
+  subWidth = "max-w-[1000px]",
 }: // hoverColor = "#fff",
 HeadingProps) {
   return (
@@ -22,7 +26,7 @@ HeadingProps) {
       <p className={`text-[2.875rem] leading-[40px] font-medium`}>{title}</p>
       {subtitle && (
         <div
-          className={`flex flex-col md:flex-row items-center gap-2 ${subtitleSize} leading-[36px]`}
+          className={`flex flex-col md:flex-row items-center gap-2 ${subtitleSize} ${subWidth} leading-[46px]`}
         >
           {subtitle.split("|").map((text, index, arr) => (
             <React.Fragment key={index}>
@@ -36,11 +40,9 @@ HeadingProps) {
           ))}
         </div>
       )}
-      <div className="max-w-[1000px]">
+      <div className={`${descWidth}`}>
         {description && (
-          <p className="text-[1.125rem] leading-[16px] text-[#A3A3A3]">
-            {description}
-          </p>
+          <p className="text-[1.125rem]  text-[#A3A3A3]">{description}</p>
         )}
       </div>
     </div>
