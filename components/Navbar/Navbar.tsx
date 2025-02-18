@@ -16,7 +16,7 @@ const navLinks = [
 
 function Navbar() {
   return (
-    <div className="w-full py-4 transition-all duration-300 bg-[#040C26]/90 border-b border-[#6100FF]/10">
+    <div className="backdrop-blur-[8px] w-full py-4 transition-all duration-300 bg-[#040C26]/23 border-b border-[#6100FF]/10">
       <div className="w-full container mx-auto px-4">
         <div className="grid grid-cols-2 lg:grid-cols-3">
           <div className="">

@@ -1,7 +1,8 @@
 "use client";
 
-import { useState } from "react";
-import LinkTop from "./Models/LinkTop";
+import { useRef, useState } from "react";
+import { useClickOutside } from "@/hooks/useClickOutside";
+import SearchModel from "./Models/SearchModel";
 
 interface CircleProps {
   circleText?: string;
@@ -12,33 +13,37 @@ const Circle = ({
   circleText = "Title",
   circleTextAmount = "Amount",
 }: CircleProps) => {
-  const [hoverTop, setHoverTop] = useState(false);
-  const [hoverLeft, setHoverLeft] = useState(false);
-  const [hoverRight, setHoverRight] = useState(false);
+  const [activeSide, setActiveSide] = useState<"top" | "left" | "right" | null>(
+    null
+  );
+  const modalRef = useRef<HTMLDivElement | null>(null);
+
+  const toggleActive = (side: "top" | "left" | "right") => {
+    setActiveSide((prev) => (prev === side ? null : side));
+  };
+
+  useClickOutside(modalRef as React.RefObject<HTMLElement>, () => {
+    setActiveSide(null);
+  });
 
   return (
-    <div className="flex items-center justify-center relative scale-80 md:scale-100">
-      <div
-        className={`absolute -top-10 transition-opacity duration-300 ${
-          hoverTop ? "opacity-100" : "opacity-0"
-        }`}
-      >
-        <LinkTop />
-      </div>
-      <div
-        className={`absolute -top-10 transition-opacity duration-300 ${
-          hoverLeft ? "opacity-100" : "opacity-0"
-        }`}
-      >
-        <LinkTop />
-      </div>
-      <div
-        className={`absolute -top-10 transition-opacity duration-300 ${
-          hoverRight ? "opacity-100" : "opacity-0"
-        }`}
-      >
-        <LinkTop />
-      </div>
+    <div className={`${activeSide ? "z-2" : ""} flex items-center justify-center relative scale-80 md:scale-100`}>
+      {activeSide && (
+        <div
+          ref={modalRef}
+          className="absolute -top-18 transition-opacity duration-300 opacity-100"
+        >
+          {activeSide === "top" && (
+            <SearchModel title="Check your Third Party Risk" />
+          )}
+          {activeSide === "left" && (
+            <SearchModel title="Check your Internal Risk" />
+          )}
+          {activeSide === "right" && (
+            <SearchModel title="Check your External Risk" />
+          )}
+        </div>
+      )}
       <svg
         width="478"
         height="478"
@@ -66,7 +71,7 @@ const Circle = ({
             fill="#4285F4"
             fillOpacity="0.35"
             id="outerCircle"
-            className="hover:opacity-70 transition-all duration-300 cursor-pointer"
+            className="hover:opacity-70 transition-all duration-300"
           />
           <circle
             cx="238.882"
@@ -118,9 +123,8 @@ const Circle = ({
           strokeWidth="2.17597"
           mask="url(#path-6-inside-1_0_1)"
           id="topSide"
-          className="[transform-origin:center] hover:scale-105 transition-all duration-300 fill-white/[0.1] hover:fill-[url(#hoverGradient)]"
-          onMouseEnter={() => setHoverTop(true)}
-          onMouseLeave={() => setHoverTop(false)}
+          className="[transform-origin:center] hover:scale-105 transition-all duration-300 fill-white/[0.1] hover:fill-[url(#hoverGradient)] cursor-pointer"
+          onClick={() => toggleActive("top")}
         />
         <mask id="path-7-inside-2_0_1" fill="white">
           <path d="M342.846 350.974C313.995 375.925 276.625 389.481 238.054 388.987C199.484 388.493 162.492 373.985 134.324 348.303L167.083 314.179C186.527 331.906 212.061 341.921 238.685 342.262C265.308 342.603 291.104 333.246 311.019 316.023L342.846 350.974Z" />
@@ -132,7 +136,7 @@ const Circle = ({
           strokeWidth="2.17597"
           mask="url(#path-7-inside-2_0_1)"
           id="bottomSide"
-          className="[transform-origin:center] hover:scale-105 transition-all duration-300 fill-white/[0.1] hover:fill-[url(#hoverGradient)]"
+          className="[transform-origin:center] hover:scale-105 transition-all duration-300 fill-white/[0.1] hover:fill-[url(#hoverGradient)] cursor-pointer"
         />
         <mask id="path-8-inside-3_0_1" fill="white">
           <path d="M127.026 341.847C102.075 312.996 88.519 275.626 89.013 237.055C89.507 198.485 104.015 161.493 129.697 133.325L163.821 166.084C146.094 185.528 136.079 211.062 135.738 237.685C135.397 264.309 144.754 290.105 161.977 310.02L127.026 341.847Z" />
@@ -144,9 +148,8 @@ const Circle = ({
           strokeWidth="2.17597"
           mask="url(#path-8-inside-3_0_1)"
           id="leftSide"
-          className="[transform-origin:center] hover:scale-105 transition-all duration-300 fill-white/[0.1] hover:fill-[url(#hoverGradient)]"
-          onMouseEnter={() => setHoverLeft(true)}
-          onMouseLeave={() => setHoverLeft(false)}
+          className="[transform-origin:center] hover:scale-105 transition-all duration-300 fill-white/[0.1] hover:fill-[url(#hoverGradient)] cursor-pointer"
+          onClick={() => toggleActive("left")}
         />
         <mask id="path-9-inside-4_0_1" fill="white">
           <path d="M351.974 136.438C376.925 165.289 390.481 202.659 389.987 241.23C389.493 279.8 374.985 316.792 349.303 344.96L315.179 312.201C332.906 292.757 342.921 267.223 343.262 240.6C343.603 213.976 334.246 188.181 317.023 168.266L351.974 136.438Z" />
@@ -158,9 +161,8 @@ const Circle = ({
           strokeWidth="2.17597"
           mask="url(#path-9-inside-4_0_1)"
           id="rightSide"
-          className="[transform-origin:center] hover:scale-105 transition-all duration-300 fill-white/[0.1] hover:fill-[url(#hoverGradient)]"
-          onMouseEnter={() => setHoverRight(true)}
-          onMouseLeave={() => setHoverRight(false)}
+          className="[transform-origin:center] hover:scale-105 transition-all duration-300 fill-white/[0.1] hover:fill-[url(#hoverGradient)] cursor-pointer"
+          onClick={() => toggleActive("right")}
         />
         <defs>
           <linearGradient

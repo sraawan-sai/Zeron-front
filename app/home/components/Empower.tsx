@@ -10,15 +10,15 @@ const Empower = () => {
 Let me know if you'd like further tweaks!"
         descWidth="max-w-[720px]"
       />
-      {/* <div className="w-full max-w-[800px] h-full max-h-[800px]">
+      <div className="w-full max-w-[800px] h-full max-h-[800px]">
         <video
-          src="/video/zinai.mp4"
+          src="/video/newzin.mp4"
           autoPlay={true}
           muted
           loop
           className="w-full h-full object-cover object-center"
         />
-      </div> */}
+      </div>
     </div>
   );
 };

@@ -10,6 +10,7 @@ type ButtonProps = {
   className?: string;
   disabled?: boolean;
   href?: string;
+  type?: "button" | "submit" | "reset";
 };
 
 const GradientButton: React.FC<ButtonProps> = ({
@@ -18,9 +19,11 @@ const GradientButton: React.FC<ButtonProps> = ({
   className = "",
   disabled = false,
   href,
+  type = "button",
 }) => {
   const ButtonContent = (
     <button
+      type={type}
       onClick={onClick}
       disabled={disabled}
       className={cn(
