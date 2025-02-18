@@ -15,6 +15,8 @@
   }
 }
 
+@custom-variant hover (&:hover);
+
 *,
 *::before,
 *::after {

@@ -1,5 +1,7 @@
 "use client";
 
+import "@/styles/stars.css";
+
 import React, { useEffect, useState } from "react";
 import GradientButton from "@/components/Buttons/GradientButton";
 import Circle from "@/components/circle";
@@ -27,8 +29,15 @@ const Hero = () => {
         src="/images/herobg.png"
         alt=""
         fill={true}
-        className="object-cover object-center -z-10"
+        className="object-cover object-center opacity-50 -z-10"
       />
+      <div className="absolute w-full h-full -z-20">
+        <section className="wrapper">
+          <div id="stars"></div>
+          <div id="stars2"></div>
+          <div id="stars3"></div>
+        </section>
+      </div>
       <div className="absolute bottom-0 left-0 w-full">
         <div
           className="relative w-full min-h-[55vh] 2xl:min-h-[70vh] "
@@ -43,7 +52,10 @@ const Hero = () => {
         </div>
       </div>
       <div className="absolute -bottom-54 w-full flex items-center justify-center">
-        <Circle circleText="Cyber Risk Increasing" circleTextAmount="$12, 130" />
+        <Circle
+          circleText="Cyber Risk Increasing"
+          circleTextAmount="$12, 130"
+        />
       </div>
       <div className="flex flex-col items-center pt-30 xl:pt-24">
         <div className="flex flex-col items-center text-center mt-4">
@@ -65,7 +77,7 @@ const Hero = () => {
             organization from the unseen threats orbiting your business.
           </p>
         </div>
-        <div className="mt-10">
+        <div className="mt-10 z-1">
           <GradientButton
             text="Request a Demo"
             href="/"

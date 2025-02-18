@@ -46,8 +46,46 @@ function Footer() {
       <div className="w-full container mx-auto px-4 flex flex-col">
         <div className="grid grid-cols-1 md:grid-cols-[1.75fr_1fr_1fr_1fr] gap-10 md:gap-0">
           {/* Logo Section */}
-          <div>
-            <Image src="/Logo.svg" alt="ZERON" width={240} height={50} />
+          <div className="flex flex-col gap-7 max-w-[240px]">
+            <div>
+              <Image
+                src="/Logo.svg"
+                alt="ZERON"
+                width={240}
+                height={50}
+                className="w-full h-full"
+              />
+            </div>
+            <div className="flex items-center gap-3.75">
+              <Image
+                src="/icons/ISMS.svg"
+                alt="ISMS"
+                width={50}
+                height={50}
+                className="w-full h-full"
+              />
+              <Image
+                src="/icons/AICPA.svg"
+                alt="AICPA"
+                width={50}
+                height={50}
+                className="w-full h-full"
+              />
+              <Image
+                src="/icons/STAR.svg"
+                alt="STAR"
+                width={50}
+                height={50}
+                className="w-full h-full"
+              />
+              <Image
+                src="/icons/START.svg"
+                alt="START"
+                width={50}
+                height={50}
+                className="w-full h-full"
+              />
+            </div>
           </div>
 
           {/* Company Links */}
@@ -108,7 +146,7 @@ function Footer() {
             </div>
           </div>
           <div className="w-full py-20">
-            <div className="flex flex-col gap-3 md:pl-40">
+            <div className="flex flex-col gap-3 pl-0 md:pl-20 lg:pl-40">
               <p>Sign Up For Our Newsletter</p>
               <form className="flex flex-col gap-3">
                 <div className="flex items-center gap-2">
