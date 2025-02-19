@@ -1,3 +1,4 @@
+import EmpowerAnimation from "@/components/Animation/Empower";
 import Heading from "@/components/Layout/Heading";
 
 const Empower = () => {
@@ -10,7 +11,7 @@ const Empower = () => {
 Let me know if you'd like further tweaks!"
         descWidth="max-w-[720px]"
       />
-      <div className="w-full max-w-[800px] h-full max-h-[800px]">
+      {/* <div className="w-full max-w-[800px] h-full max-h-[800px]">
         <video
           src="/video/newzin.mp4"
           autoPlay={true}
@@ -18,6 +19,9 @@ Let me know if you'd like further tweaks!"
           loop
           className="w-full h-full object-cover object-center"
         />
+      </div> */}
+      <div className="w-full max-w-[500px] h-[400px] md:h-[500px]">
+        <EmpowerAnimation />
       </div>
     </div>
   );
