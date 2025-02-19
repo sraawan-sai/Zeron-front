@@ -25,12 +25,12 @@ const Hero = () => {
 
   return (
     <div className="w-full min-h-screen relative -mt-26 overflow-hidden">
-      <Image
+      {/* <Image
         src="/images/herobg.png"
         alt=""
         fill={true}
         className="object-cover object-center opacity-50 -z-10"
-      />
+      /> */}
       <div className="absolute w-full h-full -z-20">
         <section className="wrapper">
           <div id="stars"></div>

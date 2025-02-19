@@ -3,8 +3,9 @@
 @theme {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --animate-gradient: gradient 10s ease infinite;
+  --animate-gradient: gradient 3s ease infinite;
 }
+
 @layer base {
   *,
   ::after,

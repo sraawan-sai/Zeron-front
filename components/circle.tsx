@@ -26,12 +26,25 @@ const Circle = ({
     setActiveSide(null);
   });
 
+  const modalPositionClasses =
+    activeSide === "top"
+      ? "-top-44 left-1/2 transform -translate-x-1/2"
+      : activeSide === "left"
+      ? "-top-44 md:-left-[80%] md:top-[30%] transform md:-translate-y-[30%]"
+      : activeSide === "right"
+      ? "-top-44 md:-right-[80%] md:top-[30%] transform md:-translate-y-[30%]"
+      : "";
+
   return (
-    <div className={`${activeSide ? "z-2" : ""} flex items-center justify-center relative scale-80 md:scale-100`}>
+    <div
+      className={`${
+        activeSide ? "z-2" : ""
+      } flex items-center justify-center relative scale-80 md:scale-100`}
+    >
       {activeSide && (
         <div
           ref={modalRef}
-          className="absolute -top-18 transition-opacity duration-300 opacity-100"
+          className={`${modalPositionClasses} absolute transition-opacity duration-300 opacity-100`}
         >
           {activeSide === "top" && (
             <SearchModel title="Check your Third Party Risk" />
