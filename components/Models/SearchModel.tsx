@@ -41,22 +41,28 @@ const SearchModel = ({ title }: SearchModelProps) => {
     >
       <div className="flex items-center gap-2">
         <div className="flex">
-          <Image src="/icons/shield.svg" alt="" width={48} height={48} />
+          <Image
+            src="/icons/shield.svg"
+            alt=""
+            width={48}
+            height={48}
+            className="min-w-12 min-h-12"
+          />
         </div>
-        <p className={`text-[1.375rem]`}>{title}</p>
+        <p className={`text-[1.375rem] md:whitespace-nowrap`}>{title}</p>
       </div>
       <form className="flex items-center gap-4" onSubmit={handleSubmit}>
         <input
           type="text"
           placeholder="Enter your domain..."
-          className="bg-[#1A3265] rounded-[6px] border border-[#6F58FF] px-4 py-2"
+          className="bg-[#1A3265] rounded-[6px] border border-[#6F58FF] px-4 py-2 h-[40px] focus:outline-none"
           value={domain}
           onChange={handleChange}
         />
         <GradientButton
           text="Search"
           type="submit"
-          className="px-4 py-2 rounded-[6px] cursor-pointer bg-gradient-to-r from-[#1C76FD] to-[#5721F0]"
+          className="px-4 py-2 rounded-[6px] cursor-pointer bg-gradient-to-r from-[#1C76FD] to-[#5721F0] h-[40px]"
         />
       </form>
       <div

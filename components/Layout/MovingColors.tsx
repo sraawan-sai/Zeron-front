@@ -1,39 +1,45 @@
-const MovingColors = ({ upsideDown = false }) => {
+"use client";
+
+import { useState } from "react";
+import { useLocalMouseTrack } from "@/hooks/useLocalMouseTrack";
+
+interface MovingColorsProps {
+  upsideDown?: boolean;
+}
+
+const MovingColors: React.FC<MovingColorsProps> = ({ upsideDown = false }) => {
+  const { mousePosition, handleMouseMove, resetMousePosition } =
+    useLocalMouseTrack();
+  const [isHovered, setIsHovered] = useState(false);
+  const dotSize = 160;
+  const halfDot = dotSize / 2;
+
   return (
-    <div className="w-full relative">
-      <video
-        src="/video/lines.mp4"
-        autoPlay={true}
-        muted
-        loop
-        className={`${
-          upsideDown ? "rotate-180" : ""
-        } w-full h-[250px] object-cover object-center relative`}
-      />
+    <div
+      className="blur-[1px] animate-gradient bg-[length:300%] w-full h-[150px] bg-linear-to-r/shorter from-[#206FFC] via-[#45AFC9] to-[#5327F1] relative overflow-hidden"
+      onMouseMove={handleMouseMove}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => {
+        setIsHovered(false);
+        resetMousePosition();
+      }}
+    >
+      <div
+        className="z-999 absolute w-40 h-40 rounded-full bg-[#0A0118]/60 blur-xl transition-opacity duration-700 ease-in-out"
+        style={{
+          opacity: isHovered ? 1 : 0,
+          transform: `translate(${mousePosition.x - halfDot}px, ${
+            mousePosition.y - halfDot
+          }px)`,
+        }}
+      ></div>
       {upsideDown ? (
-        <div className="absolute top-0 left-0 w-full h-[80%] bg-gradient-to-b from-[#0A0118] to-transparent" />
+        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-[#0A0118] to-[#0A0118]/40" />
       ) : (
-      <div className="absolute bottom-0 left-0 w-full h-[80%] bg-gradient-to-t from-[#0A0118] to-transparent" />
+        <div className="absolute bottom-0 left-0 w-full h-full bg-gradient-to-t from-[#0A0118] to-[#0A0118]/40" />
       )}
     </div>
   );
 };
 
 export default MovingColors;
-// const MovingColors = ({ upsideDown = false }) => {
-//   return (
-//     <div className="blur-[1px] animate-gradient bg-[length:200%] w-full h-[175px] bg-gradient-to-r from-[#206FFC] via-[#45AFC9] to-[#5327F1] relative">
-//       {upsideDown ? (
-//         <div
-//           className="absolute top-0 left-0 w-full h-[90%] bg-gradient-to-b from-[#0A0118] to-transparent" />
-//           // style={{ clipPath: "ellipse(150% 100% at 50% 100%)" }}
-//       ) : (
-//         <div
-//           className="absolute bottom-0 left-0 w-full h-[90%] bg-gradient-to-t from-[#0A0118] to-transparent" />
-//           // style={{ clipPath: "ellipse(150% 100% at 50% 0)" }}
-//       )}
-//     </div>
-//   );
-// };
-
-// export default MovingColors;

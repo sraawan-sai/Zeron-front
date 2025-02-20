@@ -32,7 +32,7 @@ const GradientButton: React.FC<ButtonProps> = ({
         className
       )}
     >
-      {text}
+      <span className="relative z-10">{text}</span>
     </button>
   );
 
