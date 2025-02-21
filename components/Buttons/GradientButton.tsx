@@ -32,6 +32,7 @@ const GradientButton: React.FC<ButtonProps> = ({
         className
       )}
     >
+      <div className="myButton absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[calc(100%+5px)] h-[calc(100%+5px)] rounded-[6px] -z-1" />
       <span className="relative z-10">{text}</span>
     </button>
   );
