@@ -1,17 +1,27 @@
+import "@/styles/stars.css";
+
 import Heading from "@/components/Layout/Heading";
 import { InsightData } from "@/public/data/insightData";
 import Image from "next/image";
 
 const Insights = () => {
   return (
-    <div className="flex flex-col items-center justify-center container mx-auto gap-16 px-4 py-20">
+    <div className="flex flex-col items-center justify-center  mx-auto gap-16 px-4 py-20 overflow-hidden">
       <Heading
         title="Decoding the Data Universe into Clear"
         subtitle="Bright Insights"
         description="In the vast cosmos of scattered data, Zeron is your gravitational force—pulling in chaos, quantifying risks, automating compliance, and transforming raw data into clear, actionable insights."
         descWidth="max-w-[800px]"
       />
-      <div className="w-full max-w-[600px] h-full max-h-[800px]">
+      <div className="w-full max-w-[600px] h-full max-h-[800px] relative">
+        <div className="absolute w-full min-h-screen bottom-0 lg:-left-[100%]  clip-trap translate-y-[90%] bg-gradient-to-t from-[#0A0118] to-[#0A0118]/40 -z-1" />
+        <div className="absolute w-full min-h-screen bottom-0 lg:-left-[100%]  clip-trap translate-y-[90%] -z-2">
+          <section className="wrapper">
+            <div id="stars"></div>
+            <div id="stars2"></div>
+            <div id="stars3"></div>
+          </section>
+        </div>
         <video
           src="/video/insights.mp4"
           autoPlay={true}
@@ -20,7 +30,7 @@ const Insights = () => {
           className="w-full h-full object-cover object-center"
         />
       </div>
-      <div className="mt-20 inline-grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div className="mt-20 inline-grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
         {InsightData.map((insight, index) => (
           <div
             key={index}
@@ -37,8 +47,12 @@ const Insights = () => {
               />
             </div>
             <div className="px-4 flex flex-col">
-              <p>{insight.title}</p>
-              <p>{insight.desc}</p>
+              <p className={`font-medium text-[1.125rem] tracking-[-0.36px]`}>
+                {insight.title}
+              </p>
+              <p className={`text-[#9B96B0] tracking-[-0.16px]`}>
+                {insight.desc}
+              </p>
             </div>
           </div>
         ))}

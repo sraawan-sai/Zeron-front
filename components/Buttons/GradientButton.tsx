@@ -28,11 +28,11 @@ const GradientButton: React.FC<ButtonProps> = ({
       disabled={disabled}
       className={cn(
         "relative inline-flex items-center justify-center transition-all duration-300 ease-in-out",
-        "text-white hover:opacity-80 active:scale-95 disabled:opacity-50",
+        "text-white group active:scale-95 disabled:opacity-50",
         className
       )}
     >
-      <div className="myButton absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[calc(100%+5px)] h-[calc(100%+5px)] rounded-[6px] -z-1" />
+      <div className="myButton group-hover:opacity-100 opacity-0 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[calc(100%+4px)] h-[calc(100%+4px)] rounded-[6px] -z-1 transition-all duration-500" />
       <span className="relative z-10">{text}</span>
     </button>
   );
