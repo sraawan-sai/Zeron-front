@@ -28,7 +28,7 @@ const GradientButton: React.FC<ButtonProps> = ({
       disabled={disabled}
       className={cn(
         "relative inline-flex items-center justify-center transition-all duration-300 ease-in-out",
-        "text-white hover:opacity-80 active:scale-95 disabled:opacity-50",
+        "text- hover:opacity-80 active:scale-95 disabled:opacity-50",
         className
       )}
     >

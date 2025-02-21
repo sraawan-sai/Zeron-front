@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { motion } from "framer-motion";
 import HeaderBar from "@/components/Navbar/Header/Header";
 import Navbar from "@/components/Navbar/Navbar";
 
@@ -19,16 +20,24 @@ function NavbarWrapper() {
   }, []);
 
   return (
-    <div className="fixed top-0 left-0 w-full z-50">
+    <motion.div
+      initial={{ opacity: 0, y: -50 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+      className="fixed top-0 left-0 w-full z-50"
+    >
       <HeaderBar isVisible={isHeaderVisible} />
-      <div
+      <motion.div
+        initial={{ opacity: 0, y: -30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, ease: "easeOut", delay: 0.2 }}
         className={`${
           isHeaderVisible ? "mt-0" : "-mt-22 md:-mt-14"
         } transition-all duration-300`}
       >
         <Navbar />
-      </div>
-    </div>
+      </motion.div>
+    </motion.div>
   );
 }
 

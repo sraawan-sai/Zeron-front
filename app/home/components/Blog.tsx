@@ -5,6 +5,7 @@ import { BlogData } from "@/public/data/blogData";
 import Image from "next/image";
 import Link from "next/link";
 import { MdOutlineArrowForward } from "react-icons/md";
+import { motion } from "framer-motion"; // Import Framer Motion
 
 const Blog = () => {
   const postsPerPage = 3;
@@ -56,19 +57,21 @@ const Blog = () => {
   }, [isHovered, totalPages]);
 
   return (
-    <div
+    <motion.div
+      initial={{ opacity: 0, y: 50 }} // Start invisible and move up
+      whileInView={{ opacity: 1, y: 0 }} // Fade in and move up when in view
+      transition={{ duration: 0.8, ease: "easeOut" }} // Smooth transition
+      viewport={{ once: true, amount: 0.2 }} // Trigger when 20% is visible
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       className="flex flex-col items-center justify-center container mx-auto gap-12 px-4 py-20"
     >
       <div className="flex flex-col text-center items-center justify-center gap-4">
-        <p
-          className={`cursor-default text-[#6100FF] hover:text-[#fff] text-[2.875rem] leading-[40px]`}
-        >
+        <p className="cursor-default text-[#6100FF] hover:text-[#fff] text-[2.875rem] leading-[40px]">
           Stay Informed with Zeron
         </p>
         <div className="max-w-[600px]">
-          <p className="text-[1.125rem]  text-[#A3A3A3]">
+          <p className="text-[1.125rem] text-[#A3A3A3]">
             Get expert insights on cyber risk, compliance, and security trends.
             Stay ahead in the evolving digital landscape.
           </p>
@@ -80,8 +83,12 @@ const Blog = () => {
         }`}
       >
         {visibleBlogs.map((blog, index) => (
-          <div
+          <motion.div
             key={index}
+            initial={{ opacity: 0, y: 50 }} // Individual fade-up for each blog card
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: index * 0.2 }}
+            viewport={{ once: true }}
             className="group cursor-pointer flex flex-col gap-6.5 rounded-md bg-[#19133F] max-w-[280px]"
           >
             <div className="w-full h-[150px] relative overflow-hidden">
@@ -98,7 +105,7 @@ const Blog = () => {
               </p>
               <p className="leading-[20px]">{blog.title}</p>
             </div>
-          </div>
+          </motion.div>
         ))}
       </div>
       <div className="flex gap-1">
@@ -114,13 +121,13 @@ const Blog = () => {
       </div>
       <Link href="" className="group">
         <div className="flex items-center gap-1">
-          <p className={`group-hover:underline`}>Learn more</p>
-          <div className="">
+          <p className="group-hover:underline">Learn more</p>
+          <div>
             <MdOutlineArrowForward size={16} />
           </div>
         </div>
       </Link>
-    </div>
+    </motion.div>
   );
 };
 
