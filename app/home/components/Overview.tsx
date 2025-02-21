@@ -36,7 +36,8 @@ function Overview() {
         {cardData.map((data, index) => (
           <div key={index} className="group relative">
             {/* <div className="group-hover:block hidden absolute -bottom-10 -z-10 w-40 h-40 rounded-full bg-[#9747FF]/70 blur-md"></div> */}
-            <div className="hover:bg-[#0088FF]/10 group border border-[#292929] hover:border-[#6F58FF] rounded-[8px] flex flex-col items-center justify-between gap-10 py-4 px-6 overflow-hidden relative transition-colors duration-500 hover:shadow-[0_15px_40px_2px_#9747FF66]">
+            <div className="bg-[#0A0118] hover:bg-[#0A0118] group border border-[#292929] hover:border-[#6F58FF] rounded-[8px] flex flex-col items-center justify-between gap-10 py-4 px-6  relative transition-colors duration-500 hover:shadow-[0_15px_40px_2px_#9747FF66]">
+              <div className="myButton absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[calc(100%+4px)] h-[calc(100%+4px)] rounded-[8px] -z-1" />
               <div className="group-hover:opacity-0 transition-all duration-300">
                 <Image
                   src={data.icon}
