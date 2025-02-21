@@ -1,4 +1,7 @@
 'use client';
+
+import "@/styles/stars.css";
+
 import Heading from "@/components/Layout/Heading";
 import { InsightData } from "@/public/data/insightData";
 import Image from "next/image";
@@ -11,7 +14,7 @@ const fadeUp = {
 
 const Insights = () => {
   return (
-    <div className="flex flex-col items-center justify-center container mx-auto gap-16 px-4 py-20">
+    <div className="flex flex-col items-center justify-center mx-auto gap-16 px-4 py-20 overflow-hidden">
       <motion.div initial="hidden" whileInView="visible" viewport={{ once: false, amount: 0.2 }} variants={fadeUp}>
         <Heading
           title="Decoding the Data Universe into Clear"
@@ -22,6 +25,14 @@ const Insights = () => {
       </motion.div>
 
       <motion.div className="w-full max-w-[600px] h-full max-h-[800px]" initial="hidden" whileInView="visible" viewport={{ once: false, amount: 0.2 }} variants={fadeUp}>
+        <div className="absolute w-full min-h-screen bottom-0 lg:-left-[100%]  clip-trap translate-y-[90%] bg-gradient-to-t from-[#0A0118] to-[#0A0118]/40 -z-1" />
+        <div className="absolute w-full min-h-screen bottom-0 lg:-left-[100%]  clip-trap translate-y-[90%] -z-2">
+          <section className="wrapper">
+            <div id="stars"></div>
+            <div id="stars2"></div>
+            <div id="stars3"></div>
+          </section>
+        </div>
         <video
           src="/video/insights.mp4"
           autoPlay={true}
@@ -52,8 +63,12 @@ const Insights = () => {
               />
             </div>
             <div className="px-4 flex flex-col">
-              <p>{insight.title}</p>
-              <p>{insight.desc}</p>
+              <p className={`font-medium text-[1.125rem] tracking-[-0.36px]`}>
+                {insight.title}
+              </p>
+              <p className={`text-[#9B96B0] tracking-[-0.16px]`}>
+                {insight.desc}
+              </p>
             </div>
           </motion.div>
         ))}
