@@ -25,8 +25,10 @@ const MovingColors: React.FC<MovingColorsProps> = ({ upsideDown = false }) => {
       }}
     >
       <div
-        className="z-999 absolute w-40 h-40 rounded-full bg-[#0A0118]/60 blur-xl transition-opacity duration-700 ease-in-out"
+        className="z-999 absolute w-40 h-40 rounded-full blur-xl transition-opacity duration-700 ease-in-out"
         style={{
+          background:
+            "linear-gradient(90deg, #1C76FD -5.79%, #5721F0 105.13%)",
           opacity: isHovered ? 1 : 0,
           transform: `translate(${mousePosition.x - halfDot}px, ${
             mousePosition.y - halfDot
