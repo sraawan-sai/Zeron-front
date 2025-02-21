@@ -1,6 +1,8 @@
+'use client';
 import Heading from "@/components/Layout/Heading";
 import Image from "next/image";
 import clsx from "clsx";
+import { motion } from "framer-motion";
 
 const statsData = [
   { title: "$1.8 Billion", subtitle: "Monetary Risk Saved" },
@@ -13,14 +15,35 @@ const statsData = [
   { title: "$1.8 Billion", subtitle: "Monetary Risk Saved" },
 ];
 
+// Framer Motion Animations
+const fadeUpVariants = {
+  hidden: { opacity: 0, y: 50 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
+};
+
+const headingVariants = {
+  hidden: { opacity: 0, y: 50 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut", delay: 0.2 } },
+};
+
 function Stats() {
   return (
     <div className="flex flex-col items-center justify-center container mx-auto gap-16 px-4 py-20">
-      <Heading
-        title="Single Point of Truth for Cyber Risk Management"
-        subtitle="Quantifying Risks | Prioritizing Action | Achieve Resilience"
-        subtitleSize="text-[1.75rem]"
-      />
+      
+      {/* Heading with Fade-Up Animation */}
+      <motion.div 
+        variants={headingVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+      >
+        <Heading
+          title="Single Point of Truth for Cyber Risk Management"
+          subtitle="Quantifying Risks | Prioritizing Action | Achieve Resilience"
+          subtitleSize="text-[1.75rem]"
+        />
+      </motion.div>
+
       <div className="grid grid-cols-2 md:grid-cols-4 w-full relative">
         {/* Background Image */}
         <div className="select-none absolute inset-0">
@@ -32,10 +55,14 @@ function Stats() {
           />
         </div>
 
-        {/* Grid Items */}
+        {/* Grid Items with Animation */}
         {statsData.map((data, index) => (
-          <div
+          <motion.div
             key={index}
+            variants={fadeUpVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
             className={clsx(
               "z-10 group hover:bg-gradient-to-r from-[#1C76FD] to-[#5721F0] transition-colors duration-500 min-h-50 flex flex-col items-center justify-center p-6 border-[#1C76FD]/70",
 
@@ -55,7 +82,7 @@ function Stats() {
             <p className="group-hover:scale-130 text-center text-[0.625rem] transition-transform ease-out duration-400">
               {data.subtitle}
             </p>
-          </div>
+          </motion.div>
         ))}
       </div>
     </div>

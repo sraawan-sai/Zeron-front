@@ -1,5 +1,7 @@
+'use client';
 import Heading from "@/components/Layout/Heading";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 const cardData = [
   {
@@ -24,19 +26,48 @@ const cardData = [
   },
 ];
 
+// Framer Motion Variants
+const fadeUpVariants = {
+  hidden: { opacity: 0, y: 50 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
+};
+
+const headingVariants = {
+  hidden: { opacity: 0, y: 50 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut", delay: 0.2 } },
+};
+
 function Overview() {
   return (
     <div className="flex flex-col items-center justify-center container mx-auto gap-16 px-4 py-20">
-      <Heading
-        title="Securing Your Digital Galaxy with"
-        subtitle="Precision and Power"
-        description="In a world of evolving cyber threats, Zeron helps you quantify risk, manage third-party security, automate compliance, and strengthen defense—turning complex data into clear, actionable insights."
-      />
+      
+      {/* Animated Heading */}
+      <motion.div
+        variants={headingVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+      >
+        <Heading
+          title="Securing Your Digital Galaxy with"
+          subtitle="Precision and Power"
+          description="In a world of evolving cyber threats, Zeron helps you quantify risk, manage third-party security, automate compliance, and strengthen defense—turning complex data into clear, actionable insights."
+        />
+      </motion.div>
+
+      {/* Cards with Animation */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-4">
         {cardData.map((data, index) => (
-          <div key={index} className="group relative">
-            {/* <div className="group-hover:block hidden absolute -bottom-10 -z-10 w-40 h-40 rounded-full bg-[#9747FF]/70 blur-md"></div> */}
-            <div className="bg-[#0A0118] hover:bg-[#0A0118] group border border-[#292929] hover:border-[#6F58FF] rounded-[8px] flex flex-col items-center justify-between gap-10 py-4 px-6  relative transition-colors duration-500 hover:shadow-[0_15px_40px_2px_#9747FF66]">
+          <motion.div
+            key={index}
+            variants={fadeUpVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ delay: index * 0.15 }}
+            className="group relative"
+          >
+            <div className="bg-[#0A0118] hover:bg-[#0A0118] group border border-[#292929] hover:border-[#6F58FF] rounded-[8px] flex flex-col items-center justify-between gap-10 py-4 px-6 relative transition-colors duration-500 hover:shadow-[0_15px_40px_2px_#9747FF66]">
               <div className="myButton absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[calc(100%+4px)] h-[calc(100%+4px)] rounded-[8px] -z-1" />
               <div className="group-hover:opacity-0 transition-all duration-300">
                 <Image
@@ -54,7 +85,7 @@ function Overview() {
                 {data.desc}
               </div>
             </div>
-          </div>
+          </motion.div>
         ))}
       </div>
     </div>

@@ -7,7 +7,7 @@ import { poppins } from "./fonts";
 
 export async function generateMetadata() {
   return generateDynamicMetadata({
-    title: "Cyber Risk Quantification Made Simple with Zeron CRPM Platform",
+    title: "Zeron Landing Page",
     path: "/",
   });
 }
