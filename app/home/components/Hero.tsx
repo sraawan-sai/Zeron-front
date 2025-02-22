@@ -26,22 +26,31 @@ const Hero = () => {
   return (
     <div className="w-full min-h-screen relative -mt-26 overflow-hidden">
       {/* Background Stars */}
-      <div className="absolute w-full h-full -z-20">
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1, ease: "easeOut" }}
+        className="absolute w-full h-full -z-20"
+      >
         <section className="wrapper">
           <div id="stars"></div>
           <div id="stars2"></div>
           <div id="stars3"></div>
         </section>
-      </div>
+      </motion.div>
 
       {/* Arc Image with Scaling */}
       <div className="absolute bottom-0 left-0 w-full">
         <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, ease: "easeOut" }}
+          initial={{ opacity: 0, y: 50, scale: 1 }}
+          animate={{ opacity: 1, y: 0, scale: scale }}
+          transition={{
+            opacity: { duration: 1, ease: "easeOut" },
+            y: { duration: 1, ease: "easeOut" },
+            scale: { duration: 0 },
+          }}
           className="relative w-full min-h-[55vh] 2xl:min-h-[70vh]"
-          style={{ transform: `scale(${scale})` }}
+          // style={{ transform: `scale(${scale})` }}
         >
           <Image
             src="/images/arc.png"
