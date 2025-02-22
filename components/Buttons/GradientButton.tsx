@@ -33,7 +33,7 @@ const GradientButton: React.FC<ButtonProps> = ({
       )}
     >
       <div className="myButton group-hover:opacity-100 opacity-0 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[calc(100%+4px)] h-[calc(100%+4px)] rounded-[6px] -z-1 transition-all duration-500" />
-      <span className="relative z-10">{text}</span>
+      <span className="relative">{text}</span>
     </button>
   );
 
