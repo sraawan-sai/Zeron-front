@@ -37,7 +37,7 @@ const SearchModel = ({ title }: SearchModelProps) => {
   return (
     <div
       id="linkTop"
-      className="flex flex-col gap-4 bg-gradient-to-r from-[#5BB0FF] to-[#6F58FF] rounded-[8px] px-5.5 pt-4 pb-6 relative"
+      className="backdrop-blur-[8px] w-full max-w-[400px] flex flex-col gap-4 bg-[#4285F4]/23 border border-[#6F58FF]/80 rounded-[8px] px-5.5 pt-4 pb-6 relative"
     >
       <div className="flex items-center gap-2">
         <div className="flex">
@@ -55,14 +55,14 @@ const SearchModel = ({ title }: SearchModelProps) => {
         <input
           type="text"
           placeholder="Enter your domain..."
-          className="bg-[#1A3265] rounded-[6px] border border-[#6F58FF] px-4 py-2 h-[40px] focus:outline-none"
+          className="w-full  bg-[#1A3265] rounded-[6px] border border-[#6F58FF] px-4 py-2 h-[40px] focus:outline-none"
           value={domain}
           onChange={handleChange}
         />
         <GradientButton
           text="Search"
           type="submit"
-          className="px-4 py-2 rounded-[6px] cursor-pointer bg-gradient-to-r from-[#1C76FD] to-[#5721F0] h-[40px]"
+          className="px-4 py-2 rounded-[6px] cursor-pointer bg-linear-to-r from-[#5721F0] to-[#1C76FD] h-[40px]"
         />
       </form>
       <div

@@ -24,7 +24,7 @@ const Hero = () => {
   }, []);
 
   return (
-    <div className="w-full min-h-screen relative -mt-26 overflow-hidden">
+    <div className="w-full min-h-screen relative -mt-28 pt-8 overflow-hidden">
       {/* Background Stars */}
       <motion.div
         initial={{ opacity: 0 }}
@@ -49,7 +49,7 @@ const Hero = () => {
             y: { duration: 1, ease: "easeOut" },
             scale: { duration: 0 },
           }}
-          className="relative w-full min-h-[55vh] 2xl:min-h-[70vh]"
+          className="relative w-full min-h-[40vh] xs:min-h-[30vh] md:min-h-[45vh] 2xl:min-h-[55vh]"
           // style={{ transform: `scale(${scale})` }}
         >
           <Image
@@ -79,7 +79,7 @@ const Hero = () => {
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, delay: 0.5, ease: "easeOut" }}
-        className="flex flex-col items-center pt-30 xl:pt-24"
+        className="flex flex-col items-center pt-30 xs:pt-40 md:pt-26 px-4 lg:px-0"
       >
         {/* Title */}
         <motion.div
@@ -89,10 +89,10 @@ const Hero = () => {
           transition={{ duration: 1, ease: "easeOut" }}
           className="flex flex-col items-center text-center mt-4"
         >
-          <p className="text-[clamp(2rem,5vw,5rem)] leading-[2rem] md:leading-[5rem]">
+          <p className="text-[2rem] xs:text-[2.375rem] md:text-[3rem] lg:text-[5rem] leading-[2.5rem] md:leading-[3.5rem] lg:leading-[5rem] tracking-[-2px]">
             Navigate the Cyber
           </p>
-          <p className="text-[clamp(2rem,5vw,5rem)] leading-[2rem] md:leading-[5rem]">
+          <p className="text-[2rem] xs:text-[2.375rem] md:text-[3rem] lg:text-[5rem] leading-[2.5rem] md:leading-[3.5rem] lg:leading-[5rem] tracking-[-2px]">
             Universe with Precision
           </p>
         </motion.div>
@@ -103,9 +103,11 @@ const Hero = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
-          className="mt-4 max-w-[700px] text-center"
+          className="mt-6 max-w-[750px] text-center"
         >
-          <p>
+          <p
+            className={`text-[1rem] md:text-[1.125rem] leading-[20px] md:leading-[24px]`}
+          >
             In an ever-expanding digital cosmos, Zeron is your guiding
             star—illuminating risks, automating compliance, and defending your
             organization from the unseen threats orbiting your business.
@@ -123,7 +125,7 @@ const Hero = () => {
           <GradientButton
             text="Request a Demo"
             href="/"
-            className="px-5 py-2 text-[1rem] font-medium rounded-md cursor-pointer bg-gradient-to-r from-[#1C76FD] to-[#5721F0]"
+            className="px-5 py-2 text-[1rem] font-medium rounded-md cursor-pointer bg-linear-to-r from-[#1C76FD] to-[#5721F0]"
           />
         </motion.div>
       </motion.div>

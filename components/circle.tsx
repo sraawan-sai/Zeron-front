@@ -28,18 +28,18 @@ const Circle = ({
 
   const modalPositionClasses =
     activeSide === "top"
-      ? "-top-44 left-1/2 transform -translate-x-1/2"
+      ? "top-0 -translate-y-full left-1/2 transform -translate-x-1/2"
       : activeSide === "left"
-      ? "-top-44 lg:-left-[80%] lg:top-[30%] transform lg:-translate-y-[30%]"
+      ? "top-0 -translate-y-full lg:left-0 lg:-translate-x-full lg:top-[30%] transform lg:-translate-y-[30%]"
       : activeSide === "right"
-      ? "-top-44 lg:-right-[80%] lg:top-[30%] transform lg:-translate-y-[30%]"
+      ? "top-0 -translate-y-full lg:right-0 lg:translate-x-full lg:top-[30%] transform lg:-translate-y-[30%]"
       : "";
 
   return (
     <div
       className={`${
         activeSide ? "z-2" : ""
-      } flex items-center justify-center relative scale-80 md:scale-100`}
+      } flex items-center justify-center relative scale-70 2xl:scale-80`}
     >
       {activeSide && (
         <div
