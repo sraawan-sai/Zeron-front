@@ -1,4 +1,4 @@
-'use client';
+"use client";
 import Image from "next/image";
 import Marquee from "react-fast-marquee";
 import { motion } from "framer-motion";
@@ -17,7 +17,7 @@ const LogoMarquee = () => {
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.2 }}
-      className="w-full flex flex-col items-center gap-3 overflow-hidden py-8"
+      className="w-full flex flex-col items-center gap-9 overflow-hidden pt-25 pb-8"
     >
       <p className="text-[1.5rem]">Trusted by</p>
 
