@@ -49,7 +49,7 @@ const SearchModel = ({ title }: SearchModelProps) => {
             className="min-w-12 min-h-12"
           />
         </div>
-        <p className={`text-[1.375rem] md:whitespace-nowrap`}>{title}</p>
+        <p className={`text-[1.375rem] whitespace-nowrap`}>{title}</p>
       </div>
       <form className="flex items-center gap-4" onSubmit={handleSubmit}>
         <input
