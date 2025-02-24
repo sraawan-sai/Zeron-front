@@ -10,6 +10,7 @@ import {
   FaYoutube,
   FaArrowRight,
 } from "react-icons/fa6";
+import CustomSection from "../Layout/CustomSection";
 
 const companyLinks = [
   { label: "Our Customers", href: "/" },
@@ -43,7 +44,7 @@ const socialLinks = [
 function Footer() {
   return (
     <div className="w-full flex flex-col pt-10 gap-6">
-      <div className="w-full container mx-auto px-4 flex flex-col">
+      <CustomSection className="flex-col px-4">
         <div className="grid grid-cols-1 md:grid-cols-[1.75fr_1fr_1fr_1fr] gap-10 md:gap-0">
           {/* Logo Section */}
           <div className="flex flex-col gap-7 max-w-[240px]">
@@ -129,9 +130,9 @@ function Footer() {
             </div>
           </div>
         </div>
-      </div>
+      </CustomSection>
       <div className="border-t border-[#ffffff]/25 flex">
-        <div className="container mx-auto flex flex-col md:flex-row px-4">
+        <CustomSection className="flex-col md:flex-row px-4">
           <div className="w-full md:border-r border-[#ffffff]/25 py-20 flex flex-col gap-6">
             <div className="flex gap-10">
               {socialLinks.map((link, index) => (
@@ -146,7 +147,7 @@ function Footer() {
             </div>
           </div>
           <div className="w-full py-20">
-            <div className="flex flex-col gap-3 pl-0 md:pl-20 lg:pl-40">
+            <div className="flex flex-col gap-3 pl-0 md:pl-20 lg:pl-28 xl:32 2xl:pl-40">
               <p>Sign Up For Our Newsletter</p>
               <form className="flex flex-col gap-3">
                 <div className="flex items-center gap-2">
@@ -185,7 +186,7 @@ function Footer() {
               </form>
             </div>
           </div>
-        </div>
+        </CustomSection>
       </div>
     </div>
   );
