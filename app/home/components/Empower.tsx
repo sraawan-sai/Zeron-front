@@ -1,4 +1,4 @@
-'use client';
+"use client";
 import EmpowerAnimation from "@/components/Animation/Empower";
 import Heading from "@/components/Layout/Heading";
 import { motion } from "framer-motion";
@@ -24,9 +24,9 @@ const Empower = () => {
           descWidth="max-w-[720px]"
         />
       </motion.div>
-      
+
       <motion.div
-        className="w-full max-w-[500px] h-[400px] md:h-[500px]"
+        className="w-full max-w-[700px] h-[360px] xs:h-[400px] md:h-[700px]"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.3 }}
