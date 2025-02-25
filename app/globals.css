@@ -100,7 +100,7 @@ body {
   translate: -50% -50%;
   z-index: -1;
   border-radius: 16px;
-  background: linear-gradient(var(--angle), rgba(28, 118, 253, 0.3), #5821f04f, transparent 50%); 
+  background: linear-gradient(var(--angle), rgba(28, 118, 253, 0.9), #5821f04f, transparent 50%); 
   animation: 12s customspin linear infinite;
 }
 

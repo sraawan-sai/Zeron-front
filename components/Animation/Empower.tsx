@@ -1,15 +1,36 @@
 "use client";
 
 import { DotLottieReact } from "@lottiefiles/dotlottie-react";
+import Image from "next/image";
 
 const EmpowerAnimation = () => {
   return (
-    <DotLottieReact
-      src="/animation/zinai.json"
-      autoplay
-      loop
-      className="w-full h-full"
-    />
+    <div className="relative w-full h-full">
+      <DotLottieReact
+        src="/animation/zinai.json"
+        autoplay
+        loop
+        className="w-full h-full"
+      />
+      <div className="absolute bottom-0 left-0">
+        <Image
+          src="/images/SemiLeft.svg"
+          alt=""
+          width={280}
+          height={350}
+          className="w-full h-full max-w-[150px] max-h-[300px] md:max-w-full md:max-h-full"
+        />
+      </div>
+      <div className="absolute bottom-0 right-0">
+        <Image
+          src="/images/SemiLeft.svg"
+          alt=""
+          width={280}
+          height={350}
+          className="transform scale-x-[-1] w-full h-full max-w-[150px] max-h-[300px] md:max-w-full md:max-h-full"
+        />
+      </div>
+    </div>
   );
 };
 
