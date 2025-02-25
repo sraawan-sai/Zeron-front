@@ -1,4 +1,4 @@
-'use client';
+"use client";
 import Heading from "@/components/Layout/Heading";
 import Image from "next/image";
 import { motion } from "framer-motion";
@@ -34,13 +34,16 @@ const fadeUpVariants = {
 
 const headingVariants = {
   hidden: { opacity: 0, y: 50 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut", delay: 0.2 } },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.8, ease: "easeOut", delay: 0.2 },
+  },
 };
 
 function Overview() {
   return (
     <div className="flex flex-col items-center justify-center container mx-auto gap-16 px-4 py-20">
-      
       {/* Animated Heading */}
       <motion.div
         variants={headingVariants}
@@ -52,6 +55,7 @@ function Overview() {
           title="Securing Your Digital Galaxy with"
           subtitle="Precision and Power"
           description="In a world of evolving cyber threats, Zeron helps you quantify risk, manage third-party security, automate compliance, and strengthen defense—turning complex data into clear, actionable insights."
+          descWidth="max-w-[850px]"
         />
       </motion.div>
 
@@ -67,7 +71,7 @@ function Overview() {
             transition={{ delay: index * 0.15 }}
             className="group relative"
           >
-            <div className="bg-[#0A0118] hover:bg-[#0A0118] group border border-[#292929] hover:border-[#6F58FF] rounded-[8px] flex flex-col items-center justify-between gap-10 py-4 px-6 relative transition-colors duration-500 hover:shadow-[0_15px_40px_2px_#9747FF66]">
+            <div className="bg-[#0A0118] hover:bg-[#0A0118] group border border-[#292929] hover:border-[#6F58FF] rounded-[8px] flex flex-col items-center justify-between gap-10 py-4 px-4 xs:px-6 relative transition-colors duration-500 hover:shadow-[0_15px_40px_2px_#9747FF66]">
               <div className="myButton absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[calc(100%+4px)] h-[calc(100%+4px)] rounded-[8px] -z-1" />
               <div className="group-hover:opacity-0 transition-all duration-300">
                 <Image

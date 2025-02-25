@@ -15,7 +15,7 @@ interface HeadingProps {
 function Heading({
   title,
   subtitle,
-  subtitleSize = "text-[2.625rem]",
+  subtitleSize = "text-[1.625rem] md:text-[2.625rem]",
   description,
   descWidth = "max-w-[950px]",
   subWidth = "max-w-[1000px]",
@@ -23,10 +23,14 @@ function Heading({
 HeadingProps) {
   return (
     <div className="w-full flex flex-col items-center justify-center text-center gap-4">
-      <p className={`text-[2.875rem] leading-[40px] font-medium`}>{title}</p>
+      <p
+        className={`text-[1.75rem] xs:text-[2rem] md:text-[2.875rem] leading-[34px] xs:leading-[40px] font-medium tracking-[-1px]`}
+      >
+        {title}
+      </p>
       {subtitle && (
         <div
-          className={`flex flex-col md:flex-row items-center gap-2 ${subtitleSize} ${subWidth} leading-[46px]`}
+          className={`flex flex-col xs:flex-row items-center gap-3 xs:gap-1 md:gap-2 ${subtitleSize} ${subWidth} leading-[20px] md:leading-[46px]`}
         >
           {subtitle.split("|").map((text, index, arr) => (
             <React.Fragment key={index}>
@@ -34,7 +38,7 @@ HeadingProps) {
                 {text.trim()}
               </span>
               {index < arr.length - 1 && (
-                <span className="hidden md:block text-[#6100FF]">|</span>
+                <span className="hidden xs:block text-[#6100FF]">|</span>
               )}
             </React.Fragment>
           ))}
@@ -42,7 +46,9 @@ HeadingProps) {
       )}
       <div className={`${descWidth}`}>
         {description && (
-          <p className="text-[1.125rem]  text-[#A3A3A3]">{description}</p>
+          <p className="text-[1rem] md:text-[1.125rem] text-[#A3A3A3] tracking-[-1px]">
+            {description}
+          </p>
         )}
       </div>
     </div>

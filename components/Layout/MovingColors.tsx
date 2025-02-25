@@ -16,7 +16,7 @@ const MovingColors: React.FC<MovingColorsProps> = ({ upsideDown = false }) => {
 
   return (
     <div
-      className="blur-[1px] animate-gradient bg-[length:300%] w-full h-[150px] bg-linear-to-r/shorter from-[#206FFC] via-[#45AFC9] to-[#5327F1] relative overflow-hidden"
+      className="animate-gradient bg-[length:300%] w-full h-[100px] bg-linear-to-r/oklch from-[#00235f] via-[#45AFC9] to-[#5327F1] relative overflow-hidden"
       onMouseMove={handleMouseMove}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => {
@@ -25,10 +25,10 @@ const MovingColors: React.FC<MovingColorsProps> = ({ upsideDown = false }) => {
       }}
     >
       <div
-        className="z-999 absolute w-40 h-40 rounded-full blur-xl transition-opacity duration-700 ease-in-out"
+        className="z-999 absolute w-40 h-40 rounded-full blur-xl transition-opacity duration-700 ease-in-out bg-[#0A0118]/50"
         style={{
-          background:
-            "linear-gradient(90deg, #1C76FD -5.79%, #5721F0 105.13%)",
+          // background:
+          //   "linear-gradient(90deg, #1C76FD -5.79%, #5721F0 105.13%)",
           opacity: isHovered ? 1 : 0,
           transform: `translate(${mousePosition.x - halfDot}px, ${
             mousePosition.y - halfDot
