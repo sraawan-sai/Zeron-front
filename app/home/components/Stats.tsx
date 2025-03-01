@@ -69,7 +69,7 @@ function Stats() {
               whileInView="visible"
               viewport={{ once: true, amount: 0.2 }}
               className={clsx(
-                "z-10 group hover:bg-gradient-to-r from-[#1C76FD] to-[#5721F0] transition-colors duration-500 min-h-50 flex flex-col items-center justify-center p-6 border-[#1C76FD]/70",
+                "z-10 group hover:bg-gradient-to-r from-[#1C76FD] to-[#5721F0] transition-colors duration-500 min-h-50 flex flex-col items-center justify-center p-4 xs:p-6 border-[#1C76FD]/70",
 
                 // Default (Mobile: 2 Columns)
                 index % 2 !== 0 && "border-l",
@@ -81,7 +81,7 @@ function Stats() {
                 index < 4 && "md:border-t-0"
               )}
             >
-              <p className="group-hover:scale-140 text-center text-[1.5rem] font-medium transition-transform ease-out duration-300">
+              <p className="group-hover:scale-140 text-center text-[1.125rem] xs:text-[1.5rem] font-medium transition-transform ease-out duration-300">
                 {data.title}
               </p>
               <p className="group-hover:scale-130 text-center text-[0.625rem] transition-transform ease-out duration-400">

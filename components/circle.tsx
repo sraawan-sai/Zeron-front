@@ -16,6 +16,10 @@ const Circle = ({
   const [activeSide, setActiveSide] = useState<"top" | "left" | "right" | null>(
     null
   );
+  const [hoveredSide, setHoveredSide] = useState<
+    "top" | "left" | "right" | null
+  >(null);
+
   const modalRef = useRef<HTMLDivElement | null>(null);
 
   const toggleActive = (side: "top" | "left" | "right") => {
@@ -26,36 +30,54 @@ const Circle = ({
     setActiveSide(null);
   });
 
-  const modalPositionClasses =
-    activeSide === "top"
-      ? "top-0 -translate-y-full left-1/2 transform -translate-x-1/2"
-      : activeSide === "left"
-      ? "top-0 -translate-y-full lg:left-0 lg:-translate-x-full lg:top-[30%] transform lg:-translate-y-[30%]"
-      : activeSide === "right"
-      ? "top-0 -translate-y-full lg:right-0 lg:translate-x-full lg:top-[30%] transform lg:-translate-y-[30%]"
-      : "";
+  const handleMouseEnter = (side: "top" | "left" | "right") => {
+    setHoveredSide(side);
+  };
+
+  const handleMouseLeave = () => {
+    setHoveredSide(null);
+  };
+
+  const isModalVisible = (side: "top" | "left" | "right") =>
+    activeSide === side || hoveredSide === side;
+
+  const getModalPositionClasses = (side: "top" | "left" | "right") => {
+    if (!isModalVisible(side)) return "";
+
+    return side === "top"
+      ? "top-0 -translate-y-[calc(100%+10px)] left-1/2 transform -translate-x-1/2"
+      : side === "left"
+      ? "top-0 -translate-y-full lg:left-0 lg:-translate-x-[calc(100%+10px)] lg:top-[30%] transform lg:-translate-y-[30%]"
+      : "top-0 -translate-y-full lg:right-0 lg:translate-x-[calc(100%+10px)] lg:top-[30%] transform lg:-translate-y-[30%]";
+  };
 
   return (
     <div
       className={`${
-        activeSide ? "z-2" : ""
+        activeSide ? "z-2" : "xl:z-2"
       } flex items-center justify-center relative scale-70 2xl:scale-80`}
     >
-      {activeSide && (
-        <div
-          ref={modalRef}
-          className={`${modalPositionClasses} absolute transition-opacity duration-300 opacity-100`}
-        >
-          {activeSide === "top" && (
-            <SearchModel title="Check your Third Party Risk" />
-          )}
-          {activeSide === "left" && (
-            <SearchModel title="Check your Internal Risk" />
-          )}
-          {activeSide === "right" && (
-            <SearchModel title="Check your External Risk" />
-          )}
-        </div>
+      {["top", "left", "right"].map(
+        (side) =>
+          isModalVisible(side as "top" | "left" | "right") && (
+            <div
+              key={side}
+              ref={modalRef}
+              className={`${getModalPositionClasses(
+                side as "top" | "left" | "right"
+              )} absolute transition-opacity duration-300 opacity-100`}
+            >
+              <SearchModel
+                title={
+                  side === "top"
+                    ? "Check your Third Party Risk"
+                    : side === "left"
+                    ? "Check your Internal Risk"
+                    : "Check your External Risk"
+                }
+              />
+            </div>
+          )
       )}
       <svg
         width="478"
@@ -138,6 +160,8 @@ const Circle = ({
           id="topSide"
           className="[transform-origin:center] hover:scale-105 transition-all duration-300 fill-white/[0.1] hover:fill-[url(#hoverGradient)] cursor-pointer"
           onClick={() => toggleActive("top")}
+          onMouseEnter={() => handleMouseEnter("top")}
+          onMouseLeave={handleMouseLeave}
         />
         <mask id="path-7-inside-2_0_1" fill="white">
           <path d="M342.846 350.974C313.995 375.925 276.625 389.481 238.054 388.987C199.484 388.493 162.492 373.985 134.324 348.303L167.083 314.179C186.527 331.906 212.061 341.921 238.685 342.262C265.308 342.603 291.104 333.246 311.019 316.023L342.846 350.974Z" />
@@ -163,6 +187,8 @@ const Circle = ({
           id="leftSide"
           className="[transform-origin:center] hover:scale-105 transition-all duration-300 fill-white/[0.1] hover:fill-[url(#hoverGradient)] cursor-pointer"
           onClick={() => toggleActive("left")}
+          onMouseEnter={() => handleMouseEnter("left")}
+          onMouseLeave={handleMouseLeave}
         />
         <mask id="path-9-inside-4_0_1" fill="white">
           <path d="M351.974 136.438C376.925 165.289 390.481 202.659 389.987 241.23C389.493 279.8 374.985 316.792 349.303 344.96L315.179 312.201C332.906 292.757 342.921 267.223 343.262 240.6C343.603 213.976 334.246 188.181 317.023 168.266L351.974 136.438Z" />
@@ -176,6 +202,8 @@ const Circle = ({
           id="rightSide"
           className="[transform-origin:center] hover:scale-105 transition-all duration-300 fill-white/[0.1] hover:fill-[url(#hoverGradient)] cursor-pointer"
           onClick={() => toggleActive("right")}
+          onMouseEnter={() => handleMouseEnter("right")}
+          onMouseLeave={handleMouseLeave}
         />
         <defs>
           <linearGradient

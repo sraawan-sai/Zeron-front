@@ -8,21 +8,25 @@ const cardData = [
     title: "Attack Surface",
     icon: "/icons/attack.svg",
     desc: "Lorem Ipsum is simply dummy text of the printing",
+    animationClass: "card1"
   },
   {
     title: "Compliance",
     icon: "/icons/compliance.svg",
     desc: "Lorem Ipsum is simply dummy text of the printing",
+    animationClass: "card2"
   },
   {
     title: "Defence",
     icon: "/icons/defence.svg",
     desc: "Lorem Ipsum is simply dummy text of the printing",
+     animationClass: "card3"
   },
   {
     title: "Vendor Pulse",
     icon: "/icons/pulse.svg",
     desc: "Lorem Ipsum is simply dummy text of the printing",
+     animationClass: "card4"
   },
 ];
 
@@ -72,7 +76,7 @@ function Overview() {
             className="group relative"
           >
             <div className="bg-[#0A0118] hover:bg-[#0A0118] group border border-[#292929] hover:border-[#6F58FF] rounded-[8px] flex flex-col items-center justify-between gap-10 py-4 px-4 xs:px-6 relative transition-colors duration-500 hover:shadow-[0_15px_40px_2px_#9747FF66]">
-              <div className="myButton absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[calc(100%+4px)] h-[calc(100%+4px)] rounded-[8px] -z-1" />
+              <div className={`myButton ${data.animationClass} absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[calc(100%+4px)] h-[calc(100%+4px)] rounded-[8px] -z-1`} />
               <div className="group-hover:opacity-0 transition-all duration-300">
                 <Image
                   src={data.icon}
