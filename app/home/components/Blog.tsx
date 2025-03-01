@@ -67,7 +67,7 @@ const Blog = () => {
       className="flex flex-col items-center justify-center container mx-auto gap-12 px-4 py-20"
     >
       <div className="flex flex-col text-center items-center justify-center gap-4">
-        <p className="cursor-default text-[#6100FF] hover:text-[#fff] text-[2.875rem] leading-[40px]">
+        <p className="cursor-default text-[#6100FF] hover:text-[#fff] text-[2.875rem] leading-[52px]">
           Stay Informed with Zeron
         </p>
         <div className="max-w-[600px]">

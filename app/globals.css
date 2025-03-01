@@ -117,3 +117,19 @@ body {
     --angle: 360deg;  
   }
 }
+
+.card1::after, .card1::before {
+  animation: 8s customspin linear infinite;
+}
+
+.card2::after, .card2::before {
+  animation: 12s customspin linear infinite reverse;
+}
+
+.card3::after, .card3::before {
+  animation: 10s customspin linear infinite;
+}
+
+.card4::after, .card4::before {
+  animation: 14s customspin linear infinite reverse;
+}

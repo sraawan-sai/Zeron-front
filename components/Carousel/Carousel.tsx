@@ -112,16 +112,20 @@ const Carousel: React.FC<PropType> = ({ testimonials, options }) => {
         <div className="flex touch-pan-y touch-pinch-zoom ml-[-16px]">
           {testimonials.map((testimonial, index) => (
             <div
-              className="cursor-grab active:cursor-grabbing relative flex-shrink-0 min-w-0 pl-4 w-[70%] xl:w-[60%] 2xl:w-[50%] translate-z-0"
+              className="cursor-grab active:cursor-grabbing relative flex-shrink-0 min-w-0 pl-4 w-[75%] xl:w-[60%] 2xl:w-[50%] translate-z-0"
               key={index}
             >
-              <div className="px-2 md:px-5 py-8 bg-[#19133F] w-full h-full flex flex-col gap-5 text-center items-center justify-between border border-[#292929] rounded-[12px]">
+              <div className="px-2 md:px-5 py-12 bg-[#19133F] w-full h-full flex flex-col gap-5 text-center items-center justify-between border border-[#292929] rounded-[12px]">
                 <div className="flex flex-grow items-center justify-center">
-                  <p className={`text-[1.125rem] `}>{testimonial.review}</p>
+                  <p
+                    className={`text-[0.875rem] md:text-[1.125rem] leading-[20px] md:leading-[28px]`}
+                  >
+                    {testimonial.review}
+                  </p>
                 </div>
                 <div className="flex flex-col items-center justify-center gap-5 w-full">
-                  <span className="w-full h-[1px] bg-[#5BB0FF]"></span>
-                  <div className="flex gap-4 items-center">
+                  <span className="w-full h-[1px] bg-linear-to-r from-[#5BB0FF]/80 to-[#6F58FF]/80"></span>
+                  <div className="flex flex-col md:flex-row gap-4 items-center">
                     <div className="h-16 w-16 rounded-full">
                       <Image
                         src={testimonial.image}

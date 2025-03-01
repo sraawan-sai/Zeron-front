@@ -30,7 +30,7 @@ HeadingProps) {
       </p>
       {subtitle && (
         <div
-          className={`flex flex-col xs:flex-row items-center gap-3 xs:gap-1 md:gap-2 ${subtitleSize} ${subWidth} leading-[20px] md:leading-[46px]`}
+          className={`flex flex-col xs:flex-row items-center gap-3 xs:gap-1 md:gap-2 ${subtitleSize} ${subWidth} leading-[32px] md:leading-[46px]`}
         >
           {subtitle.split("|").map((text, index, arr) => (
             <React.Fragment key={index}>
