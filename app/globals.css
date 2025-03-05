@@ -133,3 +133,34 @@ body {
 .card4::after, .card4::before {
   animation: 14s customspin linear infinite reverse;
 }
+
+.star-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.star {
+  position: absolute;
+  border-radius: 50%;
+  background: white;
+  animation: animate linear forwards;
+}
+
+@keyframes animate {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+    opacity: 1;
+  }
+  50% {
+    transform: translate(calc(var(--x-offset) / 2), 50vh) rotate(180deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(var(--x-offset), 100vh) rotate(360deg);
+    opacity: 0;
+  }
+}
