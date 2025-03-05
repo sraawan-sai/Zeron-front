@@ -1,5 +1,3 @@
-//TODO: MOBILE NAVBAR
-
 "use client";
 
 // NEXT imports
@@ -15,14 +13,20 @@ import { IoMenu, IoClose } from "react-icons/io5";
 import GradientButton from "../Buttons/GradientButton";
 import CustomSection from "../Layout/CustomSection";
 import { navLinks } from "@/public/data/navigationLinks";
+import ProductsNavbar from "./ProductNav";
 
 function Navbar() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [productsDropdownOpen, setProductsDropdownOpen] = useState(false);
 
   const toggleSidebar = () => {
     setSidebarOpen((prev) => {
       return !prev;
     });
+  };
+
+  const toggleProductsDropdown = () => {
+    setProductsDropdownOpen((prev) => !prev);
   };
 
   return (
@@ -41,11 +45,33 @@ function Navbar() {
           <div className="flex items-center justify-end md:justify-center">
             <div className="hidden lg:flex justify-center items-center gap-6">
               {navLinks.map((link, index) => (
-                <Link key={`${link.href}-${index}`} href={link.href}>
-                  <p className="text-[0.875rem] hover:text-[#6100FF] transition-colors duration-200">
-                    {link.label}
-                  </p>
-                </Link>
+                <div key={`${link.href}-${index}`} className="relative">
+                  {link.label === "Products" ? (
+                    <div
+                      onMouseEnter={toggleProductsDropdown} // Open dropdown on hover
+                      onMouseLeave={toggleProductsDropdown} // Close dropdown on hover out
+                      className="cursor-pointer"
+                    >
+                      <p className="text-[0.875rem] hover:text-[#6100FF] transition-colors duration-200">
+                        {link.label}
+                      </p>
+                      {/* Dropdown for Products */}
+                      {productsDropdownOpen && (
+                        <div className="absolute top-full left-[28%] -translate-x-[28%] custombk:left-1/2 custombk:-translate-x-1/2 w-[1000px] cursor-default">
+                          <div className="px-16 py-6 mt-9 relative w-full bg-[#000D38] border-[0.5px] border-[#3B24B2] rounded-[8px] drop-shadow-[0_0_15px_rgba(184,57,149,0.1)]">
+                            <ProductsNavbar />
+                          </div>
+                        </div>
+                      )}
+                    </div>
+                  ) : (
+                    <Link href={link.href}>
+                      <p className="text-[0.875rem] hover:text-[#6100FF] transition-colors duration-200">
+                        {link.label}
+                      </p>
+                    </Link>
+                  )}
+                </div>
               ))}
             </div>
             <div className="flex items-center lg:hidden">
