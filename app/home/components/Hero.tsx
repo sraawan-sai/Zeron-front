@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import GradientButton from "@/components/Buttons/GradientButton";
 import Circle from "@/components/circle";
 import Image from "next/image";
+import StarsBackground from "@/components/Layout/Stars";
 
 const Hero = () => {
   const [scale, setScale] = useState(1);
@@ -32,10 +33,11 @@ const Hero = () => {
         transition={{ duration: 1, ease: "easeOut" }}
         className="absolute w-full h-full -z-20"
       >
-        <section className="wrapper">
-          <div id="stars"></div>
+        <section className="relative">
+          {/* <div id="stars"></div>
           <div id="stars2"></div>
-          <div id="stars3"></div>
+          <div id="stars3"></div> */}
+          <StarsBackground />
         </section>
       </motion.div>
 
