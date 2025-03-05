@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 import GradientButton from "@/components/Buttons/GradientButton";
 import Circle from "@/components/circle";
 import Image from "next/image";
-import StarsBackground from "@/components/Layout/Stars";
+import StarsCanvas from "@/components/Layout/Stars";
 
 const Hero = () => {
   const [scale, setScale] = useState(1);
@@ -37,7 +37,7 @@ const Hero = () => {
           {/* <div id="stars"></div>
           <div id="stars2"></div>
           <div id="stars3"></div> */}
-          <StarsBackground />
+          <StarsCanvas />
         </section>
       </motion.div>
 
