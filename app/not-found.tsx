@@ -1,3 +1,5 @@
+"use client";
+
 import GradientButton from "@/components/Buttons/GradientButton";
 import Image from "next/image";
 
@@ -5,10 +7,10 @@ export default function NotFound() {
   return (
     <div className="min-h-screen w-full flex flex-col items-center justify-center px-4 relative">
       <Image
-        src="/images/bgnew.png"
+        src="/images/bg50.png"
         alt=""
         fill={true}
-        className="object-bottom object-cover"
+        className="object-top object-cover -z-1"
       />
       <p className="text-[6.25rem] leading-[100px] tracking-[-2%]">404</p>
       <div className="flex flex-col text-center">

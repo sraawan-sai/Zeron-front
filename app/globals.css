@@ -5,7 +5,6 @@
   --color-foreground: var(--foreground);
   --animate-gradient: gradient 6s ease infinite;
   --breakpoint-xs: 400px;
-  --breakpoint-custombk: 1434px;
 }
 
 @layer base {
