@@ -55,7 +55,7 @@ const Hero = () => {
           // style={{ transform: `scale(${scale})` }}
         >
           <Image
-            src="/images/arc.png"
+            src="/images/arcnew.png"
             alt=""
             fill={true}
             className="object-cover object-top -z-10"
