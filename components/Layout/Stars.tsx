@@ -14,9 +14,22 @@ type Star = {
   size: number;
 };
 
+type ShootingStar = {
+  startX: number;
+  startY: number;
+  x: number;
+  y: number;
+  speed: number;
+  length: number;
+  lifetime: number;
+  createdAt: number;
+  angle: number;
+};
+
 const StarsCanvas = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const starsRef = useRef<Star[]>([]);
+  const shootingStarsRef = useRef<ShootingStar[]>([]);
   const mouseOffsetRef = useRef({ x: 0, y: 0 });
   const animationFrameRef = useRef<number | null>(null);
 
@@ -70,6 +83,44 @@ const StarsCanvas = () => {
       }
     }, 200);
 
+    //Shooting star with randomized direction.
+    const createShootingStar = (
+      canvasWidth: number,
+      canvasHeight: number
+    ): ShootingStar => {
+      const isDownRight = Math.random() < 0.5;
+      let angle: number;
+      let startX: number;
+      if (isDownRight) {
+        angle = Math.PI / 4;
+        startX = Math.random() * canvasWidth * 0.4;
+      } else {
+        angle = (3 * Math.PI) / 4;
+        startX = canvasWidth - Math.random() * canvasWidth * 0.4;
+      }
+      const startY = Math.random() * canvasHeight * 0.5;
+      const speed = Math.random() * 50 + 50;
+      const length = Math.random() * 50 + 100;
+      const lifetime = Math.random() * 0.5 + 1.5;
+      return {
+        startX,
+        startY,
+        x: startX,
+        y: startY,
+        speed,
+        length,
+        lifetime,
+        createdAt: performance.now(),
+        angle,
+      };
+    };
+
+    const shootingStarInterval = setInterval(() => {
+      shootingStarsRef.current.push(
+        createShootingStar(canvas.width, canvas.height)
+      );
+    }, 2000);
+
     let lastTime = performance.now();
     // Current parallax offset lags behind mouseOffsetRef.
     const currentParallax = { x: 0, y: 0 };
@@ -82,6 +133,7 @@ const StarsCanvas = () => {
       currentParallax.x += (mouseOffsetRef.current.x - currentParallax.x) * 0.1;
       currentParallax.y += (mouseOffsetRef.current.y - currentParallax.y) * 0.1;
 
+      // Animate firefly stars.
       stars.forEach((star) => {
         star.phase += star.speed * dt;
         const offsetX = Math.cos(star.phase) * star.amplitude;
@@ -113,6 +165,43 @@ const StarsCanvas = () => {
         ctx.restore();
       });
 
+      // Shooting stars animation.
+      for (let i = shootingStarsRef.current.length - 1; i >= 0; i--) {
+        const shootingStar = shootingStarsRef.current[i];
+        const elapsed = (time - shootingStar.createdAt) / 1000;
+        if (elapsed > shootingStar.lifetime) {
+          shootingStarsRef.current.splice(i, 1);
+          continue;
+        }
+        shootingStar.x +=
+          shootingStar.speed * dt * Math.cos(shootingStar.angle);
+        shootingStar.y +=
+          shootingStar.speed * dt * Math.sin(shootingStar.angle);
+        const opacity = 0.5 * (1 - elapsed / shootingStar.lifetime);
+
+        const tailX =
+          shootingStar.x - shootingStar.length * Math.cos(shootingStar.angle);
+        const tailY =
+          shootingStar.y - shootingStar.length * Math.sin(shootingStar.angle);
+
+        ctx.save();
+        ctx.lineWidth = 2;
+        const gradient = ctx.createLinearGradient(
+          shootingStar.x,
+          shootingStar.y,
+          tailX,
+          tailY
+        );
+        gradient.addColorStop(0, `rgba(255, 255, 255, ${opacity})`);
+        gradient.addColorStop(1, "rgba(255, 255, 255, 0)");
+        ctx.strokeStyle = gradient;
+        ctx.beginPath();
+        ctx.moveTo(shootingStar.x, shootingStar.y);
+        ctx.lineTo(tailX, tailY);
+        ctx.stroke();
+        ctx.restore();
+      }
+
       animationFrameRef.current = requestAnimationFrame(animate);
     };
     animationFrameRef.current = requestAnimationFrame(animate);
@@ -128,6 +217,7 @@ const StarsCanvas = () => {
       window.removeEventListener("resize", setCanvasSize);
       window.removeEventListener("mousemove", handleMouseMove);
       clearInterval(starInterval);
+      clearInterval(shootingStarInterval);
       if (animationFrameRef.current)
         cancelAnimationFrame(animationFrameRef.current);
     };
