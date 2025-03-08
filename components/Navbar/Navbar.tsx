@@ -14,10 +14,16 @@ import GradientButton from "../Buttons/GradientButton";
 import CustomSection from "../Layout/CustomSection";
 import { navLinks } from "@/public/data/navigationLinks";
 import ProductsNavbar from "./ProductNav";
+import CompanyDropdown from "./CompanyDropdown";
+import ResourcesDropdown from "./ResourcesDropdown";
+import PartnersDropdown from "./PartnersDropdown";
 
 function Navbar() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [productsDropdownOpen, setProductsDropdownOpen] = useState(false);
+  const [companyDropdownOpen, setCompanyDropdownOpen] = useState(false);
+  const [resourcesDropdownOpen, setResourcesDropdownOpen] = useState(false);
+  const [partnersDropdownOpen, setPartnersDropdownOpen] = useState(false);
 
   const toggleSidebar = () => {
     setSidebarOpen((prev) => {
@@ -27,6 +33,18 @@ function Navbar() {
 
   const toggleProductsDropdown = () => {
     setProductsDropdownOpen((prev) => !prev);
+  };
+
+  const toggleCompanyDropdown = () => {
+    setCompanyDropdownOpen((prev) => !prev);
+  };
+
+  const toggleResourcesDropdown = () => {
+    setResourcesDropdownOpen((prev) => !prev);
+  };
+
+  const togglePartnersDropdown = () => {
+    setPartnersDropdownOpen((prev) => !prev);
   };
 
   return (
@@ -51,21 +69,115 @@ function Navbar() {
                 >
                   {link.label === "Products" ? (
                     <div
-                      onMouseEnter={toggleProductsDropdown} // Open dropdown on hover
-                      onMouseLeave={toggleProductsDropdown} // Close dropdown on hover out
+                      onMouseEnter={toggleProductsDropdown}
+                      onMouseLeave={toggleProductsDropdown}
                       className="cursor-pointer"
                     >
                       <p className="text-[0.875rem] hover:text-[#6100FF] transition-colors duration-200">
                         {link.label}
                       </p>
                       {/* Dropdown for Products */}
-                      {productsDropdownOpen && (
-                        <div className="absolute top-full left-[23%] -translate-x-[23%] 2xl:left-1/2 2xl:-translate-x-1/2 w-[1000px] cursor-default">
-                          <div className="px-16 py-6 mt-9 relative w-full bg-[#000D38] border-[0.5px] border-[#3B24B2] rounded-[8px] drop-shadow-[0_0_15px_rgba(184,57,149,0.1)]">
-                            <ProductsNavbar />
-                          </div>
+                      <div
+                        className={`absolute top-full left-[23%] -translate-x-[23%] 2xl:left-1/2 2xl:-translate-x-1/2 w-[1000px] cursor-default transition-opacity duration-300 ${
+                          productsDropdownOpen
+                            ? "opacity-100"
+                            : "opacity-0 pointer-events-none"
+                        }`}
+                      >
+                        <div
+                          className={`px-16 py-6 mt-9 relative w-full bg-[#000D38] border-[0.5px] border-[#3B24B2] rounded-[8px] drop-shadow-[0_0_15px_rgba(184,57,149,0.1)] transition-transform duration-500 ${
+                            productsDropdownOpen
+                              ? "translate-y-0"
+                              : "-translate-y-4"
+                          }`}
+                        >
+                          <ProductsNavbar />
                         </div>
-                      )}
+                      </div>
+                    </div>
+                  ) : link.label === "Company" ? (
+                    <div
+                      onMouseEnter={toggleCompanyDropdown}
+                      onMouseLeave={toggleCompanyDropdown}
+                      className="cursor-pointer"
+                    >
+                      <p className="text-[0.875rem] hover:text-[#6100FF] transition-colors duration-200">
+                        {link.label}
+                      </p>
+                      {/* Dropdown for Company */}
+                      <div
+                        className={`absolute top-full left-[23%] -translate-x-[23%] 2xl:left-1/2 2xl:-translate-x-1/2 w-[1000px] cursor-default transition-opacity duration-300 ${
+                          companyDropdownOpen
+                            ? "opacity-100"
+                            : "opacity-0 pointer-events-none"
+                        }`}
+                      >
+                        <div
+                          className={`px-16 py-6 mt-9 relative w-full bg-[#000D38] border-[0.5px] border-[#3B24B2] rounded-[8px] drop-shadow-[0_0_15px_rgba(184,57,149,0.1)] transition-transform duration-500 ${
+                            companyDropdownOpen
+                              ? "translate-y-0"
+                              : "-translate-y-4"
+                          }`}
+                        >
+                          <CompanyDropdown />
+                        </div>
+                      </div>
+                    </div>
+                  ) : link.label === "Resources" ? (
+                    <div
+                      onMouseEnter={toggleResourcesDropdown}
+                      onMouseLeave={toggleResourcesDropdown}
+                      className="cursor-pointer"
+                    >
+                      <p className="text-[0.875rem] hover:text-[#6100FF] transition-colors duration-200">
+                        {link.label}
+                      </p>
+                      {/* Dropdown for Resources */}
+                      <div
+                        className={`absolute top-full left-1/2 -translate-x-1/2 w-[160px] cursor-default transition-opacity duration-300 ${
+                          resourcesDropdownOpen
+                            ? "opacity-100"
+                            : "opacity-0 pointer-events-none"
+                        }`}
+                      >
+                        <div
+                          className={`px-6 py-4 mt-9 relative w-full bg-[#000D38] border-[0.5px] border-[#3B24B2] rounded-[8px] drop-shadow-[0_0_15px_rgba(184,57,149,0.1)] transition-transform duration-500 ${
+                            resourcesDropdownOpen
+                              ? "translate-y-0"
+                              : "-translate-y-4"
+                          }`}
+                        >
+                          <ResourcesDropdown />
+                        </div>
+                      </div>
+                    </div>
+                  ) : link.label === "Partners" ? (
+                    <div
+                      onMouseEnter={togglePartnersDropdown}
+                      onMouseLeave={togglePartnersDropdown}
+                      className="cursor-pointer"
+                    >
+                      <p className="text-[0.875rem] hover:text-[#6100FF] transition-colors duration-200">
+                        {link.label}
+                      </p>
+                      {/* Dropdown for Partners */}
+                      <div
+                        className={`absolute top-full left-1/2 -translate-x-1/2 w-[210px] cursor-default transition-opacity duration-300 ${
+                          partnersDropdownOpen
+                            ? "opacity-100"
+                            : "opacity-0 pointer-events-none"
+                        }`}
+                      >
+                        <div
+                          className={`px-6 py-4 mt-9 relative w-full bg-[#000D38] border-[0.5px] border-[#3B24B2] rounded-[8px] drop-shadow-[0_0_15px_rgba(184,57,149,0.1)] transition-transform duration-500 ${
+                            partnersDropdownOpen
+                              ? "translate-y-0"
+                              : "-translate-y-4"
+                          }`}
+                        >
+                          <PartnersDropdown />
+                        </div>
+                      </div>
                     </div>
                   ) : (
                     <Link href={link.href}>
