@@ -1,0 +1,80 @@
+{
+  "popular": [
+    {
+      "id": 1,
+      "image": "/img.png",
+      "title": "Lorem Ipsum is simply dummy text of the printing demi text",
+      "excerpt": "At a ipsum bibendum non massa. Tristique tristique odio sed eget eget mauris non et. Aliquam erat neque ornare sed facilisis.",
+      "category": "NEWS",
+      "date": "26 JANUARY 2025"
+    },
+    {
+      "id": 2,
+      "image": "/img.png",
+      "title": "Secondary Popular Post Title",
+      "excerpt": "Secondary excerpt if needed.",
+      "category": "NEWS",
+      "date": "26 JANUARY 2025"
+    },
+    {
+      "id": 3,
+      "image": "/img.png",
+      "title": "Secondary Popular Post Title",
+      "excerpt": "Secondary excerpt if needed.",
+      "category": "NEWS",
+      "date": "26 JANUARY 2025"
+    },
+    {
+      "id": 4,
+      "image": "/img.png",
+      "title": "Secondary Popular Post Title",
+      "excerpt": "Secondary excerpt if needed.",
+      "category": "NEWS",
+      "date": "26 JANUARY 2025"
+    }
+  ],
+  "more": [
+    {
+      "id": 5,
+      "image": "/img.png",
+      "title": "More Blog Post Title 1",
+      "category": "Blogs",
+      "date": "26 JANUARY 2025"
+    },
+    {
+      "id": 6,
+      "image": "/img.png",
+      "title": "More Blog Post Title 2",
+      "category": "Blogs",
+      "date": "26 JANUARY 2025"
+    },
+    {
+      "id": 7,
+      "image": "/img.png",
+      "title": "More Blog Post Title 3",
+      "category": "Blogs",
+      "date": "26 JANUARY 2025"
+    },
+    {
+      "id": 8,
+      "image": "/img.png",
+      "title": "More Blog Post Title 1",
+      "category": "Blogs",
+      "date": "26 JANUARY 2025"
+    },
+    {
+      "id": 9,
+      "image": "/img.png",
+      "title": "More Blog Post Title 2",
+      "category": "Blogs",
+      "date": "26 JANUARY 2025"
+    },
+    {
+      "id": 10,
+      "image": "/img.png",
+      "title": "More Blog Post Title 3",
+      "category": "Blogs",
+      "date": "26 JANUARY 2025"
+    }
+  ]
+}
