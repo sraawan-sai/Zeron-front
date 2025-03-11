@@ -50,8 +50,8 @@ function Footer() {
       <CustomSection className="flex-col px-4">
         <div className="grid grid-cols-1 xl:grid-cols-[1.25fr_4fr] gap-10 xl:gap-0">
           {/* Logo Section */}
-          <div className="flex flex-col gap-7 max-w-[240px]">
-            <div>
+          <div className="flex flex-col gap-7">
+            <div className="w-full max-w-[240px]">
               <Image
                 src="/Logo.svg"
                 alt="ZERON"
@@ -60,21 +60,12 @@ function Footer() {
                 className="w-full h-full"
               />
             </div>
-            <div className="flex items-center gap-3.75">
-              <Image src="/icons/ISMS.svg" alt="ISMS" width={50} height={50} />
-              <Image
-                src="/icons/AICPA.svg"
-                alt="AICPA"
-                width={50}
-                height={50}
-              />
-              <Image src="/icons/STAR.svg" alt="STAR" width={50} height={50} />
-              <Image
-                src="/icons/START.svg"
-                alt="START"
-                width={50}
-                height={50}
-              />
+            <div className="flex gap-12">
+              {socialLinks.map((link, index) => (
+                <Link key={index} href={link.href}>
+                  {<link.icon size={24} />}
+                </Link>
+              ))}
             </div>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-0">
@@ -138,51 +129,51 @@ function Footer() {
       <div className="border-t border-[#ffffff]/25 flex">
         <CustomSection className="flex-col md:flex-row px-4">
           <div className="w-full md:border-r border-[#ffffff]/25 py-20 flex flex-col gap-6">
-            <div className="flex gap-10">
-              {socialLinks.map((link, index) => (
-                <Link key={index} href={link.href}>
-                  {<link.icon size={24} />}
-                </Link>
-              ))}
-            </div>
-            <div className="flex flex-col text-[0.875rem]">
-              <p>©2025 Zeron.one, All Rights Reserved.</p>
-              <p>Teamcognito Solutions Pvt Ltd. All Rights Reserved.</p>
-            </div>
-            <div className="flex  gap-6 text-[#ffffff]/50 text-sm py-4 ">
-              <Link
-                href="/"
-                className="hover:text-white transition-colors duration-200"
-              >
-                All Rights Reserved
-              </Link>
-              <Link
-                href="/"
-                className="hover:text-white transition-colors duration-200"
-              >
-                Privacy
-              </Link>
-              <Link
-                href="/"
-                className="hover:text-white transition-colors duration-200"
-              >
-                Trust Centre
-              </Link>
-              <Link
-                href="/"
-                className="hover:text-white transition-colors duration-200"
-              >
-                Media Guidelines
-              </Link>
-              <Link
-                href="/"
-                className="hover:text-white transition-colors duration-200"
-              >
-                Legal
-              </Link>
+            <div className="w-full max-w-[540px] flex flex-col gap-8 items-center justify-center">
+              <div className="flex gap-8">
+                <Image
+                  src="/icons/ISMS.svg"
+                  alt="ISMS"
+                  width={74}
+                  height={74}
+                />
+                <Image
+                  src="/icons/AICPA.svg"
+                  alt="AICPA"
+                  width={74}
+                  height={74}
+                />
+                <Image
+                  src="/icons/STAR.svg"
+                  alt="STAR"
+                  width={74}
+                  height={74}
+                />
+                <Image
+                  src="/icons/START.svg"
+                  alt="START"
+                  width={74}
+                  height={74}
+                />
+              </div>
+              <div className="flex flex-col gap-2">
+                <div className="flex gap-6 text-sm">
+                  <Link href="/">All Rights Reserved</Link>
+                  <Link href="/">Privacy</Link>
+                  <Link href="/">Trust Centre</Link>
+                  <Link href="/">Media Guidelines</Link>
+                  <Link href="/">Legal</Link>
+                </div>
+                <div className="">
+                  <p className="text-[0.75rem] text-white font-light">
+                    ©2025 Zeron.one, All Rights Reserved. Teamcognito Solutions
+                    Pvt Ltd. All Rights Reserved.
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
-          <div className="w-full py-20">
+          <div className="w-full md:py-20 pb-10 md:pb-0">
             <div className="flex flex-col gap-3 pl-0 md:pl-20 lg:pl-28 xl:32 2xl:pl-40">
               <p>Sign Up For Our Newsletter</p>
               <form className="flex flex-col gap-3">
