@@ -1,23 +1,20 @@
 "use client";
 
-import "@/styles/stars.css";
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { motion } from "framer-motion";
 import GradientButton from "@/components/Buttons/GradientButton";
-import Circle from "@/components/circle";
-import Image from "next/image";
 import StarsCanvas from "@/components/Layout/Stars";
 
 const Hero = () => {
-  const [scale, setScale] = useState(1);
+  // const [scale, setScale] = useState(1);
 
   useEffect(() => {
     const handleScroll = () => {
-      const scrollY = window.pageYOffset;
-      const maxScroll = 500;
-      const maxExtraScale = 0.5;
-      const newScale = 1 + Math.min(scrollY / maxScroll, maxExtraScale);
-      setScale(newScale);
+      // const scrollY = window.pageYOffset;
+      // const maxScroll = 500;
+      // const maxExtraScale = 0.5;
+      // const newScale = 1 + Math.min(scrollY / maxScroll, maxExtraScale);
+      // setScale(newScale);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -34,18 +31,15 @@ const Hero = () => {
         className="absolute w-full h-full -z-20"
       >
         <section className="relative">
-          {/* <div id="stars"></div>
-          <div id="stars2"></div>
-          <div id="stars3"></div> */}
           <StarsCanvas />
         </section>
       </motion.div>
-         {/* Main Hero Content */}
+      {/* Main Hero Content */}
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, delay: 0.5, ease: "easeOut" }}
-        className="flex flex-col items-center pt-30 xs:pt-40 md:pt-26 px-4 lg:px-0"
+        className="flex flex-col items-center pt-30 xs:pt-40 md:pt-30 px-4 lg:px-0"
       >
         {/* Title */}
         <motion.div
@@ -58,7 +52,6 @@ const Hero = () => {
           <p className="text-[2rem] xs:text-[2.375rem] md:text-[3rem] lg:text-[5rem] leading-[2.5rem] md:leading-[3.5rem] lg:leading-[5rem] tracking-[-2px] pt-20">
             Zeron | Attack Surface
           </p>
-        
         </motion.div>
 
         {/* Subtitle */}
@@ -72,7 +65,8 @@ const Hero = () => {
           <p
             className={`text-[1rem] md:text-[1.125rem] leading-[20px] md:leading-[24px]`}
           >
-          Uncover your external attack surface and gain actionable insights to strengthen your security posture.
+            Uncover your external attack surface and gain actionable insights to
+            strengthen your security posture.
           </p>
         </motion.div>
 

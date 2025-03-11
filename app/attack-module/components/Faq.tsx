@@ -27,13 +27,13 @@ const FAQSection = () => {
   };
 
   return (
-    <section className="flex flex-col justify-center items-center p-[150px] gap-[50px] w-full h-[892px] bg-[#0A0118]">
-      <div className="flex justify-center items-center p-[10px] gap-[10px] w-[1140px] h-[124px]">
+    <section className="flex flex-col justify-center items-center p-4 md:p-[150px] gap-[50px] w-full bg-[#0A0118]">
+      <div className="flex justify-center items-center p-[10px] gap-[10px] w-full max-w-[1140px]">
         <h1 className="text-white text-[48px] leading-[52px] text-center letter-spacing-[-1px]">
           Navigating the Unknown: Your Cybersecurity Questions, Answered
         </h1>
       </div>
-      <div className="flex flex-col items-start gap-[24px] w-[1140px]">
+      <div className="flex flex-col items-start gap-[24px] w-full max-w-[1140px]">
         {faqs.map((faq, index) => (
           <div
             key={index}
