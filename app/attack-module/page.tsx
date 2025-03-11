@@ -1,5 +1,6 @@
-'use client';
+"use client";
 import LogoMarquee from "../home/components/Marquee";
+import DataChaos from "./components/DataCaos";
 import FaqSection from "./components/Faq";
 import AttackSurfaceFeatures from "./components/Feature";
 import ContactFormSection from "./components/Form";
@@ -8,20 +9,18 @@ import AttackSurfaceOverview from "./components/Overview";
 import ResourcesSection from "./components/Resources";
 import Testimonial from "./components/Testimonial";
 
-
 const attackonsurface = () => {
   return (
     <div>
       <Hero />
       <LogoMarquee />
       <AttackSurfaceOverview />
-      <AttackSurfaceFeatures/>
-      <Testimonial/>
-      <ResourcesSection/>
-      <ContactFormSection/>
-      <FaqSection/>
-    
-
+      <DataChaos />
+      <AttackSurfaceFeatures />
+      <Testimonial />
+      <ResourcesSection />
+      <ContactFormSection />
+      <FaqSection />
     </div>
   );
 };
