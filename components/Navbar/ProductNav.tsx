@@ -5,7 +5,7 @@ const ProductsNavbar = () => {
   const productLinks = [
     { label: "CRPM", href: "/" },
     { label: "QBER MODEL", href: "/" },
-    { label: "Attack Module", href: "/" },
+    { label: "Attack Module", href: "/attack-module" },
     { label: "Compliance Module", href: "/" },
     { label: "Defence Module", href: "/" },
   ];

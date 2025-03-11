@@ -1,9 +1,9 @@
 'use client';
+import LogoMarquee from "../home/components/Marquee";
 import FaqSection from "./components/Faq";
 import AttackSurfaceFeatures from "./components/Feature";
 import ContactFormSection from "./components/Form";
 import Hero from "./components/Hero";
-import LogoMarquee from "./components/Marquee";
 import AttackSurfaceOverview from "./components/Overview";
 import ResourcesSection from "./components/Resources";
 import Testimonial from "./components/Testimonial";
