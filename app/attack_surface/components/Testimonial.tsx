@@ -15,7 +15,7 @@ const TestimonialsSection = () => {
         <div className="flex flex-col items-center gap-[50px] px-[20px] pt-[51px] pb-[20px] w-[852px] bg-[rgba(25,19,63,0.5)] backdrop-blur-[22.7px] rounded-[12px]">
           <p className="text-white text-[16px] leading-[24px] text-center max-w-[718px]">
             Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
-            has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer
+            has been the industrys standard dummy text ever since the 1500s, when an unknown printer
             took a galley of type and scrambled it to make a type specimen book. It has survived not
             only five centuries.
           </p>
@@ -38,13 +38,13 @@ const TestimonialsSection = () => {
         <div className="absolute left-[-623px] flex flex-col items-center px-[20px] pt-[51px] pb-[20px] w-[852px] bg-[#19133F]/15 backdrop-blur-[22.7px] rounded-[12px] opacity-50">
           <p className="text-white text-[18px] leading-[28px] text-center">
             Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
-            has been the industry's standard dummy text ever since the 1500s.
+            has been the industrys standard dummy text ever since the 1500s.
           </p>
         </div>
         <div className="absolute right-[-623px] flex flex-col items-center px-[20px] pt-[51px] pb-[20px] w-[852px] bg-[#19133F]/15 backdrop-blur-[22.7px] rounded-[12px] opacity-50">
           <p className="text-white text-[18px] leading-[28px] text-center">
             Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
-            has been the industry's standard dummy text ever since the 1500s.
+            has been the industry s standard dummy text ever since the 1500s.
           </p>
         </div>
       </div>

@@ -4,12 +4,11 @@ import "@/styles/stars.css";
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import GradientButton from "@/components/Buttons/GradientButton";
-import Circle from "@/components/circle";
-import Image from "next/image";
+
 import StarsCanvas from "@/components/Layout/Stars";
 
 const Hero = () => {
-  const [scale, setScale] = useState(1);
+  const [, setScale] = useState(1);
 
   useEffect(() => {
     const handleScroll = () => {
