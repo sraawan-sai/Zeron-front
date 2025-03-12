@@ -1,40 +1,38 @@
-import React from 'react';
+import Image from "next/image";
+import React from "react";
 
 const CyberRiskProcess: React.FC = () => {
   const steps = [
     {
-      title: 'Identify & Map',
+      title: "Identify & Map",
       description:
-        'Continuously discover risks across internal infrastructure, third-party vendors, and compliance frameworks.',
+        "Continuously discover risks across internal infrastructure, third-party vendors, and compliance frameworks.",
     },
     {
-      title: 'Quantify & Prioritize',
+      title: "Quantify & Prioritize",
       description:
-        'Convert cyber risk into financial metrics and rank vulnerabilities based on business impact.',
+        "Convert cyber risk into financial metrics and rank vulnerabilities based on business impact.",
     },
     {
-      title: 'Mitigate & Optimize',
+      title: "Mitigate & Optimize",
       description:
-        'Implement AI-driven recommendations, track compliance, and enhance your cyber resilience.',
+        "Implement AI-driven recommendations, track compliance, and enhance your cyber resilience.",
     },
   ];
 
   return (
-    <section className="relative flex flex-col justify-center items-center px-[150px] pb-[50px] gap-[100px] w-full h-[724px] bg-[#0A0118] isolate z-10">
-      
+    <section className="relative flex flex-col justify-center items-center px-4 md:px-25 py-16 gap-[100px] w-full bg-[#0A0118] isolate z-10">
       {/* Title */}
-      <h2 className="text-white text-4xl md:text-5xl font-medium text-center leading-snug z-20 pb-10">
-        Transforming Cyber Risk Management into an Exact Science
+      <h2 className="text-white text-4xl md:text-[3rem] text-center leading-[52px] tracking-[-1px] z-20 pb-10">
+        Transforming Cyber Risk <br /> Management into an Exact Science
       </h2>
 
       {/* Steps Wrapper */}
-      <div
-        className="relative flex flex-col md:flex-row justify-center items-center gap-8 w-full max-w-7xl z-20"
-      >
+      <div className="relative flex flex-col md:flex-row justify-center items-center gap-8 w-full pt-8 pb-16 z-20">
         {steps.map((step, idx) => (
           <div
             key={idx}
-            className="flex flex-col items-center text-center p-8 gap-6 bg-white/10 backdrop-blur-xl rounded-2xl shadow-lg max-w-[350px] min-h-[220px]"
+            className="flex flex-col items-center justify-center text-center px-4 py-8 gap-6 bg-white/10 backdrop-blur-xl rounded-2xl shadow-lg w-full max-w-[400px] min-h-[220px]"
           >
             <h3 className="text-white text-2xl font-semibold leading-snug drop-shadow-md">
               {step.title}
@@ -47,15 +45,14 @@ const CyberRiskProcess: React.FC = () => {
       </div>
 
       {/* Background Curve Image */}
-      <div
-        className="absolute inset-0 w-full h-full z-0"
-        style={{
-          backgroundImage: "url('/images/cyberrisk.png')",
-          backgroundSize: 'cover',
-          backgroundPosition: 'center -20%',
-          backgroundRepeat: 'no-repeat',
-        }}
-      />
+      <div className="absolute inset-0 w-full h-full z-0">
+        <Image
+          src="/images/cyberrisk.png"
+          alt=""
+          fill={true}
+          className="object-cover object-top"
+        />
+      </div>
     </section>
   );
 };

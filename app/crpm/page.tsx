@@ -5,19 +5,18 @@ import FaqSection from "./components/Faq";
 import CyberRiskFeatures from "./components/Feature";
 import ContactFormSection from "./components/Form";
 import Hero from "./components/Hero";
-import LogoMarquee from "./components/Marquee";
+import CRPMMaruquee from "./components/Marquee";
 import Overview from "./components/Overview";
 import ResourcesSection from "./components/Resources";
 import CrpmStats from "./components/Stats";
 import Testimonial from "./components/Testimonial";
-
 
 const crpm = () => {
   return (
     <div>
       <Hero />
       <MovingColors />
-      <LogoMarquee />
+      <CRPMMaruquee />
       <Overview />
       <CyberRiskProcess/>
       <CyberRiskFeatures/>
