@@ -39,12 +39,12 @@ const Hero = () => {
           <StarsCanvas />
         </section>
       </motion.div>
-         {/* Main Hero Content */}
+      {/* Main Hero Content */}
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, delay: 0.5, ease: "easeOut" }}
-        className="flex flex-col items-center pt-30 xs:pt-40 md:pt-26 px-4 lg:px-0"
+        className="flex flex-col items-center pt-30 xs:pt-40 md:pt-30 px-4 lg:px-0"
       >
         {/* Title */}
         <motion.div
@@ -52,12 +52,17 @@ const Hero = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 1, ease: "easeOut" }}
-          className="flex flex-col items-center text-center mt-4"
+          className="flex flex-col gap-2 items-center text-center mt-4"
         >
-          <p className="text-[2rem] xs:text-[2.375rem] md:text-[3rem] lg:text-[5rem] leading-[2.5rem] md:leading-[3.5rem] lg:leading-[5rem] tracking-[-2px] pt-20">
-            Zeron | Attack Surface
+          <p className="text-[2rem] xs:text-[2.375rem] lg:text-[3rem] leading-[2.5rem] lg:leading-[3.5rem] tracking-[-2px] pt-20">
+            Zeron | Cyber Risk Posture Management
           </p>
-        
+          <p
+            className={`font-medium text-[#E4E2DF] text-[1rem] md:text-[1.125rem] leading-[20px] md:leading-[24px]`}
+          >
+            From Complexity to Clarity—Understand, Quantify & Mitigate Cyber
+            Risks
+          </p>
         </motion.div>
 
         {/* Subtitle */}
@@ -66,12 +71,15 @@ const Hero = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
-          className="mt-6 max-w-[750px] text-center"
+          className="mt-6 max-w-[850px] text-center"
         >
           <p
-            className={`text-[1rem] md:text-[1.125rem] leading-[20px] md:leading-[24px]`}
+            className={`text-[#E4E2DF]/70 text-[1rem] md:text-[1.125rem] leading-[20px] md:leading-[24px]`}
           >
-          Uncover your external attack surface and gain actionable insights to strengthen your security posture.
+            Cyber threats are ever-evolving, but your response shouldn’t be
+            reactive. Zeron’s CRPM gives you a real-time, quantified view of
+            your risk posture, enabling data-driven decisions and proactive
+            defense.
           </p>
         </motion.div>
 
