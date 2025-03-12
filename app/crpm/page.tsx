@@ -1,4 +1,4 @@
-'use client';
+"use client";
 import MovingColors from "@/components/Layout/MovingColors";
 import CyberRiskProcess from "./components/Cyberrisk";
 import FaqSection from "./components/Faq";
@@ -10,6 +10,7 @@ import Overview from "./components/Overview";
 import ResourcesSection from "./components/Resources";
 import CrpmStats from "./components/Stats";
 import Testimonial from "./components/Testimonial";
+import InternalRisk from "./components/InternalRisk";
 
 const crpm = () => {
   return (
@@ -18,17 +19,15 @@ const crpm = () => {
       <MovingColors />
       <CRPMMaruquee />
       <Overview />
-      <CyberRiskProcess/>
-      <CyberRiskFeatures/>
-      <CrpmStats/>
+      <InternalRisk />
+      <CyberRiskProcess />
+      <CyberRiskFeatures />
+      <CrpmStats />
 
-
-      <Testimonial/>
-      <ResourcesSection/>
-      <ContactFormSection/>
-      <FaqSection/>
-    
-
+      <Testimonial />
+      <ResourcesSection />
+      <ContactFormSection />
+      <FaqSection />
     </div>
   );
 };
