@@ -24,7 +24,7 @@ const Hero = () => {
   }, []);
 
   return (
-    <div className="w-full min-h-screen relative -mt-28 pt-8 overflow-hidden">
+    <div className="w-full min-h-screen relative overflow-hidden">
       {/* Background Stars */}
       <motion.div
         initial={{ opacity: 0 }}
