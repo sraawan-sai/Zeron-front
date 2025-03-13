@@ -165,7 +165,7 @@ function Footer() {
                   <Link href="/">Legal</Link>
                 </div>
                 <div className="">
-                  <p className="text-[0.75rem] text-white font-light">
+                  <p className="text-[0.75rem] text-white text-center font-light tracking-[-0.18px]">
                     ©2025 Zeron.one, All Rights Reserved. Teamcognito Solutions
                     Pvt Ltd. All Rights Reserved.
                   </p>

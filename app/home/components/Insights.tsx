@@ -37,7 +37,7 @@ const Insights = () => {
 
       <div className="w-full h-full relative flex items-center justify-center">
         <div className="absolute w-[100vw] min-h-screen bottom-0 clip-trap translate-y-[90%] bg-gradient-to-t from-[#0A0118] to-[#0A0118]/40 -z-1" />
-        <div className="absolute w-[100vw] min-h-screen bottom-0 clip-trap translate-y-[90%] -z-2">
+        <div className="absolute w-[100vw] min-h-screen -bottom-20 clip-trap translate-y-[90%] -z-2">
           <section className="relative">
             {/* <div id="stars"></div>
             <div id="stars2"></div>
