@@ -5,6 +5,8 @@
   --color-foreground: var(--foreground);
   --animate-gradient: gradient 6s ease infinite;
   --breakpoint-xs: 400px;
+  --animate-dash: dash 2s linear infinite;
+  --animate-dash-reverse: dash 1s linear infinite reverse;
 }
 
 @layer base {
@@ -115,6 +117,14 @@ body {
   }
   to{
     --angle: 360deg;  
+  }
+}
+@keyframes dash {
+  from {
+    stroke-dashoffset: 0;
+  }
+  to {
+    stroke-dashoffset: -9.24;
   }
 }
 

@@ -1,6 +1,6 @@
 "use client";
 import LogoMarquee from "../home/components/Marquee";
-import DataChaos from "./components/DataCaos";
+import DataChaos from "./components/DataChaos";
 import FaqSection from "./components/Faq";
 import AttackSurfaceFeatures from "./components/Feature";
 import ContactFormSection from "./components/Form";

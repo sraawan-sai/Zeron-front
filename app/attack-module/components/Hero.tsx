@@ -1,20 +1,20 @@
 "use client";
 
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import GradientButton from "@/components/Buttons/GradientButton";
 import StarsCanvas from "@/components/Layout/Stars";
-
+import Galaxy from "@/components/SVG/Galaxy";
 const Hero = () => {
-  // const [scale, setScale] = useState(1);
+  const [scale, setScale] = useState(1);
 
   useEffect(() => {
     const handleScroll = () => {
-      // const scrollY = window.pageYOffset;
-      // const maxScroll = 500;
-      // const maxExtraScale = 0.5;
-      // const newScale = 1 + Math.min(scrollY / maxScroll, maxExtraScale);
-      // setScale(newScale);
+      const scrollY = window.pageYOffset;
+      const maxScroll = 500;
+      const maxExtraScale = 0.5;
+      const newScale = 1 + Math.min(scrollY / maxScroll, maxExtraScale);
+      setScale(newScale);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -22,7 +22,7 @@ const Hero = () => {
   }, []);
 
   return (
-    <div className="w-full min-h-screen relative -mt-28 pt-8 overflow-hidden">
+    <div className="w-full min-h-screen relative overflow-hidden">
       {/* Background Stars */}
       <motion.div
         initial={{ opacity: 0 }}
@@ -34,12 +34,24 @@ const Hero = () => {
           <StarsCanvas />
         </section>
       </motion.div>
+      <motion.div
+        initial={{ opacity: 0, y: 50, scale: 1 }}
+        animate={{ opacity: 1, y: 0, scale: scale }}
+        transition={{
+          opacity: { duration: 1, ease: "easeOut" },
+          y: { duration: 1, ease: "easeOut" },
+          scale: { duration: 0 },
+        }}
+        className="absolute -bottom-[610px] w-full flex items-center justify-center"
+      >
+        <Galaxy />
+      </motion.div>
       {/* Main Hero Content */}
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, delay: 0.5, ease: "easeOut" }}
-        className="flex flex-col items-center pt-30 xs:pt-40 md:pt-30 px-4 lg:px-0"
+        className="flex flex-col items-center pt-20 xs:pt-30 md:pt-20 px-4 lg:px-0"
       >
         {/* Title */}
         <motion.div
