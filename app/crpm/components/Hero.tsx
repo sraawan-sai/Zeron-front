@@ -4,9 +4,9 @@ import "@/styles/stars.css";
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import GradientButton from "@/components/Buttons/GradientButton";
-
+import Image from "next/image";
 import StarsCanvas from "@/components/Layout/Stars";
-
+import CRPMCircle from "@/components/SVG/CRPMCircle";
 const Hero = () => {
   const [, setScale] = useState(1);
 
@@ -32,19 +32,31 @@ const Hero = () => {
         transition={{ duration: 1, ease: "easeOut" }}
         className="absolute w-full h-full -z-20"
       >
-        <section className="relative">
-          {/* <div id="stars"></div>
-          <div id="stars2"></div>
-          <div id="stars3"></div> */}
+        <div className="w-full h-full inset-0 absolute">
+          <Image
+            src="/images/crpmhero.png"
+            alt=""
+            fill={true}
+            className="object-cover object-center -z-2"
+          />
+        </div>
+        <section className="relative -z-1">
           <StarsCanvas />
         </section>
+      </motion.div>
+      <motion.div
+        initial={{ opacity: 0, y: 50, scale: 1 }}
+        animate={{ opacity: 1, y: 0 }}
+        className="absolute -bottom-58 xs:-bottom-48 lg:-bottom-40 2xl:-bottom-32 w-full flex items-center justify-center"
+      >
+        <CRPMCircle />
       </motion.div>
       {/* Main Hero Content */}
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, delay: 0.5, ease: "easeOut" }}
-        className="flex flex-col items-center pt-30 xs:pt-40 md:pt-30 px-4 lg:px-0"
+        className="flex flex-col items-center pt-10 xs:pt-30 md:pt-16 lg:pt-10 px-4 lg:px-0"
       >
         {/* Title */}
         <motion.div
