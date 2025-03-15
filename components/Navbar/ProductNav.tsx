@@ -6,8 +6,8 @@ const ProductsNavbar = () => {
     { label: "CRPM", href: "/crpm" },
     { label: "QBER MODEL", href: "/qber" },
     { label: "Attack Module", href: "/attack-module" },
-    { label: "Compliance Module", href: "/" },
-    { label: "Defence Module", href: "/" },
+    { label: "Compliance Module", href: "/compliance-module" },
+    { label: "Defence Module", href: "/defence-module" },
   ];
 
   const vendorLinks = [
