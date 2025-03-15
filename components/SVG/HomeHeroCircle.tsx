@@ -2,7 +2,7 @@
 
 import { useRef, useState } from "react";
 import { useClickOutside } from "@/hooks/useClickOutside";
-import SearchModel from "./Models/SearchModel";
+import SearchModel from "../Models/SearchModel";
 
 interface CircleProps {
   circleText?: string;

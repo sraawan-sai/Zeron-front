@@ -1,5 +1,5 @@
 import Hero from "./components/Hero";
-import LogoMarquee from "./components/Marquee";
+import LogoMarquee from "../../components/Sections/Marquee";
 import Overview from "./components/Overview";
 import Stats from "./components/Stats";
 import Testimonial from "./components/Testimonial";
