@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { motion } from "framer-motion";
 import {
   FaXTwitter,
   FaFacebook,
@@ -44,6 +45,22 @@ const socialLinks = [
   { label: "Youtube", href: "https://www.youtube.com/", icon: FaYoutube },
 ];
 
+// ✅ Reusable animated link component
+const AnimatedLink = ({ href, label }: { href: string; label: string }) => (
+  <motion.div
+    whileHover={{ x: -5 }}
+    transition={{ type: "spring", stiffness: 300, damping: 20 }}
+    className="relative"
+  >
+    <Link href={href}>
+      <p className="hover:text-white transition-colors duration-200 relative">
+        {label}
+        <span className="absolute left-0 bottom-[-2px] w-0 h-[1px] bg-white transition-all duration-300 hover:w-full" />
+      </p>
+    </Link>
+  </motion.div>
+);
+
 function Footer() {
   return (
     <div className="w-full flex flex-col pt-10 gap-6">
@@ -62,62 +79,57 @@ function Footer() {
             </div>
             <div className="flex gap-12">
               {socialLinks.map((link, index) => (
-                <Link key={index} href={link.href}>
-                  {<link.icon size={24} />}
-                </Link>
+                <motion.div
+                  key={index}
+                  whileHover={{ y: -3 }}
+                  transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                >
+                  <Link href={link.href}>
+                    {<link.icon size={24} />}
+                  </Link>
+                </motion.div>
               ))}
             </div>
           </div>
+
+          {/* Links Section */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-0">
-            {/* Company Links */}
+            {/* Company */}
             <div className="flex flex-col gap-4">
               <p className="font-medium text-[1.25rem]">Company</p>
               <div className="flex flex-col gap-2 text-[1rem] text-[#ffffff]/50">
                 {companyLinks.map((link) => (
-                  <Link key={link.label} href={link.href}>
-                    <p className="hover:text-white transition-colors duration-200">
-                      {link.label}
-                    </p>
-                  </Link>
+                  <AnimatedLink key={link.label} {...link} />
                 ))}
               </div>
             </div>
 
-            {/* New to Zeron Links */}
+            {/* New to Zeron */}
             <div className="flex flex-col gap-4">
               <p className="font-medium text-[1.25rem]">New to Zeron?</p>
               <div className="flex flex-col gap-2 text-[1rem] text-[#ffffff]/50">
                 {newToZeronLinks.map((link) => (
-                  <Link key={link.label} href={link.href}>
-                    <p className="hover:text-white transition-colors duration-200">
-                      {link.label}
-                    </p>
-                  </Link>
+                  <AnimatedLink key={link.label} {...link} />
                 ))}
               </div>
             </div>
 
-            {/* Resources Links */}
+            {/* Resources */}
             <div className="flex flex-col gap-4">
               <p className="font-medium text-[1.25rem]">Resources</p>
               <div className="flex flex-col gap-2 text-[1rem] text-[#ffffff]/50">
                 {resourcesLinks.map((link) => (
-                  <Link key={link.label} href={link.href}>
-                    <p className="hover:text-white transition-colors duration-200">
-                      {link.label}
-                    </p>
-                  </Link>
+                  <AnimatedLink key={link.label} {...link} />
                 ))}
               </div>
             </div>
 
-            {/* Headquarters Section */}
+            {/* Headquarters */}
             <div className="flex flex-col gap-5">
               <p className="font-medium text-[1.25rem]">Headquarters</p>
               <div className="flex flex-col gap-2 text-[1rem] text-[#ffffff]/50">
-                <p className={`leading-[18px]`}>
-                  409, ATL Corporate Park, Saki Vihar Rd, Saki Vihar,
-                  Chandivali, Mumbai
+                <p className="leading-[18px]">
+                  409, ATL Corporate Park, Saki Vihar Rd, Saki Vihar, Chandivali, Mumbai
                 </p>
                 <p>+91 8927726336</p>
                 <p>sales@zeron.one</p>
@@ -126,53 +138,37 @@ function Footer() {
           </div>
         </div>
       </CustomSection>
+
+      {/* Bottom Section */}
       <div className="border-t border-[#ffffff]/25 flex">
         <CustomSection className="flex-col md:flex-row px-4">
           <div className="w-full md:border-r border-[#ffffff]/25 py-20 flex flex-col gap-6">
             <div className="w-full max-w-[540px] flex flex-col gap-8 items-center justify-center">
               <div className="flex gap-8">
-                <Image
-                  src="/icons/ISMS.svg"
-                  alt="ISMS"
-                  width={74}
-                  height={74}
-                />
-                <Image
-                  src="/icons/AICPA.svg"
-                  alt="AICPA"
-                  width={74}
-                  height={74}
-                />
-                <Image
-                  src="/icons/STAR.svg"
-                  alt="STAR"
-                  width={74}
-                  height={74}
-                />
-                <Image
-                  src="/icons/START.svg"
-                  alt="START"
-                  width={74}
-                  height={74}
-                />
+                {["ISMS", "AICPA", "STAR", "START"].map((icon, idx) => (
+                  <Image
+                    key={idx}
+                    src={`/icons/${icon}.svg`}
+                    alt={icon}
+                    width={74}
+                    height={74}
+                  />
+                ))}
               </div>
               <div className="flex flex-col gap-2">
                 <div className="flex gap-6 text-sm">
-                  <Link href="/">All Rights Reserved</Link>
-                  <Link href="/">Privacy</Link>
-                  <Link href="/">Trust Centre</Link>
-                  <Link href="/">Media Guidelines</Link>
-                  <Link href="/">Legal</Link>
+                  {["All Rights Reserved", "Privacy", "Trust Centre", "Media Guidelines", "Legal"].map((item, idx) => (
+                    <Link key={idx} href="/">{item}</Link>
+                  ))}
                 </div>
-                <div className="">
-                  <p className="text-[0.75rem] text-white text-center font-light tracking-[-0.18px]">
-                    ©2025 Zeron.one, All Rights Reserved. Teamcognito Solutions
-                    Pvt Ltd. All Rights Reserved.
-                  </p>
-                </div>
+                <p className="text-[0.75rem] text-white text-center font-light tracking-[-0.18px]">
+                  ©2025 Zeron.one, All Rights Reserved. Teamcognito Solutions Pvt Ltd. All Rights Reserved.
+                </p>
               </div>
             </div>
           </div>
+
+          {/* Newsletter Section */}
           <div className="w-full md:py-20 pb-10 md:pb-0">
             <div className="flex flex-col gap-3 pl-0 md:pl-20 lg:pl-28 xl:32 2xl:pl-40">
               <p>Sign Up For Our Newsletter</p>
@@ -191,22 +187,12 @@ function Footer() {
                     <FaArrowRight size={18} />
                   </button>
                 </div>
-
-                {/* Checkbox Section */}
                 <label className="flex items-start gap-2 cursor-pointer">
-                  <input
-                    type="checkbox"
-                    className="mt-[5px] cursor-pointer"
-                    required
-                  />
+                  <input type="checkbox" className="mt-[5px] cursor-pointer" required />
                   <div className="max-w-[500px] text-[#7A7A7A]">
                     <p>
-                      I understand and agree that my personal data will be
-                      collected and processed according to the{" "}
-                      <Link href="/" className=" text-[#0F6CBD]">
-                        Privacy Policy
-                      </Link>{" "}
-                      *
+                      I understand and agree that my personal data will be processed according to the{" "}
+                      <Link href="/" className="text-[#0F6CBD]">Privacy Policy</Link> *
                     </p>
                   </div>
                 </label>
