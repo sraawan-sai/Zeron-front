@@ -1,5 +1,5 @@
 import CustomSection from "@/components/Layout/CustomSection";
-import InternalRiskCircle from "./Circle";
+import InternalRiskCircle from "../../../components/SVG/InternalRiskCircle";
 import Image from "next/image";
 import Link from "next/link";
 
