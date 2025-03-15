@@ -1,0 +1,132 @@
+"use client";
+
+import "@/styles/stars.css";
+import React, { useEffect, useState } from "react";
+import { motion } from "framer-motion";
+import GradientButton from "@/components/Buttons/GradientButton";
+import Image from "next/image";
+import StarsCanvas from "@/components/Layout/Stars";
+
+const Hero = () => {
+  const [, setScale] = useState(1);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollY = window.pageYOffset;
+      const maxScroll = 500;
+      const maxExtraScale = 0.5;
+      const newScale = 1 + Math.min(scrollY / maxScroll, maxExtraScale);
+      setScale(newScale);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  return (
+    <div className="w-full min-h-screen relative overflow-hidden">
+      {/* Background Stars */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1, ease: "easeOut" }}
+        className="absolute w-full h-full -z-20"
+      >
+        <div className="w-full h-full inset-0 absolute">
+          <Image
+            src="/images/crpmhero.png"
+            alt=""
+            fill={true}
+            className="object-cover object-center -z-2"
+          />
+        </div>
+        <section className="relative -z-1">
+          <StarsCanvas />
+        </section>
+      </motion.div>
+      <motion.div
+        initial={{ opacity: 0, y: 50, scale: 1 }}
+        animate={{ opacity: 1, y: 0 }}
+        className="absolute bottom-0 left-0 w-full flex items-center justify-center"
+      >
+        <p className="font-thin tracking-[-13.17px] leading-[170px] md:leading-[260px] 2xl:leading-[340px] outline text-[10rem] md:text-[16rem] 2xl:text-[20rem] bg-linear-to-r from-[#1C76FD] to-[#5721F0] text-transparent bg-clip-text mix-blend-screen">
+          QBER
+        </p>
+      </motion.div>
+      <motion.div
+        initial={{ opacity: 0, y: 50, scale: 1 }}
+        animate={{ opacity: 1, y: 0 }}
+        className="absolute -bottom-1/2 left-0 w-full h-full flex items-center justify-center"
+      >
+        <div className="relative">
+          <Image
+            src="/images/qberhero.png"
+            alt=""
+            width={800}
+            height={300}
+            className="object-contain object-center mix-blend-screen -z-2 opacity-70"
+          />
+        </div>
+      </motion.div>
+      {/* Main Hero Content */}
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1, delay: 0.5, ease: "easeOut" }}
+        className="flex flex-col items-center pt-10 xs:pt-30 md:pt-16 lg:pt-10 px-4 lg:px-0"
+      >
+        {/* Title */}
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 1, ease: "easeOut" }}
+          className="flex flex-col gap-2 items-center text-center mt-4"
+        >
+          <p className="text-[2rem] xs:text-[2.375rem] lg:text-[3rem] leading-[2.5rem] lg:leading-[3.5rem] tracking-[-2px] pt-20">
+            QBER
+          </p>
+          <p
+            className={`font-medium text-[#E4E2DF] text-[1rem] md:text-[1.125rem] leading-[20px] md:leading-[24px]`}
+          >
+            QUANTIFIED BUSINESS EXPOSURE TO RISKS
+          </p>
+        </motion.div>
+
+        {/* Subtitle */}
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
+          className="mt-6 max-w-[850px] text-center"
+        >
+          <p
+            className={`text-[#E4E2DF]/70 text-[1rem] md:text-[1.125rem] leading-[20px] md:leading-[24px]`}
+          >
+            With QBER, cybersecurity is no longer a guessing game. It’s a
+            science-backed, context-driven approach to understanding and
+            mitigating risks.
+          </p>
+        </motion.div>
+
+        {/* Button */}
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 1, delay: 0.4, ease: "easeOut" }}
+          className="mt-10 z-1"
+        >
+          <GradientButton
+            text="Request a Demo"
+            href="/"
+            className="px-5 py-2 text-[1rem] font-medium rounded-md cursor-pointer bg-linear-to-r from-[#1C76FD] to-[#5721F0]"
+          />
+        </motion.div>
+      </motion.div>
+    </div>
+  );
+};
+
+export default Hero;

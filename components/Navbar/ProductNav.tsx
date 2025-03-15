@@ -4,7 +4,7 @@ const ProductsNavbar = () => {
   // Define the links for each column
   const productLinks = [
     { label: "CRPM", href: "/crpm" },
-    { label: "QBER MODEL", href: "/" },
+    { label: "QBER MODEL", href: "/qber" },
     { label: "Attack Module", href: "/attack-module" },
     { label: "Compliance Module", href: "/" },
     { label: "Defence Module", href: "/" },
