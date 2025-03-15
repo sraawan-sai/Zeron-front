@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React, { useState } from "react";
 
 type FormDataType = {
@@ -50,8 +51,8 @@ const Form = () => {
         className="flex flex-col gap-[30px] w-full max-w-[692px]"
       >
         {textFields.map(({ label, name }, index) => (
-          <div key={index} className="flex flex-col gap-[20px]">
-            <label className="text-white text-[16px]">
+          <div key={index} className="flex flex-col gap-5">
+            <label className="text-white">
               {label}
               <span className="text-red-500">*</span>
             </label>
@@ -61,29 +62,31 @@ const Form = () => {
               value={formData[name] as string}
               onChange={handleChange}
               placeholder={`Enter your ${label}`}
-              className="w-full h-[32px] bg-transparent placeholder-white/60 border-b border-white/25 outline-none"
+              className="px-2 py-1.5 w-full bg-transparent placeholder-white/60 border-b border-white/20 outline-none"
               required
             />
           </div>
         ))}
 
         <div className="flex items-start gap-2 text-white">
-          <input
-            type="checkbox"
-            name="agree"
-            checked={formData.agree}
-            onChange={handleChange}
-            className="w-[14px] h-[14px] border border-[#767676] rounded-[2.5px]"
-            required
-          />
-          <p className="text-[14px]">
-            I understand and agree that my personal data will be collected and
-            processed according to the{" "}
-            <a href="/privacy-policy" className="text-[#0F6CBD] underline">
-              Privacy Policy
-            </a>
-            .
-          </p>
+          <label className="flex items-start gap-2 cursor-pointer">
+            <input
+              type="checkbox"
+              name="agree"
+              checked={formData.agree}
+              onChange={handleChange}
+              className="mt-[1px] border border-[#767676] rounded-[2.5px] cursor-pointer"
+              required
+            />
+            <p className="text-[0.875rem] leading-[17.5px] max-w-[480px]">
+              I understand and agree that my personal data will be collected and
+              processed according to the{" "}
+              <Link href="#" className="text-[#0F6CBD] hover:underline">
+                Privacy Policy
+              </Link>
+              .
+            </p>
+          </label>
         </div>
 
         <button
