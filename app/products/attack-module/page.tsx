@@ -1,13 +1,14 @@
 "use client";
-import LogoMarquee from "../home/components/Marquee";
+import FAQSection from "@/components/Sections/FAQ";
+import LogoMarquee from "../../../components/Sections/Marquee";
 import DataChaos from "./components/DataChaos";
-import FaqSection from "./components/Faq";
 import AttackSurfaceFeatures from "./components/Feature";
-import ContactFormSection from "./components/Form";
 import Hero from "./components/Hero";
 import AttackSurfaceOverview from "./components/Overview";
-import ResourcesSection from "./components/Resources";
 import Testimonial from "./components/Testimonial";
+import { ASFAQ } from "@/public/data/FAQData";
+import ContactForm from "@/components/Sections/ContactForm";
+import Resources from "@/components/Sections/Resources";
 
 const attackonsurface = () => {
   return (
@@ -18,9 +19,9 @@ const attackonsurface = () => {
       <DataChaos />
       <AttackSurfaceFeatures />
       <Testimonial />
-      <ResourcesSection />
-      <ContactFormSection />
-      <FaqSection />
+      <Resources />
+      <ContactForm title="Uncover Hidden Threats with Attack Surface Intelligence" />
+      <FAQSection faqs={ASFAQ} />
     </div>
   );
 };

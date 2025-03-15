@@ -4,7 +4,7 @@ import "@/styles/stars.css";
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import GradientButton from "@/components/Buttons/GradientButton";
-import Circle from "@/components/circle";
+import Circle from "@/components/SVG/HomeHeroCircle";
 import Image from "next/image";
 import StarsCanvas from "@/components/Layout/Stars";
 

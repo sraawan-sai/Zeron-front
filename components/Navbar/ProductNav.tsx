@@ -3,11 +3,11 @@ import Link from "next/link";
 const ProductsNavbar = () => {
   // Define the links for each column
   const productLinks = [
-    { label: "CRPM", href: "/crpm" },
-    { label: "QBER MODEL", href: "/qber" },
-    { label: "Attack Module", href: "/attack-module" },
-    { label: "Compliance Module", href: "/compliance-module" },
-    { label: "Defence Module", href: "/defence-module" },
+    { label: "CRPM", href: "/products/crpm" },
+    { label: "QBER MODEL", href: "/products/qber" },
+    { label: "Attack Module", href: "/products/attack-module" },
+    { label: "Compliance Module", href: "/products/compliance-module" },
+    { label: "Defence Module", href: "/products/defence-module" },
   ];
 
   const vendorLinks = [
