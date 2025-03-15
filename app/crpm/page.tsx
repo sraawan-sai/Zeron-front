@@ -1,16 +1,17 @@
 "use client";
 import MovingColors from "@/components/Layout/MovingColors";
 import CyberRiskProcess from "./components/Cyberrisk";
-import FaqSection from "./components/Faq";
 import CyberRiskFeatures from "./components/Feature";
-import ContactFormSection from "./components/Form";
 import Hero from "./components/Hero";
 import CRPMMaruquee from "./components/Marquee";
 import Overview from "./components/Overview";
-import ResourcesSection from "./components/Resources";
 import CrpmStats from "./components/Stats";
 import Testimonial from "./components/Testimonial";
 import InternalRisk from "./components/InternalRisk";
+import { CRPMFAQ } from "@/public/data/FAQData";
+import FAQSection from "@/components/Sections/FAQ";
+import ContactForm from "@/components/Sections/ContactForm";
+import Resources from "@/components/Sections/Resources";
 
 const crpm = () => {
   return (
@@ -25,9 +26,9 @@ const crpm = () => {
       <CrpmStats />
 
       <Testimonial />
-      <ResourcesSection />
-      <ContactFormSection />
-      <FaqSection />
+      <Resources />
+      <ContactForm title="Get in Touch - Strengthen Your Cyber Resilience" />
+      <FAQSection faqs={CRPMFAQ} />
     </div>
   );
 };
