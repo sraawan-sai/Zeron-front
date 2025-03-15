@@ -53,7 +53,7 @@ function Stats() {
           {/* Background Image */}
           <div className="select-none absolute inset-0">
             <Image
-              src="/images/bg1.png"
+              src="/images/stats.jpg"
               alt="bg"
               fill
               className="object-cover object-center -z-10"
