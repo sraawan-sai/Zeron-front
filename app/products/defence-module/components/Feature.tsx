@@ -1,7 +1,7 @@
 import Image from "next/image";
 import React from "react";
 
-const DefenceFeatures = () => {
+const AttackSurfaceFeatures = () => {
   const features = [
     {
       title: "Universal Asset Discovery",
@@ -27,6 +27,18 @@ const DefenceFeatures = () => {
         "Visualize asset connections to identify weak points and attack vectors.",
       image: "/images/crpmf5.png",
     },
+    {
+      title: "Exposure & CVE Detection",
+      description:
+        "Detect misconfigurations, CVEs, and unprotected assets automatically.",
+      image: "/images/crpmf6.png",
+    },
+    {
+      title: "Seamless Integrations",
+      description:
+        "Connect with SIEM, SOAR, and security tools for unified risk management.",
+      image: "/images/crpmf1.svg",
+    },
   ];
 
   return (
@@ -38,17 +50,17 @@ const DefenceFeatures = () => {
           src="/images/bottombg.png"
           alt=""
           fill={true}
-          className="object-cover object-top max-h-[500px] opacity-80"
+          className="object-cover object-center max-h-[400px]"
         />
       </div>
 
       {/* Heading */}
       <h2 className="text-white text-center text-[3rem] tracking-[-1px] leading-[52px] z-10">
-        Protect Your Digital Assets with Advanced Defense
+        Navigate Your Attack Surface with <br /> Precision
       </h2>
 
       {/* Features */}
-      <div className="grid grid-cols-2 gap-x-10 z-10 max-w-7xl w-full">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-10 z-10 max-w-7xl w-full">
         {features.map((feature, idx) => (
           <div
             key={idx}
@@ -78,4 +90,4 @@ const DefenceFeatures = () => {
   );
 };
 
-export default DefenceFeatures;
+export default AttackSurfaceFeatures;

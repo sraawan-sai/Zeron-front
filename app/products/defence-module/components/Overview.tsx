@@ -1,78 +1,38 @@
-import React from "react";
+import React from 'react';
 
-const DefenceOverview: React.FC = () => {
-  const cards = [
-    {
-      title: "Cyber Risk Quantification",
-      description:
-        "Identify external assets, misconfigurations, and shadow IT.",
-      icon: "/images/cyberrisk.svg",
-    },
-    {
-      title: "Holistic Risk Visibility",
-      description: "Assign financial impact scores to vulnerabilities (CVaR).",
-      icon: "/images/holisticrisk.svg",
-    },
-    {
-      title: "Proactive Risk Mitigation",
-      description: "Detect and mitigate threats before they are exploited.",
-      icon: "/images/proactiverisk.svg",
-    },
-  ];
-
+const DefenseOverview = () => {
   return (
-    <section className="relative w-full min-h-screen flex flex-col justify-center items-center bg-[#0A0118] px-6 md:px-24 py-16">
-      {/* Background Overlay */}
-      <div
-        className="absolute inset-0 z-0 bg-cover bg-center"
-        style={{
-          backgroundImage:
-            "linear-gradient(180deg, #0A0118 15.79%, rgba(0, 0, 0, 0) 82.87%), url('/images/crpmhero.png')",
-        }}
-      ></div>
+    <div className="flex flex-col items-center w-full bg-transparent px-4 py-16">
+      
+      {/* Outer container with gaps and responsive width */}
+      <div className="flex flex-col items-center gap-6 max-w-5xl w-full">
 
-      {/* Content Wrapper */}
-      <div className="relative z-10 flex flex-col items-center text-center max-w-6xl">
-        <p className="text-2xl font-medium tracking-[-1px]"> QBER Overview</p>
-        <h2 className="mt-6.5 text-white text-[3rem] leading-[52px] tracking-[-1px]">
-          QBER | Where Cybersecurity Meets Data-Driven Decisions
-        </h2>
-        <p className="mt-2 text-[#E4E2DF] text-[1.25rem] font-medium leading-[24px]">
-          Know Your Risk | Reduce Uncertainty | Strengthen Security
-        </p>
-        <p className="mt-4 text-[#E4E2DF]/70 text-[1.125rem] max-w-[1050px] leading-[24px]">
-          QBER (Quantified Business Exposure to Risks) is Zeron’s advanced Cyber
-          Risk Quantification solution. It translates complex security risks
-          into clear, measurable financial impact—helping organizations make
-          data-driven decisions to safeguard their digital assets.
+        {/* Small Top Heading */}
+        <h3 className="font-medium text-lg md:text-2xl leading-tight tracking-tight text-white text-center">
+          Defence Overview
+        </h3>
+
+        {/* Main Heading */}
+        <h1 className="font-normal text-3xl md:text-5xl leading-snug md:leading-tight tracking-tight text-white text-center max-w-4xl">
+          Defending Your Cyber Universe with <br /> Intelligent Defense
+        </h1>
+
+        {/* Subheading */}
+        <p className="font-medium text-base md:text-lg leading-relaxed text-[#E4E2DF] text-center max-w-[70%]">
+          Threat Detection | Proactive Defense | Security Resilience
         </p>
 
-        {/* Cards Row */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12 w-full max-w-6xl">
-          {cards.map((card, idx) => (
-            <div
-              key={idx}
-              className="flex flex-col items-center text-center p-8 gap-6 bg-white/10 rounded-lg backdrop-blur-xl shadow-lg"
-            >
-              <div className="w-24 h-24 flex justify-center items-center rounded-full shadow-md">
-                <img
-                  src={card.icon}
-                  alt={card.title}
-                  className="w-20 h-20 object-contain"
-                />
-              </div>
-              <h3 className="text-white text-2xl font-semibold">
-                {card.title}
-              </h3>
-              <p className="text-gray-200 text-base leading-relaxed">
-                {card.description}
-              </p>
-            </div>
-          ))}
-        </div>
+        {/* Description */}
+        <p className="font-normal text-sm md:text-base leading-relaxed text-[#E4E2DF]/70 text-center max-w-3xl">
+          The Zeron Defense Module detects, analyzes, and mitigates cyber threats in real-time. By integrating log analysis, file integrity monitoring, vulnerability management, and endpoint security, it provides a proactive defense strategy to safeguard critical assets.
+          <br /><br />
+          With continuous monitoring and rapid response, businesses stay ahead of evolving threats and strengthen cyber resilience.
+        </p>
+
       </div>
-    </section>
+      
+    </div>
   );
 };
 
-export default DefenceOverview;
+export default DefenseOverview;
