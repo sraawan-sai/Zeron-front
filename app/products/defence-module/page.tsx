@@ -6,6 +6,7 @@ import Resources from "@/components/Sections/Resources";
 import ContactForm from "@/components/Sections/ContactForm";
 import { DefenseFAQ } from "@/public/data/FAQData";
 import FAQSection from "@/components/Sections/FAQ";
+import DefenseBanner from "./components/Banner";
 
 const DefencePage = () => {
   return (
@@ -15,6 +16,7 @@ const DefencePage = () => {
       <DefenceOverview />
       <DefenceFeatures />
       <Resources />
+      <DefenseBanner />
       <ContactForm title="Let's Talk Defense – Protect Your Digital Assets" />
       <FAQSection faqs={DefenseFAQ} />
     </div>
