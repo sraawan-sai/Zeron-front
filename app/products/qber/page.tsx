@@ -8,6 +8,7 @@ import ContactForm from "@/components/Sections/ContactForm";
 import FAQSection from "@/components/Sections/FAQ";
 import { QBERFAQ } from "@/public/data/FAQData";
 import Resources from "@/components/Sections/Resources";
+import Timeline from "./components/Timeline";
 
 const QBERPage = () => {
   return (
@@ -16,6 +17,7 @@ const QBERPage = () => {
       <LogoMarquee />
       <QberOverview />
       <QberStats />
+      <Timeline />
       <QberFeatures />
       <Resources />
       <QberBanner />
