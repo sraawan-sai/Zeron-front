@@ -31,7 +31,7 @@ const DataChaos = () => {
       </div>
       <div className="px-4 mt-25 w-full flex flex-col gap-6 items-center justify-center relative">
         {dataSections.map((section, index) => (
-          <div key={index} className="sticky top-24 w-full">
+          <div key={index} className="sticky top-24 w-full flex items-center justify-center">
             <div className="px-4 py-6 relative w-full max-w-[1248px] min-h-[430px] flex flex-col gap-5 md:gap-0 md:flex-row items-center md:justify-between">
               <div className="absolute inset-0">
                 <Image
