@@ -58,6 +58,21 @@ const Hero = () => {
         transition={{ duration: 1, delay: 0.5, ease: "easeOut" }}
         className="flex flex-col items-center pt-10 xs:pt-30 md:pt-16 lg:pt-10 px-4 lg:px-0"
       >
+        <motion.div
+          initial={{ opacity: 0, y: 50, scale: 1 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="absolute -bottom-[25%] left-0 w-full h-full flex items-center justify-center"
+        >
+          <div className="relative">
+            <Image
+              src="/images/defensehero.png"
+              alt=""
+              width={800}
+              height={300}
+              className="object-contain object-center mix-blend-screen -z-2 opacity-70 "
+            />
+          </div>
+        </motion.div>
         {/* Title */}
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -66,7 +81,7 @@ const Hero = () => {
           transition={{ duration: 1, ease: "easeOut" }}
           className="flex flex-col gap-2 items-center text-center mt-4"
         >
-          <p className="text-[2rem] xs:text-[2.375rem] lg:text-[3rem] leading-[2.5rem] lg:leading-[3.5rem] tracking-[-2px] pt-40">
+          <p className="text-[2rem] xs:text-[2.375rem] lg:text-[3rem] leading-[2.5rem] lg:leading-[3.5rem] tracking-[-2px] pt-24 2xl:pt-40">
             Zeron | Defense
           </p>
           <p
@@ -87,7 +102,8 @@ const Hero = () => {
           <p
             className={`text-[#E4E2DF]/70 text-[1rem] md:text-[1.125rem] leading-[20px] md:leading-[24px]`}
           >
-            Detect, analyze, and mitigate cyber threats in real-time with automated security insights and proactive defense strategies.
+            Detect, analyze, and mitigate cyber threats in real-time with
+            automated security insights and proactive defense strategies.
           </p>
         </motion.div>
 

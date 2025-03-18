@@ -7,7 +7,6 @@ import ContactForm from "@/components/Sections/ContactForm";
 import { DefenseFAQ } from "@/public/data/FAQData";
 import FAQSection from "@/components/Sections/FAQ";
 import MovingColors from "@/components/Layout/MovingColors";
-import DefenceCards from "./components/DefenceCards";
 import DefenseModel from "./components/Ecosystem";
 import DefenseBanner from "./components/Banner";
 
@@ -18,7 +17,6 @@ const DefencePage = () => {
       <MovingColors />
       <LogoMarquee />
       <DefenceOverview />
-      <DefenceCards/>
       <DefenseModel/>
       <DefenceFeatures />
       <Resources />

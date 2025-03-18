@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React from "react";
 
 const DefenseModel: React.FC = () => {
@@ -21,10 +22,11 @@ const DefenseModel: React.FC = () => {
       {/* Main Diagram Container */}
       <div className="relative w-full mt-12 z-10 px-[5%]">
         {/* Center Image Full Width with 5% gap left and right */}
-        <div className="w-full">
-          <img
+        <div className="min-h-screen w-full relative">
+          <Image
             src="/images/ecosystem.png"
             alt="Defense Model"
+            fill={true}
             className="w-full h-auto object-contain"
           />
         </div>

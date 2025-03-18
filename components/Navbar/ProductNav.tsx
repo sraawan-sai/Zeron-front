@@ -7,7 +7,7 @@ const ProductsNavbar = () => {
     { label: "QBER MODEL", href: "/products/qber" },
     { label: "Attack Module", href: "/products/attack-module" },
     { label: "Compliance Module", href: "/products/compliance-module" },
-    { label: "Defence Module", href: "/products/defence-module" },
+    { label: "Defence Module", href: "/products/defense-module" },
   ];
 
   const vendorLinks = [

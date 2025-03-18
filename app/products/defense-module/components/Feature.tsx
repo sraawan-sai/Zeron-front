@@ -4,39 +4,39 @@ import React from "react";
 const AttackSurfaceFeatures = () => {
   const features = [
     {
-      title: "Universal Asset Discovery",
+      title: " Advanced Log Management",
       description:
-        "Continuously scan domains, IPs, and cloud assets to uncover your full attack surface.",
+        "Collect and analyze logs from OS, applications, and network devices to detect anomalies.",
       image: "/images/crpmf2.svg",
     },
     {
-      title: "Intelligent Risk Prioritization",
+      title: "Intelligent File Integrity Monitoring",
       description:
-        "AI-driven insights rank threats by severity, exploitability, and financial impact.",
+        "Track unauthorized file changes and access attempts in real-time.",
       image: "/images/crpmf4.png",
     },
     {
-      title: "Real-Time Threat Intelligence",
+      title: " Automated Vulnerability Detection",
       description:
-        "Get real-time alerts on newly exposed vulnerabilities and risks.",
+        " Conduct security scans, assess risk severity, and provide remediation steps.",
       image: "/images/crpmf3.svg",
     },
     {
-      title: "Attack Path Mapping",
+      title: "Instant Threat Alerts",
       description:
-        "Visualize asset connections to identify weak points and attack vectors.",
+        "Generate real-time notifications via Slack, Email, and Platform Dashboards.",
       image: "/images/crpmf5.png",
     },
     {
-      title: "Exposure & CVE Detection",
+      title: "Endpoint Security Insights",
       description:
-        "Detect misconfigurations, CVEs, and unprotected assets automatically.",
+        "Detect OS-specific vulnerabilities and enhance CIS-CAT compliance scores.",
       image: "/images/crpmf6.png",
     },
     {
-      title: "Seamless Integrations",
+      title: "MITRE ATT&CK Mapping",
       description:
-        "Connect with SIEM, SOAR, and security tools for unified risk management.",
+        "Align endpoint monitoring with the MITRE framework for advanced threat detection.",
       image: "/images/crpmf1.svg",
     },
   ];
@@ -56,7 +56,7 @@ const AttackSurfaceFeatures = () => {
 
       {/* Heading */}
       <h2 className="text-white text-center text-[3rem] tracking-[-1px] leading-[52px] z-10">
-        Navigate Your Attack Surface with <br /> Precision
+        Comprehensive Security. Continuous Protection.
       </h2>
 
       {/* Features */}
