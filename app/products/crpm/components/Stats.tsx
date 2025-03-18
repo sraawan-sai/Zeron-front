@@ -31,7 +31,7 @@ const headingVariants = {
 
 function Stats() {
   return (
-    <div className="flex flex-col items-center justify-center py-20">
+    <div className="flex flex-col items-center justify-center pt-20 pb-46 relative">
       <CustomSection className="flex-col px-4 gap-16 items-center justify-center">
         {/* Heading with Fade-Up Animation */}
         <motion.div
@@ -46,10 +46,10 @@ function Stats() {
             subtitleSize="text-[1.25rem] md:text-[1.75rem]"
           />
           <Heading
-          title="CRPM Platform "
-          subtitle=""
-          subtitleSize="text-[1.25rem] md:text-[1.75rem]"
-        />
+            title="CRPM Platform "
+            subtitle=""
+            subtitleSize="text-[1.25rem] md:text-[1.75rem]"
+          />
         </motion.div>
 
         <div className="grid grid-cols-2 md:grid-cols-3 w-full max-w-[1280px] relative">
@@ -94,6 +94,14 @@ function Stats() {
           ))}
         </div>
       </CustomSection>
+      <div className="relative w-full min-h-[190px] 2xl:min-h-[300px]">
+        <Image
+          src="/images/arcnew.png"
+          alt=""
+          fill={true}
+          className="object-cover object-top -z-10"
+        />
+      </div>
     </div>
   );
 }

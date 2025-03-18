@@ -21,7 +21,7 @@ const CyberRiskOverview: React.FC = () => {
   ];
 
   return (
-    <section className="relative w-full min-h-screen flex flex-col justify-center items-center bg-[#0A0118] px-6 md:px-24 py-16">
+    <section className="relative w-full min-h-screen flex flex-col justify-center items-center bg-[#0A0118] px-6 2xl:px-24 py-16">
       {/* Background Overlay */}
       <div
         className="absolute inset-0 z-0 bg-cover bg-center"
@@ -32,7 +32,7 @@ const CyberRiskOverview: React.FC = () => {
       ></div>
 
       {/* Content Wrapper */}
-      <div className="relative z-10 flex flex-col items-center gap-8 text-center max-w-6xl">
+      <div className="relative z-10 flex flex-col items-center gap-8 text-center">
         <p className="text-2xl font-medium tracking-[-1px]"> CRPM Overview</p>
         <h2 className="text-white text-[3rem] leading-[52px] tracking-[-1px]">
           Master Your Cyber Risk Universe with Precision
@@ -46,11 +46,11 @@ const CyberRiskOverview: React.FC = () => {
         </p>
 
         {/* Cards Row */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12 w-full max-w-6xl">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12 w-full">
           {cards.map((card, idx) => (
             <div
               key={idx}
-              className="flex flex-col items-center text-center p-8 gap-6 bg-white/10 rounded-lg backdrop-blur-xl shadow-lg"
+              className="w-full max-w-[370px] flex flex-col items-center text-center px-6 py-8 gap-6 bg-white/10 rounded-lg backdrop-blur-xl shadow-lg"
             >
               <div className="w-24 h-24 flex justify-center items-center rounded-full shadow-md">
                 <img
@@ -62,7 +62,7 @@ const CyberRiskOverview: React.FC = () => {
               <h3 className="text-white text-2xl font-semibold">
                 {card.title}
               </h3>
-              <p className="text-gray-200 text-base leading-relaxed">
+              <p className="text-[#E4E2DF] leading-[26px]]">
                 {card.description}
               </p>
             </div>
