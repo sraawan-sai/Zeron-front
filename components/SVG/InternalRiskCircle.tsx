@@ -23,11 +23,13 @@ import {
 interface InternalRiskCircleProps {
   activeRiskIndex: number;
   mainTitle: string;
+  onSegmentClick?: (segmentIndex: number) => void;
 }
 
 const InternalRiskCircle = ({
   activeRiskIndex,
   mainTitle,
+  onSegmentClick,
 }: InternalRiskCircleProps) => {
   const rotation = activeRiskIndex * 90;
 
@@ -92,7 +94,11 @@ const InternalRiskCircle = ({
                   strokeWidth="1.84753"
                 />
               </g>
-              <g id="InRight">
+              <g
+                id="InRight"
+                onClick={() => onSegmentClick && onSegmentClick(0)}
+                className="cursor-pointer"
+              >
                 <mask id="path-5-inside-1_1638_8755" fill="white">
                   <path d={Right1} />
                 </mask>
@@ -111,7 +117,11 @@ const InternalRiskCircle = ({
                   className="transition-all duration-1000 ease-in-out"
                 />
               </g>
-              <g id="InDown">
+              <g
+                id="InDown"
+                onClick={() => onSegmentClick && onSegmentClick(3)}
+                className="cursor-pointer"
+              >
                 <mask id="path-6-inside-2_1638_8755" fill="white">
                   <path d={Down1} />
                 </mask>
@@ -130,7 +140,11 @@ const InternalRiskCircle = ({
                   className="transition-all duration-1000 ease-in-out"
                 />
               </g>
-              <g id="InLeft">
+              <g
+                id="InLeft"
+                onClick={() => onSegmentClick && onSegmentClick(2)}
+                className="cursor-pointer"
+              >
                 <mask id="path-7-inside-3_1638_8755" fill="white">
                   <path d={Left1} />
                 </mask>
@@ -149,7 +163,11 @@ const InternalRiskCircle = ({
                   className="transition-all duration-1000 ease-in-out"
                 />
               </g>
-              <g id="InTop">
+              <g
+                id="InTop"
+                onClick={() => onSegmentClick && onSegmentClick(1)}
+                className="cursor-pointer"
+              >
                 <mask id="path-8-inside-4_1638_8755" fill="white">
                   <path d={Up1} />
                 </mask>
