@@ -37,7 +37,7 @@ const InternalRisk = () => {
   };
 
   return (
-    <div className="relative w-full flex min-h-screen">
+    <div className="relative w-full flex min-h-screen bg-[url('/images/crpmfeature.jpg')] bg-cover bg-center bg-no-repeat">
       <div className="hidden lg:block absolute top-1/2 left-[-600px] transform -translate-y-1/2">
         <InternalRiskCircle
           activeRiskIndex={activeRiskIndex}
