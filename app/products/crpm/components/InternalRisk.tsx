@@ -23,12 +23,26 @@ const InternalRisk = () => {
     riskGroups.length;
   const activeRisk = riskGroups[displayedRiskIndex];
 
+  const handleSegmentClick = (desired: number) => {
+    setActiveRiskIndex((current) => {
+      const r = ((current % 4) + 4) % 4;
+      const candidate = current - r + desired;
+      const diff1 = Math.abs(candidate - current);
+      const diff2 = Math.abs(candidate + 4 - current);
+      const diff3 = Math.abs(candidate - 4 - current);
+      if (diff2 < diff1 && diff2 <= diff3) return candidate + 4;
+      if (diff3 < diff1 && diff3 < diff2) return candidate - 4;
+      return candidate;
+    });
+  };
+
   return (
     <div className="relative w-full flex min-h-screen">
-      <div className="hidden lg:block absolute top-1/2 left-[-600px] transform -translate-y-1/2 -z-1">
+      <div className="hidden lg:block absolute top-1/2 left-[-600px] transform -translate-y-1/2">
         <InternalRiskCircle
           activeRiskIndex={activeRiskIndex}
           mainTitle={activeRisk.circleTitle}
+          onSegmentClick={handleSegmentClick}
         />
       </div>
       <CustomSection>
