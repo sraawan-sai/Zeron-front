@@ -1,7 +1,7 @@
 import Image from "next/image";
 import React from "react";
 
-const DefenceFeatures = () => {
+const AttackSurfaceFeatures = () => {
   const features = [
     {
       title: " Advanced Log Management",
@@ -50,7 +50,7 @@ const DefenceFeatures = () => {
           src="/images/bottombg.png"
           alt=""
           fill={true}
-          className="object-cover object-top max-h-[500px] opacity-80"
+          className="object-cover object-center max-h-[400px]"
         />
       </div>
 
@@ -90,4 +90,4 @@ const DefenceFeatures = () => {
   );
 };
 
-export default DefenceFeatures;
+export default AttackSurfaceFeatures;

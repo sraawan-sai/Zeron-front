@@ -112,11 +112,11 @@ const Carousel: React.FC<PropType> = ({ testimonials, options }) => {
         <div className="flex touch-pan-y touch-pinch-zoom ml-[-16px]">
           {testimonials.map((testimonial, index) => (
             <div
-              className="cursor-grab active:cursor-grabbing relative flex-shrink-0 min-w-0 pl-4 w-[75%] xl:w-[60%] 2xl:w-[50%] translate-z-0"
+              className="cursor-grab active:cursor-grabbing relative flex-shrink-0 min-w-0 pl-4 w-[75%] xl:w-[70%] 2xl:w-[50%] translate-z-0"
               key={index}
             >
-              <div className="px-2 md:px-5 py-12 bg-[#19133F] w-full h-full flex flex-col gap-5 text-center items-center justify-between border border-[#292929] rounded-[12px]">
-                <div className="flex flex-grow items-center justify-center">
+              <div className="px-2 md:px-5 py-12 bg-[#19133F]/50 w-full h-full flex flex-col gap-20 text-center items-center justify-between rounded-[12px]">
+                <div className="px-4 lg:px-20 flex flex-grow items-center justify-center">
                   <p
                     className={`text-[0.875rem] md:text-[1.125rem] leading-[20px] md:leading-[28px]`}
                   >
@@ -124,24 +124,26 @@ const Carousel: React.FC<PropType> = ({ testimonials, options }) => {
                   </p>
                 </div>
                 <div className="flex flex-col items-center justify-center gap-5 w-full">
-                  <span className="w-full h-[1px] bg-linear-to-r from-[#5BB0FF]/80 to-[#6F58FF]/80"></span>
+                  <span className="w-full h-[1px] bg-white/20"></span>
                   <div className="flex flex-col md:flex-row gap-4 items-center">
-                    <div className="h-16 w-16 rounded-full">
+                    <div className="h-11 w-11 rounded-full">
                       <Image
                         src={testimonial.image}
                         alt={testimonial.name}
-                        width={64}
-                        height={64}
+                        width={44}
+                        height={44}
                         className="w-full h-full object-cover rounded-full"
                       />
                     </div>
                     <div className="flex flex-col text-left">
                       <p
-                        className={`font-medium text-[1.5rem] leading-[27.2px] bg-gradient-to-r from-[#5BB0FF] to-[#6F58FF] bg-clip-text text-transparent tracking-[-0.76px]`}
+                        className={`font-medium text-[1.375rem] leading-[27.2px] bg-gradient-to-r from-[#5BB0FF] to-[#6F58FF] bg-clip-text text-transparent tracking-[-0.76px]`}
                       >
                         {testimonial.name}
                       </p>
-                      <p className={`text-[0.75rem] leading-[19.7px]`}>
+                      <p
+                        className={`text-[0.75rem] leading-[19.7px] text-[#A19EB0]`}
+                      >
                         {testimonial.position}
                       </p>
                     </div>

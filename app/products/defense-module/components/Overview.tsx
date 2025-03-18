@@ -1,4 +1,5 @@
 import CustomSection from "@/components/Layout/CustomSection";
+import Image from "next/image";
 import React from "react";
 
 const DefenceOverview: React.FC = () => {
@@ -24,30 +25,30 @@ const DefenceOverview: React.FC = () => {
     {
       title: "Real-Time Monitoring & Alerts",
       description: "Enable instant threat detection with automated alerts.",
-      icon: "/images/proactiverisk.svg",
+      icon: "/icons/log-management.svg",
     },
     {
       title: "Endpoint Security Monitoring",
       description:
         "Track endpoint activity and assess risks based on the MITRE ATT&CK framework.",
-      icon: "/images/proactiverisk.svg",
+      icon: "/icons/vulnerability.svg",
     },
   ];
 
   return (
-    <section className="relative w-full min-h-screen flex flex-col justify-center items-center bg-[#0A0118] px-6 md:px-24 py-16">
+    <section className="relative w-full min-h-screen flex flex-col justify-center items-center bg-[#0A0118] px-6  2xl:px-24 py-16">
       {/* Background Overlay */}
       <div
         className="absolute inset-0 z-0 bg-cover bg-center"
         style={{
           backgroundImage:
-            "linear-gradient(180deg, #0A0118 15.79%, rgba(0, 0, 0, 0) 82.87%), url('/images/crpmhero.png')",
+            "linear-gradient(180deg, #0A0118 15.79%, rgba(0, 0, 0, 0) 82.87%), url('/images/defencebg.png')",
         }}
       ></div>
 
       {/* Content Wrapper */}
       <CustomSection className="items-center justify-center">
-        <div className="relative z-10 flex flex-col items-center text-center max-w-7xl">
+        <div className="w-full relative z-10 flex flex-col items-center text-center max-w-[1560px] ">
           <p className="text-2xl font-medium tracking-[-1px]">
             Defense Overview
           </p>
@@ -75,9 +76,11 @@ const DefenceOverview: React.FC = () => {
                 className="w-full max-w-[400px] flex flex-col items-center text-center p-8 gap-6 bg-white/10 rounded-lg backdrop-blur-xl shadow-lg"
               >
                 <div className="w-24 h-24 flex justify-center items-center rounded-full shadow-md">
-                  <img
+                  <Image
                     src={card.icon}
                     alt={card.title}
+                    width={80}
+                    height={80}
                     className="w-20 h-20 object-contain"
                   />
                 </div>

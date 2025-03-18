@@ -12,7 +12,9 @@ const EmpowerAnimation = () => {
         loop
         className="w-full h-full"
       />
-      <div className="absolute bottom-0 left-0">
+
+      {/* Left Image with 10px outward gap */}
+      <div className="absolute bottom-0 left-0 translate-x-[-20px]">
         <Image
           src="/images/SemiLeft.svg"
           alt=""
@@ -21,7 +23,9 @@ const EmpowerAnimation = () => {
           className="w-full h-full max-w-[150px] max-h-[300px] md:max-w-full md:max-h-full"
         />
       </div>
-      <div className="absolute bottom-0 right-0">
+
+      {/* Right Image with 10px outward gap */}
+      <div className="absolute bottom-0 right-0 translate-x-[20px]">
         <Image
           src="/images/SemiLeft.svg"
           alt=""

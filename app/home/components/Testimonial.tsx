@@ -1,28 +1,21 @@
-"use client"; // Required for Next.js 13+ (if using App Router)
-
-import { motion } from "framer-motion";
 import TestimonialCarousel from "@/components/Carousel/Testimonial";
-import Heading from "@/components/Layout/Heading";
+import React from "react";
 
-function Testimonial() {
+const TestimonialsSection = () => {
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 100 }} // Start completely invisible and lower
-      whileInView={{ opacity: 1, y: 0 }} // Fade in and move up
-      transition={{ duration: 0.8, ease: "easeOut" }} // Smooth transition
-      viewport={{ once: true, amount: 0.2 }} // Trigger animation when 20% of the section is visible
-      className="flex flex-col gap-16 py-20"
-    >
-      <div className="flex items-center justify-center container mx-auto px-4">
-        <Heading
-          title="Real Success, Real Security"
-          subtitle="How Zeron Transforms Cyber Resilience"
-          subtitleSize="text-[1.875rem]"
-        />
+    <section className="flex flex-col items-center pt-[150px] w-full bg-[#0A0118]">
+      {/* Heading */}
+      <div className="flex flex-col justify-center items-center px-4 md:px-[253px] pb-[100px] w-full">
+        <h2 className="text-white text-[46px] leading-[48px] md:leading-[66px] text-center font-medium tracking-[-1px]">
+          Real Success, Real Security
+        </h2>
+        <p className="text-[#6100FF] text-[30px] leading-[33px] text-center">
+          How Zeron Transforms Cyber Resilience
+        </p>
       </div>
       <TestimonialCarousel />
-    </motion.div>
+    </section>
   );
-}
+};
 
-export default Testimonial;
+export default TestimonialsSection;
