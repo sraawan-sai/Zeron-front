@@ -9,6 +9,7 @@ import StarsCanvas from "@/components/Layout/Stars";
 import CRPMCircle from "@/components/SVG/CRPMCircle";
 const Hero = () => {
   const [, setScale] = useState(1);
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
   useEffect(() => {
     const handleScroll = () => {
@@ -21,6 +22,17 @@ const Hero = () => {
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  useEffect(() => {
+    const handleMouseMove = (e: MouseEvent) => {
+      const x = (e.clientX - window.innerWidth / 2) / 100;
+      const y = (e.clientY - window.innerHeight / 2) / 100;
+      setMousePosition({ x, y });
+    };
+
+    window.addEventListener("mousemove", handleMouseMove);
+    return () => window.removeEventListener("mousemove", handleMouseMove);
   }, []);
 
   return (
@@ -49,7 +61,39 @@ const Hero = () => {
         animate={{ opacity: 1, y: 0 }}
         className="absolute -bottom-58 xs:-bottom-48 lg:-bottom-40 2xl:-bottom-32 w-full flex items-center justify-center"
       >
-        <CRPMCircle />
+        <div className="relative">
+          <div
+            className="hidden md:block absolute top-[30%] -left-48 -z-1 w-full max-w-[400px] h-[270px]"
+            style={{
+              transform: `translate(${mousePosition.x * 5}px, ${
+                -mousePosition.y * 5
+              }px)`,
+            }}
+          >
+            <Image
+              src="/images/DNA.png"
+              alt=""
+              fill={true}
+              className="object-cover object-center"
+            />{" "}
+          </div>
+          <div
+            className="hidden md:block absolute top-[40%] -right-20 -z-1 w-full max-w-[300px] h-[190px] rotate-4"
+            style={{
+              transform: `translate(${mousePosition.x * 3}px, ${
+                mousePosition.y * 3
+              }px)`,
+            }}
+          >
+            <Image
+              src="/images/DNA.png"
+              alt=""
+              fill={true}
+              className="object-cover object-center"
+            />{" "}
+          </div>
+          <CRPMCircle />
+        </div>
       </motion.div>
       {/* Main Hero Content */}
       <motion.div
