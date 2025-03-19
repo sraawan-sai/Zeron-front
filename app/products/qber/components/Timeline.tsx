@@ -1,7 +1,10 @@
+"use client";
+
 import BlueStars from "@/components/Layout/BlueStars";
 import CustomSection from "@/components/Layout/CustomSection";
 import Image from "next/image";
-import React from "react";
+import React, { useState, useEffect, useRef } from "react";
+import { motion } from "framer-motion";
 
 const timelineData = [
   {
@@ -61,6 +64,36 @@ const cards = [
 ];
 
 const Timeline = () => {
+  const [isInView, setIsInView] = useState(false);
+  const finalElementRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const [entry] = entries;
+        // When the element is in view, trigger the animation
+        if (entry.isIntersecting) {
+          setIsInView(true);
+        } else {
+          setIsInView(false);
+        }
+      },
+      {
+        threshold: 0.5, // Trigger when 50% of the element is in view
+      }
+    );
+
+    if (finalElementRef.current) {
+      observer.observe(finalElementRef.current);
+    }
+
+    return () => {
+      if (finalElementRef.current) {
+        observer.unobserve(finalElementRef.current);
+      }
+    };
+  }, []);
+
   return (
     <div className="relative w-full flex items-center justify-center py-20">
       <CustomSection className="flex-col md:items-center">
@@ -73,18 +106,30 @@ const Timeline = () => {
           {timelineData.map((item, index) => (
             <React.Fragment key={index}>
               {item.isFinal ? (
-                <div className="col-span-2 md:col-span-3 flex justify-center items-center relative h-[400px]">
+                <motion.div
+                  ref={finalElementRef}
+                  className="col-span-2 md:col-span-3 flex justify-center items-center relative h-[400px]"
+                >
                   <div className="hidden md:block absolute top-0 left-1/2 transform -translate-x-1/2 w-[3px] bg-[#5BB0FF] h-[250px]"></div>
 
-                  <Image
-                    src={item.icon}
-                    alt=""
-                    width={800}
-                    height={700}
-                    priority
-                    className="w-full max-w-[700px] h-full object-fill md:object-cover object-center"
-                  />
-                </div>
+                  <motion.div
+                    initial={{ scale: 0 }}
+                    animate={{
+                      scale: isInView ? 1 : 0,
+                      transition: { duration: 1, ease: "easeOut" },
+                    }}
+                    className="h-full flex justify-center items-center"
+                  >
+                    <Image
+                      src={item.icon}
+                      alt=""
+                      width={800}
+                      height={700}
+                      priority
+                      className="w-full max-w-[700px] h-full object-fill md:object-cover object-center"
+                    />
+                  </motion.div>
+                </motion.div>
               ) : (
                 <>
                   {/* Left Column - Alternating Text */}

@@ -9,6 +9,7 @@ import StarsCanvas from "@/components/Layout/Stars";
 
 const Hero = () => {
   const [, setScale] = useState(1);
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
   useEffect(() => {
     const handleScroll = () => {
@@ -21,6 +22,17 @@ const Hero = () => {
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  useEffect(() => {
+    const handleMouseMove = (e: MouseEvent) => {
+      const x = (e.clientX - window.innerWidth / 2) / 100;
+      const y = (e.clientY - window.innerHeight / 2) / 100;
+      setMousePosition({ x, y });
+    };
+
+    window.addEventListener("mousemove", handleMouseMove);
+    return () => window.removeEventListener("mousemove", handleMouseMove);
   }, []);
 
   return (
@@ -44,15 +56,24 @@ const Hero = () => {
           <StarsCanvas />
         </section>
       </motion.div>
-      <motion.div
-        initial={{ opacity: 0, y: 50, scale: 1 }}
-        animate={{ opacity: 1, y: 0 }}
+      <div
+        style={{
+          transform: `translate(${mousePosition.x * 3}px, ${
+            mousePosition.y * 3
+          }px)`,
+        }}
         className="absolute bottom-0 left-0 w-full flex items-center justify-center"
       >
-        <p className="font-thin tracking-[-13.17px] leading-[170px] md:leading-[260px] 2xl:leading-[340px] outline text-[10rem] md:text-[16rem] 2xl:text-[20rem] bg-linear-to-r from-[#1C76FD] to-[#5721F0] text-transparent bg-clip-text mix-blend-screen">
-          QBER
-        </p>
-      </motion.div>
+        <motion.div
+          initial={{ opacity: 0, y: 50, scale: 1 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="absolute bottom-0 left-0 w-full flex items-center justify-center"
+        >
+          <p className="font-thin tracking-[-13.17px] leading-[170px] md:leading-[260px] 2xl:leading-[340px] outline text-[10rem] md:text-[16rem] 2xl:text-[20rem] bg-linear-to-r from-[#1C76FD] to-[#5721F0] text-transparent bg-clip-text mix-blend-screen">
+            QBER
+          </p>
+        </motion.div>
+      </div>
       <motion.div
         initial={{ opacity: 0, y: 50, scale: 1 }}
         animate={{ opacity: 1, y: 0 }}
