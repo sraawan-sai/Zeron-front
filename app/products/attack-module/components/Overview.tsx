@@ -1,51 +1,80 @@
-import React from 'react';
+import CustomSection from "@/components/Layout/CustomSection";
+import Image from "next/image";
+import React from "react";
+
+const cards = [
+  {
+    title: "Continuous Discovery",
+    description: "Identify external assets, misconfigurations, and shadow IT.",
+    icon: "/images/diamond.svg",
+  },
+  {
+    title: "Risk Quantification",
+    description: "Assign financial impact scores to vulnerabilities (CVaR).",
+    icon: "/images/graph.svg",
+  },
+  {
+    title: "Real-Time Defense",
+    description: "Detect and mitigate threats before they are exploited.",
+    icon: "/images/defense.svg",
+  },
+];
 
 const AttackSurfaceOverview = () => {
   return (
-    <section className="relative w-full bg-[#0A0118] py-16 px-4 md:px-32 text-white flex flex-col items-center gap-20">
-      {/* Background Image */}
-      <div className="absolute inset-0 w-full h-full bg-center bg-cover opacity-500 z-0" style={{ backgroundImage: 'url(/images/overview.png)' }}></div>
+    <section className="relative min-h-screen w-full flex flex-col items-center bg-[#0A0118] px-6  2xl:px-24 py-16">
+      {/* Background Overlay */}
+      <div
+        className="absolute inset-0 z-0 bg-cover bg-center"
+        style={{
+          backgroundImage:
+            "linear-gradient(180deg, #0A0118 15.79%, rgba(0, 0, 0, 0) 82.87%), url('/images/attackoverviewbg.png')",
+        }}
+      ></div>
 
-      {/* Main Content */}
-      <div className="relative z-10 flex flex-col items-center max-w-5xl text-center gap-6">
-        <h2 className="text-4xl md:text-5xl font-medium leading-tight tracking-tight">
-          Unveiling the Hidden Layers of Your Digital Universe
-        </h2>
-        <p className="text-lg md:text-xl text-gray-300 max-w-3xl">
-          Every asset you own, every third-party integration, and every cloud deployment expands your attack surface.
-          Zeron continuously scans, analyzes, and prioritizes risks, turning scattered data points into structured, actionable intelligence.
-        </p>
-      </div>
-
-      {/* Feature Cards */}
-      <div className="relative z-10 grid grid-cols-1 md:grid-cols-3 gap-6 max-w-7xl w-full">
-        {/* Card 1 */}
-        <div className="flex flex-col items-center p-8 gap-6 bg-white/10 rounded-lg backdrop-blur-xl shadow-xl">
-          <img src="/images/diamond.svg" alt="Continuous Discovery" className="h-20 w-20 object-contain" />
-          <h3 className="text-2xl font-semibold">Continuous Discovery</h3>
-          <p className="text-center text-gray-300">
-            Identify external assets, misconfigurations, and shadow IT.
+      {/* Content Wrapper */}
+      <CustomSection className="items-center justify-center">
+        <div className="w-full relative z-10 flex flex-col items-center text-center max-w-[1560px] ">
+          <p className="text-2xl font-medium tracking-[-1px]">
+            Attack Surface Overview
           </p>
-        </div>
-
-        {/* Card 2 */}
-        <div className="flex flex-col items-center p-8 gap-6 bg-white/10 rounded-lg backdrop-blur-xl shadow-xl">
-          <img src="/images/graph.svg" alt="Risk Quantification" className="h-20 w-20 object-contain" />
-          <h3 className="text-2xl font-semibold">Risk Quantification</h3>
-          <p className="text-center text-gray-300">
-            Assign financial impact scores to vulnerabilities (CVaR).
+          <h2 className="mt-16 text-white text-[3rem] leading-[52px] tracking-[-1px] max-w-[850px]">
+            Unveiling the Hidden Layers of Your Digital Universe
+          </h2>
+          <p className="mt-6 text-[#E4E2DF]/70 text-[1.125rem] max-w-[820px] leading-[24px]">
+            Every asset you own, every third-party integration, and every cloud
+            deployment expands your attack surface. Zeron continuously scans,
+            analyzes, and prioritizes risks, turning scattered data points into
+            structured, actionable intelligence
           </p>
-        </div>
 
-        {/* Card 3 */}
-        <div className="flex flex-col items-center p-8 gap-6 bg-white/10 rounded-lg backdrop-blur-xl shadow-xl">
-          <img src="/images/defense.svg" alt="Real-Time Defense" className="h-20 w-20 object-contain" />
-          <h3 className="text-2xl font-semibold">Real-Time Defense</h3>
-          <p className="text-center text-gray-300">
-            Detect and mitigate threats before they are exploited.
-          </p>
+          {/* Cards Row */}
+          <div className="flex flex-wrap gap-6 mt-38 w-full items-center justify-center">
+            {cards.map((card, idx) => (
+              <div
+                key={idx}
+                className="w-full max-w-[400px] flex flex-col items-center text-center p-8 gap-6 bg-white/10 rounded-lg backdrop-blur-xl"
+              >
+                <div className="w-24 h-24 flex justify-center items-center rounded-full">
+                  <Image
+                    src={card.icon}
+                    alt={card.title}
+                    width={80}
+                    height={80}
+                    className="w-20 h-20 object-contain"
+                  />
+                </div>
+                <h3 className="text-white text-2xl font-semibold">
+                  {card.title}
+                </h3>
+                <p className="text-gray-200 text-base leading-relaxed">
+                  {card.description}
+                </p>
+              </div>
+            ))}
+          </div>
         </div>
-      </div>
+      </CustomSection>
     </section>
   );
 };
