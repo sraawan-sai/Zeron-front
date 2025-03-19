@@ -12,7 +12,7 @@ const ProductsNavbar = () => {
 
   const vendorLinks = [
     { label: "Vendor Pulse", href: "/products/vendor-pulse" },
-    { label: "Cyber Insure Pulse", href: "/products/cyber-insure-pulse" },
+    { label: "Cyber Insure Pulse", href: "/products/insure-pulse" },
   ];
 
   const solutionsLinks = [
