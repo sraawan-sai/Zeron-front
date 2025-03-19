@@ -45,14 +45,13 @@ const AttackSurfaceFeatures = () => {
     <div className="relative flex flex-col items-center justify-center w-full bg-[#0A0118] px-6 md:px-20 py-24 gap-20">
       {/* Background Gradient */}
       {/* <div className="absolute inset-0 bg-gradient-to-b from-[#0A0118] via-[#0A0118] to-transparent pointer-events-none" /> */}
-      <div className="absolute bottom-0 w-full h-[500px]">
-        <Image
-          src="/images/bottombg.png"
-          alt=""
-          fill={true}
-          className="object-cover object-center max-h-[400px]"
-        />
-      </div>
+      <div
+        className="absolute bottom-0 w-full h-full inset-0 z-0 bg-cover bg-center"
+        style={{
+          backgroundImage:
+            "linear-gradient(180deg, #0A0118 15.79%, rgba(0, 0, 0, 0) 82.87%), url('/images/bottombg.png')",
+        }}
+      ></div>
 
       {/* Heading */}
       <h2 className="text-white text-center text-[3rem] tracking-[-1px] leading-[52px] z-10">
