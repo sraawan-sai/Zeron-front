@@ -4,6 +4,7 @@ import React from "react";
 
 interface HeadingProps {
   title: string;
+  titleCN?: string;
   subtitle?: string;
   subtitleSize?: string;
   description?: string;
@@ -14,6 +15,7 @@ interface HeadingProps {
 
 function Heading({
   title,
+  titleCN,
   subtitle,
   subtitleSize = "text-[1.625rem] md:text-[2.625rem]",
   description,
@@ -24,7 +26,7 @@ HeadingProps) {
   return (
     <div className="w-full flex flex-col items-center justify-center text-center gap-4">
       <p
-        className={`text-[1.75rem] xs:text-[2rem] md:text-[2.875rem] leading-[34px] xs:leading-[40px] font-medium tracking-[-1px]`}
+        className={`${titleCN} text-[1.75rem] xs:text-[2rem] md:text-[2.875rem] leading-[34px] xs:leading-[40px] font-medium tracking-[-1px]`}
       >
         {title}
       </p>

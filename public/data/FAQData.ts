@@ -108,3 +108,40 @@ export const DefenseFAQ = [
       "The defense module supports incident response by providing real-time alerts, detailed forensic analysis, and automated response actions. It helps security teams identify the root cause of incidents, contain threats, and recover quickly while reducing manual intervention.",
   },
 ];
+
+export const VendorFAQ = [
+  {
+    question: "What is Lorem Ipsum?",
+    answer: "Viverra pulvinar nulla est senectus tincidunt. Non ullamcorper egestas consequat etiam quis. Diam sed cras feugiat nisl. Id tempor rhoncus nibh ultrices. Ut porttitor quis nulla semper vitae mollis fames nisi mattis. Eleifend lectus urna nec nulla sapien.",
+  },
+  {
+    question: "What is Lorem Ipsum?",
+    answer: "Viverra pulvinar nulla est senectus tincidunt. Non ullamcorper egestas consequat etiam quis. Diam sed cras feugiat nisl. Id tempor rhoncus nibh ultrices. Ut porttitor quis nulla semper vitae mollis fames nisi mattis. Eleifend lectus urna nec nulla sapien.",
+  },
+  {
+    question: "What is Lorem Ipsum?",
+    answer: "Viverra pulvinar nulla est senectus tincidunt. Non ullamcorper egestas consequat etiam quis. Diam sed cras feugiat nisl. Id tempor rhoncus nibh ultrices. Ut porttitor quis nulla semper vitae mollis fames nisi mattis. Eleifend lectus urna nec nulla sapien.",
+  },
+  {
+    question: "What is Lorem Ipsum?",
+    answer: "Viverra pulvinar nulla est senectus tincidunt. Non ullamcorper egestas consequat etiam quis. Diam sed cras feugiat nisl. Id tempor rhoncus nibh ultrices. Ut porttitor quis nulla semper vitae mollis fames nisi mattis. Eleifend lectus urna nec nulla sapien.",
+  },
+]
+export const InsureFAQ = [
+  {
+    question: "What is Lorem Ipsum?",
+    answer: "Viverra pulvinar nulla est senectus tincidunt. Non ullamcorper egestas consequat etiam quis. Diam sed cras feugiat nisl. Id tempor rhoncus nibh ultrices. Ut porttitor quis nulla semper vitae mollis fames nisi mattis. Eleifend lectus urna nec nulla sapien.",
+  },
+  {
+    question: "What is Lorem Ipsum?",
+    answer: "Viverra pulvinar nulla est senectus tincidunt. Non ullamcorper egestas consequat etiam quis. Diam sed cras feugiat nisl. Id tempor rhoncus nibh ultrices. Ut porttitor quis nulla semper vitae mollis fames nisi mattis. Eleifend lectus urna nec nulla sapien.",
+  },
+  {
+    question: "What is Lorem Ipsum?",
+    answer: "Viverra pulvinar nulla est senectus tincidunt. Non ullamcorper egestas consequat etiam quis. Diam sed cras feugiat nisl. Id tempor rhoncus nibh ultrices. Ut porttitor quis nulla semper vitae mollis fames nisi mattis. Eleifend lectus urna nec nulla sapien.",
+  },
+  {
+    question: "What is Lorem Ipsum?",
+    answer: "Viverra pulvinar nulla est senectus tincidunt. Non ullamcorper egestas consequat etiam quis. Diam sed cras feugiat nisl. Id tempor rhoncus nibh ultrices. Ut porttitor quis nulla semper vitae mollis fames nisi mattis. Eleifend lectus urna nec nulla sapien.",
+  },
+]

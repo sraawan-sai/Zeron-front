@@ -4,48 +4,51 @@ import React from "react";
 
 const cards = [
   {
-    title: "Continuous Discovery",
-    description: "Identify external assets, misconfigurations, and shadow IT.",
+    title: "Lorem Ipsum",
+    description:
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text",
     icon: "/images/diamond.svg",
   },
   {
-    title: "Risk Quantification",
-    description: "Assign financial impact scores to vulnerabilities (CVaR).",
+    title: "Lorem Ipsum",
+    description:
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text",
     icon: "/images/graph.svg",
   },
   {
-    title: "Real-Time Defense",
-    description: "Detect and mitigate threats before they are exploited.",
+    title: "Lorem Ipsum",
+    description:
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text",
     icon: "/images/defense.svg",
   },
 ];
 
-const AttackSurfaceOverview = () => {
+const InsureOverview: React.FC = () => {
   return (
     <section className="relative min-h-screen w-full flex flex-col items-center bg-[#0A0118] px-6  2xl:px-24 py-16">
       {/* Background Overlay */}
       <div
-        className="absolute inset-0 z-0 bg-cover bg-center"
+        className="absolute inset-0 z-0 bg-cover bg-right bg-no-repeat"
         style={{
           backgroundImage:
-            "linear-gradient(180deg, #0A0118 15.79%, rgba(0, 0, 0, 0) 82.87%), url('/images/attackoverviewbg.png')",
+            "linear-gradient(180deg, #0A0118 15.79%, rgba(0, 0, 0, 0) 82.87%), url('/images/crpmhero.png')",
         }}
       ></div>
 
       {/* Content Wrapper */}
       <CustomSection className="items-center justify-center">
         <div className="w-full relative z-10 flex flex-col items-center text-center max-w-[1560px] ">
-          <p className="text-2xl font-medium tracking-[-1px]">
-            Attack Surface Overview
-          </p>
+          <p className="text-2xl font-medium tracking-[-1px]">Lorem Overview</p>
           <h2 className="mt-16 text-white text-[3rem] leading-[52px] tracking-[-1px] max-w-[850px]">
-            Unveiling the Hidden Layers of Your Digital Universe
+            Lorem Ipsum is simply dummy text of the printing.
           </h2>
+          <p className="text-[#E4E2DF] text-[1.125rem] leading-[24px] ">
+            Know Your Risk | Reduce Uncertainty | Strengthen Security
+          </p>
           <p className="mt-6 text-[#E4E2DF]/70 text-[1.125rem] max-w-[820px] leading-[24px]">
-            Every asset you own, every third-party integration, and every cloud
-            deployment expands your attack surface. Zeron continuously scans,
-            analyzes, and prioritizes risks, turning scattered data points into
-            structured, actionable intelligence
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry. Lorem Ipsum has been the industry&apos;s standard dummy
+            text ever since the 1500s
           </p>
 
           {/* Cards Row */}
@@ -79,4 +82,4 @@ const AttackSurfaceOverview = () => {
   );
 };
 
-export default AttackSurfaceOverview;
+export default InsureOverview;
