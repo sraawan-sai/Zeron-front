@@ -1,76 +1,86 @@
+import CustomSection from "@/components/Layout/CustomSection";
+import Image from "next/image";
 import React from "react";
 
-const ComplianceOverview: React.FC = () => {
-  const cards = [
-    {
-      title: "Cyber Risk Quantification",
-      description:
-        "Identify external assets, misconfigurations, and shadow IT.",
-      icon: "/images/cyberrisk.svg",
-    },
-    {
-      title: "Holistic Risk Visibility",
-      description: "Assign financial impact scores to vulnerabilities (CVaR).",
-      icon: "/images/holisticrisk.svg",
-    },
-    {
-      title: "Proactive Risk Mitigation",
-      description: "Detect and mitigate threats before they are exploited.",
-      icon: "/images/proactiverisk.svg",
-    },
-  ];
+const cards = [
+  {
+    title: "Lorem Ipsum",
+    description:
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text",
+    icon: "/images/diamond.svg",
+  },
+  {
+    title: "Lorem Ipsum",
+    description:
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text",
+    icon: "/images/graph.svg",
+  },
+  {
+    title: "Lorem Ipsum",
+    description:
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text",
+    icon: "/images/defense.svg",
+  },
+];
 
+const ComplianceOverview: React.FC = () => {
   return (
-    <section className="relative w-full min-h-screen flex flex-col justify-center items-center bg-[#0A0118] px-6 md:px-24 py-16">
+    <section className="relative min-h-screen w-full flex flex-col items-center bg-[#0A0118] px-6  2xl:px-24 py-16">
       {/* Background Overlay */}
       <div
-        className="absolute inset-0 z-0 bg-cover bg-center"
+        className="absolute inset-0 z-0 bg-cover bg-right bg-no-repeat"
         style={{
           backgroundImage:
-            "linear-gradient(180deg, #0A0118 15.79%, rgba(0, 0, 0, 0) 82.87%), url('/images/crpmhero.png')",
+            "linear-gradient(180deg, #0A0118 15.79%, rgba(0, 0, 0, 0) 82.87%), url('/images/complianceoverviewbg.png')",
         }}
       ></div>
 
       {/* Content Wrapper */}
-      <div className="relative z-10 flex flex-col items-center text-center max-w-6xl">
-        <p className="text-2xl font-medium tracking-[-1px]"> QBER Overview</p>
-        <h2 className="mt-6.5 text-white text-[3rem] leading-[52px] tracking-[-1px]">
-          QBER | Where Cybersecurity Meets Data-Driven Decisions
-        </h2>
-        <p className="mt-2 text-[#E4E2DF] text-[1.25rem] font-medium leading-[24px]">
-          Know Your Risk | Reduce Uncertainty | Strengthen Security
-        </p>
-        <p className="mt-4 text-[#E4E2DF]/70 text-[1.125rem] max-w-[1050px] leading-[24px]">
-          QBER (Quantified Business Exposure to Risks) is Zeron’s advanced Cyber
-          Risk Quantification solution. It translates complex security risks
-          into clear, measurable financial impact—helping organizations make
-          data-driven decisions to safeguard their digital assets.
-        </p>
+      <CustomSection className="items-center justify-center">
+        <div className="w-full relative z-10 flex flex-col items-center text-center max-w-[1560px] ">
+          <p className="text-2xl font-medium tracking-[-1px]">
+            Compliance Overview
+          </p>
+          <h2 className="mt-16 text-white text-[3rem] leading-[52px] tracking-[-1px] max-w-[850px]">
+            Lorem Ipsum is simply dummy text of the printing.
+          </h2>
+          <p className="text-[#E4E2DF] text-[1.125rem] leading-[24px] ">
+            Lorem Ipsum | Lorem Ipsum | Lorem Ipsum
+          </p>
+          <p className="mt-6 text-[#E4E2DF]/70 text-[1.125rem] max-w-[820px] leading-[24px]">
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry. Lorem Ipsum has been the industry&apos;s standard dummy
+            text ever since the 1500s, when an unknown printer took a galley of
+            type and scrambled it to make a type specimen book.
+          </p>
 
-        {/* Cards Row */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12 w-full max-w-6xl">
-          {cards.map((card, idx) => (
-            <div
-              key={idx}
-              className="flex flex-col items-center text-center p-8 gap-6 bg-white/10 rounded-lg backdrop-blur-xl shadow-lg"
-            >
-              <div className="w-24 h-24 flex justify-center items-center rounded-full shadow-md">
-                <img
-                  src={card.icon}
-                  alt={card.title}
-                  className="w-20 h-20 object-contain"
-                />
+          {/* Cards Row */}
+          <div className="flex flex-wrap gap-6 mt-38 w-full items-center justify-center">
+            {cards.map((card, idx) => (
+              <div
+                key={idx}
+                className="w-full max-w-[400px] flex flex-col items-center text-center p-8 gap-6 bg-white/10 rounded-lg backdrop-blur-xl"
+              >
+                <div className="w-24 h-24 flex justify-center items-center rounded-full">
+                  <Image
+                    src={card.icon}
+                    alt={card.title}
+                    width={80}
+                    height={80}
+                    className="w-20 h-20 object-contain"
+                  />
+                </div>
+                <h3 className="text-white text-2xl font-semibold">
+                  {card.title}
+                </h3>
+                <p className="text-gray-200 text-base leading-relaxed">
+                  {card.description}
+                </p>
               </div>
-              <h3 className="text-white text-2xl font-semibold">
-                {card.title}
-              </h3>
-              <p className="text-gray-200 text-base leading-relaxed">
-                {card.description}
-              </p>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
-      </div>
+      </CustomSection>
     </section>
   );
 };

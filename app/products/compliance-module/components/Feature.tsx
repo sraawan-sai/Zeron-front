@@ -4,51 +4,60 @@ import React from "react";
 const ComplianceFeatures = () => {
   const features = [
     {
-      title: "Universal Asset Discovery",
+      title: "Lorem Ipsum",
       description:
-        "Continuously scan domains, IPs, and cloud assets to uncover your full attack surface.",
+        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text.",
       image: "/images/crpmf2.svg",
     },
     {
-      title: "Intelligent Risk Prioritization",
+      title: "Lorem Ipsum",
       description:
-        "AI-driven insights rank threats by severity, exploitability, and financial impact.",
+        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text.",
       image: "/images/crpmf4.png",
     },
     {
-      title: "Real-Time Threat Intelligence",
+      title: "Lorem Ipsum",
       description:
-        "Get real-time alerts on newly exposed vulnerabilities and risks.",
+        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text.",
       image: "/images/crpmf3.svg",
     },
     {
-      title: "Attack Path Mapping",
+      title: "Lorem Ipsum",
       description:
-        "Visualize asset connections to identify weak points and attack vectors.",
+        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text.",
       image: "/images/crpmf5.png",
+    },
+    {
+      title: "Lorem Ipsum",
+      description:
+        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text.",
+      image: "/images/crpmf6.png",
+    },
+    {
+      title: "Lorem Ipsum",
+      description:
+        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text.",
+      image: "/images/crpmf1.svg",
     },
   ];
 
   return (
     <div className="relative flex flex-col items-center justify-center w-full bg-[#0A0118] px-6 md:px-20 py-24 gap-20">
-      {/* Background Gradient */}
-      {/* <div className="absolute inset-0 bg-gradient-to-b from-[#0A0118] via-[#0A0118] to-transparent pointer-events-none" /> */}
-      <div className="absolute bottom-0 w-full h-[500px]">
-        <Image
-          src="/images/bottombg.png"
-          alt=""
-          fill={true}
-          className="object-cover object-top max-h-[500px] opacity-80"
-        />
-      </div>
+      <div
+        className="absolute bottom-0 w-full h-full inset-0 z-0 bg-cover bg-center"
+        style={{
+          backgroundImage:
+            "linear-gradient(180deg, #0A0118 15.79%, rgba(0, 0, 0, 0) 82.87%), url('/images/bottombg.png')",
+        }}
+      ></div>
 
       {/* Heading */}
-      <h2 className="text-white text-center text-[3rem] tracking-[-1px] leading-[52px] z-10">
-        Precision-Driven Cyber Risk Quantification
+      <h2 className="text-white text-center text-[3rem] tracking-[-1px] leading-[52px] z-10 max-w-[950px]">
+        Lorem Ipsum is simply dummy text of the printing.
       </h2>
 
       {/* Features */}
-      <div className="grid grid-cols-2 gap-x-10 z-10 max-w-7xl w-full">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-10 z-10 max-w-7xl w-full">
         {features.map((feature, idx) => (
           <div
             key={idx}
