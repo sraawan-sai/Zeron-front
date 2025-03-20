@@ -37,6 +37,24 @@ const Hero = () => {
 
   return (
     <div className="w-full min-h-screen relative overflow-hidden">
+      <motion.div className="absolute bottom-10 md:bottom-0 left-0 w-full flex items-center justify-center">
+        <Image
+          src="/images/products/insure/insurehero.png"
+          alt=""
+          width={2560}
+          height={500}
+          className="w-full h-auto object-cover"
+        />
+
+        <div className="absolute flex items-center justify-center">
+          <div className="bg-white/10 backdrop-blur-[10px] py-11.5 px-4 rounded-[6px] mix-blend-color-dodge">
+            <p className="text-center font-light text-[3.625rem] tracking-[10px] leading-[45px] bg-gradient-to-r from-[#1C76FD] to-[#5721F0] bg-clip-text text-transparent">
+              INSURE <br /> PULSE
+            </p>
+          </div>
+        </div>
+      </motion.div>
+
       {/* Background Stars */}
       <motion.div
         initial={{ opacity: 0 }}

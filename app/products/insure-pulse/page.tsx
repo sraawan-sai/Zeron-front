@@ -9,11 +9,13 @@ import InsureBanner from "./components/Banner";
 import ContactForm from "@/components/Sections/ContactForm";
 import FAQSection from "@/components/Sections/FAQ";
 import { InsureFAQ } from "@/public/data/FAQData";
+import MovingColors from "@/components/Layout/MovingColors";
 
 const InsurePulsePage = () => {
   return (
     <div className="">
       <Hero />
+      <MovingColors />
       <LogoMarquee />
       <InsureOverview />
       <InsureUnique />

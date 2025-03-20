@@ -2,31 +2,31 @@ import Image from "next/image";
 
 const dataSections = [
   {
-    title: "Identify Assets",
+    title: "Lorem Ipsum",
     description:
-      "Uncover every externally visible asset—domains, IPs, cloud instances, and more—before attackers do.",
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
     imageSrc: "/images/products/attack/chaos1.svg",
   },
   {
-    title: "Discover vulnerabilities",
+    title: "Lorem Ipsum",
     description:
-      "Identify CVEs, uncover security gaps, and automate exposure discovery across your external attack surface.",
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
     imageSrc: "/images/products/attack/chaos2.svg",
   },
   {
-    title: "Map exposures",
+    title: "Lorem Ipsum",
     description:
-      "Map asset relationships, uncover exposure points, and gain a unified view of your attack surface.",
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
     imageSrc: "/images/products/attack/chaos3.svg",
   },
 ];
 
-const DataChaos = () => {
+const Stack = () => {
   return (
     <div className="flex flex-col items-center justify-center container mx-auto py-20">
-      <div className="w-full max-w-[650px]">
+      <div className="w-full max-w-[850px]">
         <h2 className="text-white text-center text-[3rem] leading-[130%]">
-          Transforming Data Chaos into Cosmic Clarity
+          Lorem Ipsum is simply dummy text of the printing.
         </h2>
       </div>
       <div className="px-4 mt-25 w-full flex flex-col gap-6 items-center justify-center relative">
@@ -38,7 +38,7 @@ const DataChaos = () => {
             <div className="px-4 py-6 relative w-full max-w-[1248px] min-h-[430px] flex flex-col gap-5 md:gap-0 md:flex-row items-center md:justify-between">
               <div className="absolute inset-0">
                 <Image
-                  src="/images/lineargradientbg.png"
+                  src="/images/vendorherobg.png"
                   alt=""
                   fill
                   className="object-cover object-center -z-1"
@@ -73,4 +73,4 @@ const DataChaos = () => {
   );
 };
 
-export default DataChaos;
+export default Stack;

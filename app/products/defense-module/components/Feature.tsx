@@ -66,13 +66,15 @@ const AttackSurfaceFeatures = () => {
             className="h-full flex flex-col items-center justify-center text-center px-3 py-21 gap-4"
           >
             <div className="flex flex-col items-center gap-8">
-              <Image
-                src={feature.image}
-                alt={feature.title}
-                width={100}
-                height={80}
-                className="w-full max-w-[100px] h-full max-h-[80px] object-contain object-center"
-              />
+              <div className="w-20 h-20 relative">
+                <Image
+                  src={feature.image}
+                  alt={feature.title}
+                  width={100}
+                  height={80}
+                  className="w-full max-w-[100px] h-full max-h-[80px] object-contain object-center"
+                />
+              </div>
               <h3 className="text-white text-xl md:text-2xl font-semibold tracking-[-2%] leading-[130%]">
                 {feature.title}
               </h3>

@@ -9,11 +9,13 @@ import FAQSection from "@/components/Sections/FAQ";
 import { QBERFAQ } from "@/public/data/FAQData";
 import Resources from "@/components/Sections/Resources";
 import Timeline from "./components/Timeline";
+import MovingColors from "@/components/Layout/MovingColors";
 
 const QBERPage = () => {
   return (
     <div className="">
       <Hero />
+      <MovingColors />
       <LogoMarquee />
       <QberOverview />
       <QberStats />
