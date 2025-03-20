@@ -9,17 +9,24 @@ import Testimonial from "./components/Testimonial";
 import { ASFAQ } from "@/public/data/FAQData";
 import ContactForm from "@/components/Sections/ContactForm";
 import Resources from "@/components/Sections/Resources";
+import MovingColors from "@/components/Layout/MovingColors";
+import Banner from "@/components/Sections/Banner";
 
 const attackonsurface = () => {
   return (
     <div>
       <Hero />
+      <MovingColors />
       <LogoMarquee />
       <AttackSurfaceOverview />
       <DataChaos />
       <AttackSurfaceFeatures />
       <Testimonial />
       <Resources />
+      <Banner
+        imageLeft="/icons/feature/f6.svg"
+        imageRight="/icons/feature/f6.svg"
+      />
       <ContactForm title="Uncover Hidden Threats with Attack Surface Intelligence" />
       <FAQSection faqs={ASFAQ} />
     </div>

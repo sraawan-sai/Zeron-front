@@ -22,7 +22,7 @@ const cards = [
 
 const AttackSurfaceOverview = () => {
   return (
-    <section className="relative min-h-screen w-full flex flex-col items-center bg-[#0A0118] px-6  2xl:px-24 py-16">
+    <section className="relative w-full flex flex-col items-center bg-[#0A0118] px-6  2xl:px-24 pt-20 pb-28">
       {/* Background Overlay */}
       <div
         className="absolute inset-0 z-0 bg-cover bg-center"
@@ -41,6 +41,9 @@ const AttackSurfaceOverview = () => {
           <h2 className="mt-16 text-white text-[3rem] leading-[52px] tracking-[-1px] max-w-[850px]">
             Unveiling the Hidden Layers of Your Digital Universe
           </h2>
+          <p className="mt-2 text-[#E4E2DF] text-[1.25rem] leading-[24px]">
+            Lorem Ipsum | Lorem Ipsum | Lorem Ipsum
+          </p>
           <p className="mt-6 text-[#E4E2DF]/70 text-[1.125rem] max-w-[820px] leading-[24px]">
             Every asset you own, every third-party integration, and every cloud
             deployment expands your attack surface. Zeron continuously scans,
