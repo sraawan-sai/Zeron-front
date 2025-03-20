@@ -17,7 +17,7 @@ const LogoMarquee = () => {
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.2 }}
-      className="w-full flex flex-col items-center gap-9 overflow-hidden pt-25 pb-16"
+      className="w-full flex flex-col items-center gap-9 overflow-hidden pt-25"
     >
       <p className="text-[1.5rem]">Trusted by</p>
 

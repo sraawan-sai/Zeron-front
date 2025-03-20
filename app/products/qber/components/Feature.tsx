@@ -4,27 +4,27 @@ import React from "react";
 const QberFeatures = () => {
   const features = [
     {
-      title: "Universal Asset Discovery",
+      title: " Industry-Specific Risk Intelligence",
       description:
-        "Continuously scan domains, IPs, and cloud assets to uncover your full attack surface.",
+        "Every industry faces unique cyber threats. QBER tailors risk quantification based on sector-specific vulnerabilities, ensuring precise and relevant insights.",
       image: "/images/crpmf2.svg",
     },
     {
-      title: "Intelligent Risk Prioritization",
+      title: "Business-Centric Cyber Risk Modeling",
       description:
-        "AI-driven insights rank threats by severity, exploitability, and financial impact.",
+        "From supply chains to internal processes, QBER factors in business operations, locations, and regulations, providing a holistic risk view tailored to your organization.",
       image: "/images/crpmf4.png",
     },
     {
-      title: "Real-Time Threat Intelligence",
+      title: "Data-Driven Cybersecurity Decisions",
       description:
-        "Get real-time alerts on newly exposed vulnerabilities and risks.",
+        "Eliminate guesswork with QBER’s quantification engine, which transforms complex cyber threats into clear, data-backed risk scores for informed decision-making.",
       image: "/images/crpmf3.svg",
     },
     {
-      title: "Attack Path Mapping",
+      title: "Risk Prioritization for Maximum Resilience",
       description:
-        "Visualize asset connections to identify weak points and attack vectors.",
+        "Not all risks are equal. QBER categorizes threats by severity—critical, high, medium, and low—so you can focus on mitigating the most impactful vulnerabilities first.",
       image: "/images/crpmf5.png",
     },
   ];
@@ -62,12 +62,12 @@ const QberFeatures = () => {
                 height={80}
                 className="w-full max-w-[100px] h-full max-h-[80px] object-contain object-center"
               />
-              <h3 className="text-white text-xl md:text-2xl font-semibold tracking-[-2%] leading-[130%]">
+              <h3 className="text-white text-[1.5rem] font-semibold tracking-[-2%] leading-[130%]">
                 {feature.title}
               </h3>
             </div>
-            <div className="flex-grow max-w-[290px]">
-              <p className="text-gray-400 text-base leading-relaxed">
+            <div className="flex-grow max-w-[480px]">
+              <p className="text-[#E4E2DF]/60 text-[1.125rem] leading-[26px]">
                 {feature.description}
               </p>
             </div>
