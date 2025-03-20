@@ -12,6 +12,7 @@ import FAQSection from "@/components/Sections/FAQ";
 import ContactForm from "@/components/Sections/ContactForm";
 import Resources from "@/components/Sections/Resources";
 import LogoMarquee from "@/components/Sections/Marquee";
+import Banner from "@/components/Sections/Banner";
 
 const crpm = () => {
   return (
@@ -27,6 +28,10 @@ const crpm = () => {
 
       <Testimonial />
       <Resources />
+      <Banner
+        imageLeft="/icons/feature/f3.svg"
+        imageRight="/icons/feature/f3.svg"
+      />
       <ContactForm title="Get in Touch - Strengthen Your Cyber Resilience" />
       <FAQSection faqs={CRPMFAQ} />
     </div>
