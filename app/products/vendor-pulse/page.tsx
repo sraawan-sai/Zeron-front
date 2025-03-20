@@ -5,11 +5,12 @@ import VendorUnique from "./components/Unique";
 import VendorFeatures from "./components/Feature";
 import Stats from "./components/Stats";
 import Resources from "@/components/Sections/Resources";
-import VendorBanner from "./components/Banner";
 import FAQSection from "@/components/Sections/FAQ";
 import ContactForm from "@/components/Sections/ContactForm";
 import { VendorFAQ } from "@/public/data/FAQData";
 import AnimatedSection from "./components/AnimatedSection";
+import Stack from "./components/Stack";
+import Banner from "@/components/Sections/Banner";
 
 const VendorPage = () => {
   return (
@@ -19,10 +20,14 @@ const VendorPage = () => {
       <AnimatedSection />
       <VendorOverview />
       <VendorUnique />
+      <Stack />
       <VendorFeatures />
       <Stats />
       <Resources />
-      <VendorBanner />
+      <Banner
+        imageLeft="/images/stripes.png"
+        imageRight="/images/stripes.png"
+      />
       <ContactForm title="Let's Talk Vendor Pulse – Simplify Vendor Risk Management" />
       <FAQSection faqs={VendorFAQ} />
     </div>

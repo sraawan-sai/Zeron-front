@@ -37,6 +37,15 @@ const Hero = () => {
 
   return (
     <div className="w-full min-h-screen relative overflow-hidden">
+      <motion.div className="absolute scale-150 md:scale-100 -bottom-40 md:-bottom-68 left-0 w-full flex items-center justify-center">
+        <Image
+          src="/images/products/vendor/DNA.svg"
+          alt=""
+          width={874}
+          height={500}
+          className="mix-blend-soft-light"
+        />
+      </motion.div>
       {/* Background Stars */}
       <motion.div
         initial={{ opacity: 0 }}
@@ -111,6 +120,15 @@ const Hero = () => {
             text="Request a Demo"
             href="/"
             className="px-5 py-2 text-[1rem] font-medium rounded-md cursor-pointer bg-linear-to-r from-[#1C76FD] to-[#5721F0]"
+          />
+        </motion.div>
+        <motion.div className="absolute bottom-20 w-full left-0 flex items-center justify-center">
+          <Image
+            src="/images/products/vendor/VendorPulse.svg"
+            alt=""
+            width={340}
+            height={150}
+            className="mix-blend-soft-light"
           />
         </motion.div>
       </motion.div>

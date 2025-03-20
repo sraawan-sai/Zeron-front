@@ -5,7 +5,7 @@ const AnimatedSection = () => {
     <div className="py-10 relative w-full flex items-center justify-between">
       <div className="w-full">
         <Image
-          src="/images/VendorLines.svg"
+          src="/images/products/vendor/VendorLines.svg"
           alt="VendorPulse"
           width={900}
           height={200}
@@ -13,7 +13,7 @@ const AnimatedSection = () => {
       </div>
       <div className="min-w-fit relative items-center justify-center">
         <Image
-          src="/images/VendorPulse.svg"
+          src="/images/products/vendor/VendorPulse.svg"
           alt="VendorPulse"
           width={195}
           height={90}
@@ -21,7 +21,7 @@ const AnimatedSection = () => {
       </div>
       <div className="w-full">
         <Image
-          src="/images/VendorLines.svg"
+          src="/images/products/vendor/VendorLines.svg"
           alt="VendorPulse"
           width={900}
           height={200}
