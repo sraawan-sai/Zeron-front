@@ -1,3 +1,5 @@
+//TODO: Stacking Cards IMAGE
+
 import Image from "next/image";
 
 const dataSections = [
@@ -5,25 +7,25 @@ const dataSections = [
     title: "Lorem Ipsum",
     description:
       "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-    imageSrc: "/images/chaos1.svg",
+    imageSrc: "/images/products/compliance/comp1.svg",
   },
   {
     title: "Lorem Ipsum",
     description:
       "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-    imageSrc: "/images/chaos1.svg",
+    imageSrc: "/images/products/compliance/comp2.svg",
   },
   {
     title: "Lorem Ipsum",
     description:
       "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-    imageSrc: "/images/chaos1.svg",
+    imageSrc: "/images/products/compliance/comp3.svg",
   },
   {
     title: "Lorem Ipsum",
     description:
       "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-    imageSrc: "/images/chaos1.svg",
+    imageSrc: "/images/products/compliance/comp4.svg",
   },
 ];
 

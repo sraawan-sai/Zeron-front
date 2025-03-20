@@ -25,7 +25,7 @@ const cards = [
 
 const ComplianceOverview: React.FC = () => {
   return (
-    <section className="relative min-h-screen w-full flex flex-col items-center bg-[#0A0118] px-6  2xl:px-24 py-16">
+    <section className="relative w-full flex flex-col items-center bg-[#0A0118] px-6  2xl:px-24 pt-20 pb-28">
       {/* Background Overlay */}
       <div
         className="absolute inset-0 z-0 bg-cover bg-right bg-no-repeat"
