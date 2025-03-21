@@ -2,7 +2,7 @@ import Link from "next/link";
 
 const PartnersDropdown = () => {
   const partnersLinks = [
-    { label: "MSPP", href: "/" },
+    { label: "MSSP", href: "/" },
     { label: "Technology Alliances", href: "/" },
     { label: "Cyber Risk Consultant", href: "/" },
     { label: "SI", href: "/" },
@@ -14,13 +14,14 @@ const PartnersDropdown = () => {
       <div className="flex flex-col w-full">
         <div className="my-[10px] flex flex-col gap-[10px] text-[0.875rem] text-white/50">
           {partnersLinks.map((link, index) => (
-            <Link
-              key={`product-${index}`}
-              href={link.href}
-              className="hover:text-white transition-colors"
-            >
-              {link.label}
-            </Link>
+            <div key={`product-${index}`} className="">
+              <Link
+                href={link.href}
+                className="hover:text-white hover:border-b border-white hover:px-2 hover:py-1 transition-all duration-300"
+              >
+                {link.label}
+              </Link>
+            </div>
           ))}
         </div>
       </div>

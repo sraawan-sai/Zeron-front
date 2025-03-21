@@ -8,9 +8,6 @@ const ProductsNavbar = () => {
     { label: "Attack Module", href: "/products/attack-module" },
     { label: "Compliance Module", href: "/products/compliance-module" },
     { label: "Defence Module", href: "/products/defense-module" },
-  ];
-
-  const vendorLinks = [
     { label: "Vendor Pulse", href: "/products/vendor-pulse" },
     { label: "Cyber Insure Pulse", href: "/products/insure-pulse" },
   ];
@@ -39,16 +36,17 @@ const ProductsNavbar = () => {
         </div>
         <div className="my-[10px] flex flex-col gap-[10px] text-[0.875rem] text-white/50">
           {productLinks.map((link, index) => (
-            <Link
-              key={`product-${index}`}
-              href={link.href}
-              className="hover:text-white transition-colors"
-            >
-              {link.label}
-            </Link>
+            <div key={`product-${index}`} className="">
+              <Link
+                href={link.href}
+                className="hover:text-white hover:border-b border-white hover:px-2 hover:py-1 transition-all duration-300"
+              >
+                {link.label}
+              </Link>
+            </div>
           ))}
         </div>
-        <div className="mt-[10px] flex flex-col gap-[10px] border-t border-[#403B60] text-[0.875rem] text-white/50 py-[10px]">
+        {/* <div className="mt-[10px] flex flex-col gap-[10px] border-t border-[#403B60] text-[0.875rem] text-white/50 py-[10px]">
           {vendorLinks.map((link, index) => (
             <Link
               key={`vendor-${index}`}
@@ -58,7 +56,7 @@ const ProductsNavbar = () => {
               {link.label}
             </Link>
           ))}
-        </div>
+        </div> */}
       </div>
 
       {/* Column 2: Solutions */}
@@ -68,13 +66,14 @@ const ProductsNavbar = () => {
         </div>
         <div className="flex flex-col gap-[10px] text-[0.875rem] text-white/50 mt-[10px]">
           {solutionsLinks.map((link, index) => (
-            <Link
-              key={`solutions-${index}`}
-              href={link.href}
-              className="hover:text-white transition-colors"
-            >
-              {link.label}
-            </Link>
+            <div key={`solutions-${index}`} className="">
+              <Link
+                href={link.href}
+                className="hover:text-white hover:border-b border-white hover:px-2 hover:py-1 transition-all duration-300"
+              >
+                {link.label}
+              </Link>
+            </div>
           ))}
         </div>
       </div>
@@ -86,13 +85,14 @@ const ProductsNavbar = () => {
         </div>
         <div className="flex flex-col gap-[10px] text-[0.875rem] text-white/50 mt-[10px]">
           {othersLinks.map((link, index) => (
-            <Link
-              key={`others-${index}`}
-              href={link.href}
-              className="hover:text-white transition-colors"
-            >
-              {link.label}
-            </Link>
+            <div key={`others-${index}`} className="">
+              <Link
+                href={link.href}
+                className="hover:text-white hover:border-b border-white hover:px-2 hover:py-1 transition-all duration-300"
+              >
+                {link.label}
+              </Link>
+            </div>
           ))}
         </div>
       </div>
