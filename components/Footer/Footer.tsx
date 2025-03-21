@@ -63,7 +63,7 @@ const AnimatedLink = ({ href, label }: { href: string; label: string }) => (
 
 function Footer() {
   return (
-    <div className="w-full flex flex-col pt-10 gap-6">
+    <div className="border-t border-[#DFE1EF40]/30 w-full flex flex-col pt-10 gap-6">
       <CustomSection className="flex-col px-4">
         <div className="grid grid-cols-1 xl:grid-cols-[1.25fr_4fr] gap-10 xl:gap-0">
           {/* Logo Section */}
@@ -84,9 +84,7 @@ function Footer() {
                   whileHover={{ y: -3 }}
                   transition={{ type: "spring", stiffness: 300, damping: 20 }}
                 >
-                  <Link href={link.href}>
-                    {<link.icon size={24} />}
-                  </Link>
+                  <Link href={link.href}>{<link.icon size={24} />}</Link>
                 </motion.div>
               ))}
             </div>
@@ -129,7 +127,8 @@ function Footer() {
               <p className="font-medium text-[1.25rem]">Headquarters</p>
               <div className="flex flex-col gap-2 text-[1rem] text-[#ffffff]/50">
                 <p className="leading-[18px]">
-                  409, ATL Corporate Park, Saki Vihar Rd, Saki Vihar, Chandivali, Mumbai
+                  409, ATL Corporate Park, Saki Vihar Rd, Saki Vihar,
+                  Chandivali, Mumbai
                 </p>
                 <p>+91 8927726336</p>
                 <p>sales@zeron.one</p>
@@ -157,12 +156,21 @@ function Footer() {
               </div>
               <div className="flex flex-col gap-2">
                 <div className="flex gap-6 text-sm">
-                  {["All Rights Reserved", "Privacy", "Trust Centre", "Media Guidelines", "Legal"].map((item, idx) => (
-                    <Link key={idx} href="/">{item}</Link>
+                  {[
+                    "All Rights Reserved",
+                    "Privacy",
+                    "Trust Centre",
+                    "Media Guidelines",
+                    "Legal",
+                  ].map((item, idx) => (
+                    <Link key={idx} href="/">
+                      {item}
+                    </Link>
                   ))}
                 </div>
                 <p className="text-[0.75rem] text-white text-center font-light tracking-[-0.18px]">
-                  ©2025 Zeron.one, All Rights Reserved. Teamcognito Solutions Pvt Ltd. All Rights Reserved.
+                  ©2025 Zeron.one, All Rights Reserved. Teamcognito Solutions
+                  Pvt Ltd. All Rights Reserved.
                 </p>
               </div>
             </div>
@@ -188,11 +196,19 @@ function Footer() {
                   </button>
                 </div>
                 <label className="flex items-start gap-2 cursor-pointer">
-                  <input type="checkbox" className="mt-[5px] cursor-pointer" required />
+                  <input
+                    type="checkbox"
+                    className="mt-[5px] cursor-pointer"
+                    required
+                  />
                   <div className="max-w-[500px] text-[#7A7A7A]">
                     <p>
-                      I understand and agree that my personal data will be processed according to the{" "}
-                      <Link href="/" className="text-[#0F6CBD]">Privacy Policy</Link> *
+                      I understand and agree that my personal data will be
+                      processed according to the{" "}
+                      <Link href="/" className="text-[#0F6CBD]">
+                        Privacy Policy
+                      </Link>{" "}
+                      *
                     </p>
                   </div>
                 </label>

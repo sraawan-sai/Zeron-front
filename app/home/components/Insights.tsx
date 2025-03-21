@@ -6,7 +6,7 @@ import Heading from "@/components/Layout/Heading";
 import { InsightData } from "@/public/data/insightData";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import BlueStars from "@/components/Layout/BlueStars";
+// import BlueStars from "@/components/Layout/BlueStars";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 50 },
@@ -39,10 +39,10 @@ const Insights = () => {
         <div className="absolute w-[100vw] min-h-screen bottom-0 clip-trap translate-y-[90%] bg-gradient-to-t from-[#0A0118] to-[#0A0118]/40 -z-1" />
         <div className="absolute w-[100vw] min-h-screen -bottom-20 clip-trap translate-y-[90%] -z-2">
           <section className="relative">
-            {/* <div id="stars"></div>
+            <div id="stars"></div>
             <div id="stars2"></div>
-            <div id="stars3"></div> */}
-            <BlueStars />
+            <div id="stars3"></div>
+            {/* <BlueStars /> */}
           </section>
         </div>
         <motion.div

@@ -19,14 +19,14 @@ const Blog = () => {
   const startIndex = currentPage * postsPerPage;
   const visibleBlogs = BlogData.slice(startIndex, startIndex + postsPerPage);
 
-  const handlePageChange = (page: number) => {
-    if (page === currentPage) return;
-    setAnimateBlogs(false);
-    setTimeout(() => {
-      setCurrentPage(page);
-      setAnimateBlogs(true);
-    }, fadeDuration);
-  };
+  // const handlePageChange = (page: number) => {
+  //   if (page === currentPage) return;
+  //   setAnimateBlogs(false);
+  //   setTimeout(() => {
+  //     setCurrentPage(page);
+  //     setAnimateBlogs(true);
+  //   }, fadeDuration);
+  // };
 
   useEffect(() => {
     const startInterval = () => {
@@ -108,7 +108,7 @@ const Blog = () => {
           </motion.div>
         ))}
       </div>
-      <div className="flex gap-1">
+      {/* <div className="flex gap-1">
         {Array.from({ length: totalPages }).map((_, index) => (
           <button
             key={index}
@@ -118,7 +118,7 @@ const Blog = () => {
             }`}
           />
         ))}
-      </div>
+      </div> */}
       <Link href="" className="group">
         <div className="flex items-center gap-1">
           <p className="group-hover:underline">Learn more</p>

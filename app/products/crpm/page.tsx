@@ -32,8 +32,8 @@ const crpm = () => {
         imageLeft="/icons/feature/f3.svg"
         imageRight="/icons/feature/f3.svg"
       />
-      <ContactForm title="Get in Touch - Strengthen Your Cyber Resilience" />
       <FAQSection faqs={CRPMFAQ} />
+      <ContactForm title="Get in Touch - Strengthen Your Cyber Resilience" />
     </div>
   );
 };
