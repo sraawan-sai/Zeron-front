@@ -2,9 +2,9 @@ import Link from "next/link";
 
 const ResourcesDropdown = () => {
   const resourceLinks = [
-    { label: "Podcast", href: "/" },
+    { label: "Podcast", href: "/resources/podcast" },
     { label: "Webinars", href: "/resources/webinar" },
-    { label: "Brochures", href: "/" },
+    { label: "Brochures", href: "/resources/podcast" },
     { label: "White Paper", href: "/" },
     { label: "Research Paper", href: "/" },
     { label: "Case Studies", href: "/" },
