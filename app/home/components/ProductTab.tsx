@@ -49,7 +49,7 @@ const fadeUpVariants = {
 
 const ProductTab = () => {
   return (
-    <div className="w-full flex flex-col gap-6">
+    <div className="w-full flex flex-col items-center justify-center gap-6">
       <div className="w-full h-[100px] md:h-[200px] relative flex items-center justify-normal md:justify-center overflow-hidden">
         {/* <div className="absolute -top-[50%]">
             <div className="w-60 h-60 rounded-full border border-white"></div>
@@ -68,7 +68,7 @@ const ProductTab = () => {
           <motion.div
             key={index}
             variants={fadeUpVariants}
-            className="group relative"
+            className="group relative w-full max-w-[174px]"
           >
             <div className="bg-[#0A0118] hover:bg-[#0A0118] group border border-[#292929] hover:border-[#6F58FF] rounded-[8px] flex flex-col items-center justify-between gap-10 py-4 px-4 xs:px-6 relative transition-colors duration-500 hover:shadow-[0_15px_40px_2px_#9747FF66]">
               <div
