@@ -5,11 +5,11 @@ import Hero from "./components/hero";
 import CyberSecurityHero from "./components/social";
 
 
-const WebinarPage = () => {
+const PodcastPage = () => {
   return (
     <div className="">
         <Hero/>
-        <UpcomingWebinars/>
+        {/* <UpcomingWebinars/> */}
         <OnDemandSection/>
         <CyberSecurityHero/>
         <SubscribeCTA/>
@@ -17,4 +17,4 @@ const WebinarPage = () => {
   );
 };
 
-export default WebinarPage;
+export default PodcastPage;
