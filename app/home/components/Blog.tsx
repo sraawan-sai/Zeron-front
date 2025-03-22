@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+// import { useEffect, useRef, useState } from "react";
 import { BlogData } from "@/public/data/blogData";
 import Image from "next/image";
 import Link from "next/link";
@@ -8,16 +8,16 @@ import { MdOutlineArrowForward } from "react-icons/md";
 import { motion } from "framer-motion"; // Import Framer Motion
 
 const Blog = () => {
-  const postsPerPage = 3;
-  const [currentPage, setCurrentPage] = useState(0);
-  const totalPages = Math.ceil(BlogData.length / postsPerPage);
-  const [isHovered, setIsHovered] = useState(false);
-  const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
-  const [animateBlogs, setAnimateBlogs] = useState(true);
-  const fadeDuration = 500;
+  // const postsPerPage = 3;
+  // const [currentPage, setCurrentPage] = useState(0);
+  // const totalPages = Math.ceil(BlogData.length / postsPerPage);
+  // const [isHovered, setIsHovered] = useState(false);
+  // const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
+  // const [animateBlogs, setAnimateBlogs] = useState(true);
+  // const fadeDuration = 500;
 
-  const startIndex = currentPage * postsPerPage;
-  const visibleBlogs = BlogData.slice(startIndex, startIndex + postsPerPage);
+  // const startIndex = currentPage * postsPerPage;
+  // const visibleBlogs = BlogData.slice(startIndex, startIndex + postsPerPage);
 
   // const handlePageChange = (page: number) => {
   //   if (page === currentPage) return;
@@ -28,33 +28,33 @@ const Blog = () => {
   //   }, fadeDuration);
   // };
 
-  useEffect(() => {
-    const startInterval = () => {
-      if (intervalRef.current === null) {
-        intervalRef.current = setInterval(() => {
-          setAnimateBlogs(false);
-          setTimeout(() => {
-            setCurrentPage((prevPage) => (prevPage + 1) % totalPages);
-            setAnimateBlogs(true);
-          }, fadeDuration);
-        }, 5000);
-      }
-    };
+  // useEffect(() => {
+  //   const startInterval = () => {
+  //     if (intervalRef.current === null) {
+  //       intervalRef.current = setInterval(() => {
+  //         setAnimateBlogs(false);
+  //         setTimeout(() => {
+  //           setCurrentPage((prevPage) => (prevPage + 1) % totalPages);
+  //           setAnimateBlogs(true);
+  //         }, fadeDuration);
+  //       }, 5000);
+  //     }
+  //   };
 
-    const stopInterval = () => {
-      if (intervalRef.current !== null) {
-        clearInterval(intervalRef.current);
-        intervalRef.current = null;
-      }
-    };
+  //   const stopInterval = () => {
+  //     if (intervalRef.current !== null) {
+  //       clearInterval(intervalRef.current);
+  //       intervalRef.current = null;
+  //     }
+  //   };
 
-    if (!isHovered) {
-      startInterval();
-    } else {
-      stopInterval();
-    }
-    return () => stopInterval();
-  }, [isHovered, totalPages]);
+  //   if (!isHovered) {
+  //     startInterval();
+  //   } else {
+  //     stopInterval();
+  //   }
+  //   return () => stopInterval();
+  // }, [isHovered, totalPages]);
 
   return (
     <motion.div
@@ -62,8 +62,8 @@ const Blog = () => {
       whileInView={{ opacity: 1, y: 0 }} // Fade in and move up when in view
       transition={{ duration: 0.8, ease: "easeOut" }} // Smooth transition
       viewport={{ once: true, amount: 0.2 }} // Trigger when 20% is visible
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
+      // onMouseEnter={() => setIsHovered(true)}
+      // onMouseLeave={() => setIsHovered(false)}
       className="flex flex-col items-center justify-center container mx-auto gap-12 px-4 py-20"
     >
       <div className="flex flex-col text-center items-center justify-center gap-4">
@@ -78,11 +78,11 @@ const Blog = () => {
         </div>
       </div>
       <div
-        className={`flex flex-col md:flex-row gap-3 transition-opacity duration-500 ${
-          animateBlogs ? "opacity-100" : "opacity-0"
-        }`}
+        className={`flex flex-col md:flex-row gap-3 transition-opacity duration-500
+          `}
+        // ${ animateBlogs ? "opacity-100" : "opacity-0"}
       >
-        {visibleBlogs.map((blog, index) => (
+        {BlogData.map((blog, index) => (
           <motion.div
             key={index}
             initial={{ opacity: 0, y: 50 }} // Individual fade-up for each blog card

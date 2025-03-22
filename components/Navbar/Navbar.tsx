@@ -53,7 +53,7 @@ function Navbar() {
         sidebarOpen ? "" : "backdrop-blur-[6px]"
       } w-full flex items-center justify-center py-3.5 transition-all duration-500 bg-[#040C26]/23 border-b border-[#6100FF]/10 relative`}
     >
-      <CustomSection className="">
+      <CustomSection className="md:px-5.5!">
         <div className="w-full grid grid-cols-2 md:grid-cols-3">
           {/* GRID 1: Logo */}
           <Link href="/" className="flex items-center">
@@ -78,14 +78,14 @@ function Navbar() {
                       </p>
                       {/* Dropdown for Products */}
                       <div
-                        className={`absolute top-full left-[23%] -translate-x-[23%] 2xl:left-1/2 2xl:-translate-x-1/2 w-[1000px] cursor-default transition-opacity duration-300 ${
+                        className={`absolute top-full left-[30%] -translate-x-[30%] 2xl:left-1/2 2xl:-translate-x-1/2 w-[750px] cursor-default transition-opacity duration-300 ${
                           productsDropdownOpen
                             ? "opacity-100"
                             : "opacity-0 pointer-events-none"
                         }`}
                       >
                         <div
-                          className={`px-16 py-6 mt-9 relative w-full bg-[#000D38] border-[0.5px] border-[#3B24B2] rounded-[8px] drop-shadow-[0_0_15px_rgba(184,57,149,0.1)] transition-transform duration-500 ${
+                          className={`px-8 py-6 mt-9 relative w-full bg-[#000D38] border-[0.5px] border-[#3B24B2] rounded-[8px] drop-shadow-[0_0_15px_rgba(184,57,149,0.1)] transition-transform duration-500 ${
                             productsDropdownOpen
                               ? "translate-y-0"
                               : "-translate-y-4"
@@ -106,14 +106,14 @@ function Navbar() {
                       </p>
                       {/* Dropdown for Company */}
                       <div
-                        className={`absolute top-full left-[23%] -translate-x-[23%] 2xl:left-1/2 2xl:-translate-x-1/2 w-[1000px] cursor-default transition-opacity duration-300 ${
+                        className={`absolute top-full left-[40%] -translate-x-[40%] 2xl:left-1/2 2xl:-translate-x-1/2 w-[750px] cursor-default transition-opacity duration-300 ${
                           companyDropdownOpen
                             ? "opacity-100"
                             : "opacity-0 pointer-events-none"
                         }`}
                       >
                         <div
-                          className={`px-16 py-6 mt-9 relative w-full bg-[#000D38] border-[0.5px] border-[#3B24B2] rounded-[8px] drop-shadow-[0_0_15px_rgba(184,57,149,0.1)] transition-transform duration-500 ${
+                          className={`px-8 py-6 mt-9 relative w-full bg-[#000D38] border-[0.5px] border-[#3B24B2] rounded-[8px] drop-shadow-[0_0_15px_rgba(184,57,149,0.1)] transition-transform duration-500 ${
                             companyDropdownOpen
                               ? "translate-y-0"
                               : "-translate-y-4"

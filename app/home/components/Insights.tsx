@@ -80,6 +80,12 @@ const Insights = () => {
           >
             <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[calc(100%+3px)] h-[calc(100%+3px)] rounded-[16px] -z-1 group-hover:bg-gradient-to-r from-[#1C76FD]/30 to-[#5721F0] transition-all duration-400" />
             <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[calc(100%+3px)] h-[calc(100%+3px)] rounded-[16px] -z-1 purplebg" />
+            <div className="absolute inset-0 p-[1px] overflow-hidden rounded-[16px]">
+              <div
+                className="group-hover:scale-120 group-hover:translate-y-[10%] group-hover:translate-x-[10%] bg-cover bg-center w-full h-full transition-all duration-500 ease-out"
+                style={{ backgroundImage: `url(${insight.img})` }}
+              ></div>
+            </div>
             <div className="w-full h-full min-h-[150px] relative ">
               <Image
                 src="/images/gridlines.png"
@@ -88,7 +94,7 @@ const Insights = () => {
                 className="object-center object-cover"
               />
             </div>
-            <div className="px-4 flex flex-col">
+            <div className="px-4 flex flex-col z-1">
               <p className={`font-medium text-[1.125rem] tracking-[-0.36px]`}>
                 {insight.title}
               </p>
