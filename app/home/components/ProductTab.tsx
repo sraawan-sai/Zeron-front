@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
+import HalfCircle from "@/components/SVG/HalfCIrcle";
 
 const cardData = [
   {
@@ -51,9 +52,10 @@ const ProductTab = () => {
     <div className="">
       <div className="flex flex-col gap-6">
         <div className="h-[200px] relative flex items-center justify-center overflow-hidden">
-          <div className="absolute -top-[50%]">
+          {/* <div className="absolute -top-[50%]">
             <div className="w-60 h-60 rounded-full border border-white"></div>
-          </div>
+          </div> */}
+          <HalfCircle />
         </div>
         {/* Cards with Staggered Animation */}
         <motion.div
