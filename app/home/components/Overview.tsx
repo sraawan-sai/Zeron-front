@@ -35,6 +35,7 @@ function Overview() {
           initial="hidden"
           animate="visible"
           exit="exit"
+          className="w-full flex items-center justify-center"
         >
           <ProductTab />
         </motion.div>
@@ -74,7 +75,7 @@ function Overview() {
 
   return (
     <div className="relative w-full flex flex-col items-center justify-center py-20">
-      <CustomSection className="flex-col items-center justify-center gap-16">
+      <CustomSection className="flex-col items-center justify-center gap-10 md:gap-16">
         {/* Animated Heading */}
         <motion.div
           variants={headingVariants}
@@ -92,7 +93,7 @@ function Overview() {
 
         {/* Tab Navigation */}
         <div className="w-full">
-          <div className="flex items-center gap-6 justify-center">
+          <div className="flex items-center gap-2 md:gap-6 justify-center">
             {tabs.map((tab) => (
               <div
                 key={tab}
@@ -103,7 +104,9 @@ function Overview() {
                     : "font-light"
                 }`}
               >
-                <p className="text-[1.5rem] leading-[17.5px]">{tab}</p>
+                <p className="text-[1rem] md:text-[1.5rem] leading-[17.5px]">
+                  {tab}
+                </p>
               </div>
             ))}
           </div>
