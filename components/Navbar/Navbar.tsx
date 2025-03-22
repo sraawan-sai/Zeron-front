@@ -53,7 +53,7 @@ function Navbar() {
         sidebarOpen ? "" : "backdrop-blur-[6px]"
       } w-full flex items-center justify-center py-3.5 transition-all duration-500 bg-[#040C26]/23 border-b border-[#6100FF]/10 relative`}
     >
-      <CustomSection className="">
+      <CustomSection className="md:px-5.5!">
         <div className="w-full grid grid-cols-2 md:grid-cols-3">
           {/* GRID 1: Logo */}
           <Link href="/" className="flex items-center">

@@ -11,7 +11,7 @@ const CustomSection: React.FC<CustomSectionProps> = ({
 }) => {
   return (
     <section
-      className={`${className} max-w-[2560px] w-full flex px-4 md:px-5.5`}
+      className={`${className} max-w-[2560px] w-full flex px-4 md:px-12.5`}
     >
       {children}
     </section>
