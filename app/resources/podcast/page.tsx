@@ -1,6 +1,6 @@
 import OnDemandSection from "./components/OnDemandSection";
 import SubscribeCTA from "./components/Subscribe";
-import UpcomingWebinars from "./components/UpcomingWebinars";
+// import UpcomingWebinars from "./components/UpcomingWebinars";
 import Hero from "./components/hero";
 import CyberSecurityHero from "./components/social";
 
