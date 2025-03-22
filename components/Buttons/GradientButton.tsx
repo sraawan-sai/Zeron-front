@@ -5,7 +5,7 @@ import { cn } from "@/lib/utils";
 import Link from "next/link";
 
 type ButtonProps = {
-  text: string;
+  text:React.ReactNode ;
   onClick?: () => void;
   className?: string;
   disabled?: boolean;
