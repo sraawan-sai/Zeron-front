@@ -1,6 +1,6 @@
 const HalfCircle = () => {
   return (
-    <div className="">
+    <div className="w-full flex items-center justify-center">
       <svg
         width="660"
         height="170"
