@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Image from 'next/image';
+import { motion } from 'framer-motion';
 
 const webinarData = [
   {
@@ -43,9 +44,13 @@ const UpcomingWebinars = () => {
 
         {/* Cards Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-[24px] gap-y-[44px] w-full justify-items-center">
-          {webinarData.map((item) => (
-            <div
+          {webinarData.map((item, index) => (
+            <motion.div
               key={item.id}
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.6, delay: index * 0.1, ease: 'easeOut' }}
               className="w-full max-w-[364px] h-auto flex flex-col px-4 py-6 gap-[28px] border border-white/[0.35] rounded-[12px]"
             >
               {/* Image */}
@@ -81,7 +86,7 @@ const UpcomingWebinars = () => {
                   {item.excerpt}
                 </p>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
