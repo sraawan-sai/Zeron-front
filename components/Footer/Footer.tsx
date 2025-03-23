@@ -63,7 +63,7 @@ const AnimatedLink = ({ href, label }: { href: string; label: string }) => (
 
 function Footer() {
   return (
-    <div className="border-t border-[#DFE1EF40]/30 w-full flex flex-col pt-10 gap-6">
+    <div className="border-t border-[#DFE1EF40]/100 w-full flex flex-col pt-10 gap-6">
       <CustomSection className="flex-col">
         <div className="grid grid-cols-1 xl:grid-cols-[1.25fr_4fr] gap-10 xl:gap-0">
           {/* Logo Section */}
