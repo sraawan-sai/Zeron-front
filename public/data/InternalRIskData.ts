@@ -4,7 +4,7 @@ export const riskGroups = [
       mainTitle: "Insider Threat Detection",
       subTitle: "Detect anomalies in user behavior",
       description:
-        "Identify anomalous user behavior and prevent internal breaches.",
+        "Internal vulnerabilities can be just as damaging as external threats. Our internal risk modules help you monitor, assess, and mitigate insider threats, misconfigurations, and security gaps within your",
       list: [
         {
           icon: "/icons/diamondIcon.png",
