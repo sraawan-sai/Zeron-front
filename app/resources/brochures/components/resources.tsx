@@ -46,7 +46,7 @@ const resources = [
 ];
 
 export default function FeaturedResources() {
-  const [activeVideo, setActiveVideo] = useState<string | null>(null);
+  const [] = useState<string | null>(null);
 
   return (
     <section className="w-full bg-[#0A0118] py-24 px-4 md:px-10 lg:px-36">

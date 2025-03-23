@@ -1,7 +1,7 @@
 'use client';
 
 import React from "react";
-import GradientButton from "@/components/Buttons/GradientButton";
+// import GradientButton from "@/components/Buttons/GradientButton";
 import { motion } from "framer-motion";
 
 const Hero = () => {
