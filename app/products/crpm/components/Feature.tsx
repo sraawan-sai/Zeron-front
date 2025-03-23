@@ -1,3 +1,5 @@
+import CustomSection from "@/components/Layout/CustomSection";
+import Image from "next/image";
 import React from "react";
 
 const CyberRiskFeatures: React.FC = () => {
@@ -50,38 +52,41 @@ const CyberRiskFeatures: React.FC = () => {
             "linear-gradient(180deg, #0A0118 0%, rgba(0, 0, 0, 0) 100%), url('/images/crpmfeature.jpg')",
         }}
       ></div>
+      <CustomSection className="flex-col items-center justify-center gap-22.5">
+        {/* Title Section */}
+        <h2 className="relative z-10 text-white text-[3rem] text-center leading-[52px] tracking-[-1px] max-w-5xl">
+          Navigate Cyber Risks with Data-Driven Precision
+        </h2>
 
-      {/* Title Section */}
-      <h2 className="relative z-10 text-white text-[3rem] text-center leading-[52px] tracking-[-1px] max-w-5xl">
-        Navigate Cyber Risks with Data-Driven Precision
-      </h2>
-
-      {/* Feature Cards */}
-      <div className="relative z-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 max-w-7xl w-full">
-        {features.map((feature, idx) => (
-          <div
-            key={idx}
-            className="flex flex-col items-center text-center p-8 gap-6  backdrop-blur-xl rounded-2xl shadow-lg"
-          >
-            {/* Icon */}
-            <div className="w-20 h-20 flex justify-center items-center">
-              <img
-                src={feature.icon}
-                alt={feature.title}
-                className="w-full h-full object-contain"
-              />
+        {/* Feature Cards */}
+        <div className="relative z-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
+          {features.map((feature, idx) => (
+            <div
+              key={idx}
+              className="max-w-[380px] flex flex-col items-center text-center px-2 py-8 gap-6  backdrop-blur-xl rounded-2xl shadow-lg"
+            >
+              {/* Icon */}
+              <div className="w-20 h-20 flex justify-center items-center">
+                <Image
+                  src={feature.icon}
+                  alt={feature.title}
+                  width={100}
+                  height={100}
+                  className="w-full h-full object-contain"
+                />
+              </div>
+              {/* Title */}
+              <h3 className="text-white text-2xl font-semibold leading-[130%] tracking-[-2%]">
+                {feature.title}
+              </h3>
+              {/* Description */}
+              <p className="text-[#E4E2DF]/60 text-[1.125rem] leading-[26px]">
+                {feature.description}
+              </p>
             </div>
-            {/* Title */}
-            <h3 className="text-white text-2xl font-semibold leading-snug">
-              {feature.title}
-            </h3>
-            {/* Description */}
-            <p className="text-gray-300 text-base leading-relaxed">
-              {feature.description}
-            </p>
-          </div>
-        ))}
-      </div>
+          ))}
+        </div>
+      </CustomSection>
     </section>
   );
 };
