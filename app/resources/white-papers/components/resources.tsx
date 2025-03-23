@@ -94,13 +94,14 @@ export default function FeaturedResources() {
                 {resource.category}
               </span>
               </div>
-              <h4 className="w-[514px] h-[84px] text-white font-poppins font-normal text-[32px] leading-[130%] tracking-[-0.02em]">
-                   {resource.title}
-              </h4>
+              <h4 className="text-white font-poppins font-normal text-[24px] sm:text-[28px] md:text-[32px] leading-[130%] tracking-[-0.02em] break-words">
+  {resource.title}
+</h4>
 
-              <p className="w-[514px] h-[87px] text-white/60  font-normal text-[18px] leading-[160%] tracking-[-0.02em] text-justify">
-                  {resource.description}
-              </p>
+<p className="text-white/60 font-normal text-[16px] md:text-[18px] leading-[160%] tracking-[-0.02em] text-justify break-words">
+  {resource.description}
+</p>
+
 
               </div>
               <div className="pb-[10%]">
