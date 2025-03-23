@@ -7,8 +7,8 @@ const ResourcesDropdown = () => {
     { label: "Brochures", href: "/resources/brochures" },
     { label: "White Paper", href: "/resources/white-papers" },
     { label: "Research Paper", href: "/resources/research-papers" },
-    { label: "Case Studies", href: "/" },
-    { label: "FAQ", href: "/" },
+    { label: "Case Studies", href: "/resources/case-studies" },
+    { label: "FAQ", href: "/resources/faq" },
   ];
 
   return (
