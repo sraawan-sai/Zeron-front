@@ -74,35 +74,35 @@ export default function FeaturedResources() {
               className="flex flex-col border border-white/30 rounded-2xl p-6 gap-7"
             >
               <div
-                className="w-full h-[586px] sm:h-[400px] md:h-[586px] rounded-lg bg-cover bg-center relative"
+                className="w-full h-[300px] sm:h-[400px] md:h-[586px] rounded-lg bg-cover bg-center relative"
                 style={{ backgroundImage: `url(${resource.image})` }}
               >
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <h3 className="text-white text-[36px] sm:text-[56px] md:text-[76px] leading-[120%] text-center font-semibold uppercase tracking-[-0.03em] mix-blend-soft-light">
+                  <h3 className="text-white text-[28px] sm:text-[56px] md:text-[76px] leading-[120%] text-center font-semibold uppercase tracking-[-0.03em] mix-blend-soft-light">
                     Informed Decision Making
                   </h3>
                 </div>
               </div>
               <div className="flex flex-col gap-2">
-              <div className="flex flex-row items-center gap-[12px] w-[191px] h-[18px]">
-               <span className="text-[#0F6CBD]  text-[15px] font-medium uppercase tracking-[-0.03em] w-[86px] h-[18px]">
-                  DATA SHEET
-               </span>
-               <div className="w-[6px] h-[6px] bg-white rounded-full" />
-                 <span className="text-white/60  text-[15px] font-medium uppercase tracking-[-0.03em] w-[75px] h-[18px]">
-                {resource.category}
-              </span>
-              </div>
-              <h4 className="w-[514px] h-[84px] text-white font-poppins font-normal text-[32px] leading-[130%] tracking-[-0.02em]">
-               {resource.title}
-              </h4>
+                <div className="flex flex-row items-center gap-[12px]">
+                  <span className="text-[#0F6CBD] text-[14px] sm:text-[15px] font-medium uppercase tracking-[-0.03em]">
+                    DATA SHEET
+                  </span>
+                  <div className="w-[6px] h-[6px] bg-white rounded-full" />
+                  <span className="text-white/60 text-[14px] sm:text-[15px] font-medium uppercase tracking-[-0.03em]">
+                    {resource.category}
+                  </span>
+                </div>
+                <h4 className="text-white font-poppins font-normal text-[24px] sm:text-[28px] md:text-[32px] leading-[130%] tracking-[-0.02em] break-words">
+  {resource.title}
+</h4>
 
-              <p className="w-[514px] h-[87px] text-white/60 font-normal text-[18px] leading-[160%] tracking-[-0.02em] text-justify">
-              {resource.description}
-              </p>
+<p className="text-white/60 font-normal text-[16px] md:text-[18px] leading-[160%] tracking-[-0.02em] text-justify break-words">
+  {resource.description}
+</p>
 
               </div>
-              <div className="pb-[10%]">
+              <div className="pb-10 sm:pb-[10%]">
                 <a
                   href={resource.pdfUrl}
                   download
