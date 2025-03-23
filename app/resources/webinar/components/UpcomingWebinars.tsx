@@ -67,11 +67,11 @@ const UpcomingWebinars = () => {
               <div className="w-full flex flex-col gap-[10px]">
                 {/* Meta */}
                 <div className="flex items-center gap-[8px] h-[12px]">
-                  <span className="text-[#0F6CBD] font-inter text-[10px] font-medium leading-[120%] tracking-[-0.03em] uppercase">
+                  <span className="text-[#0F6CBD]  text-[10px] font-medium leading-[120%] tracking-[-0.03em] uppercase">
                     News
                   </span>
                   <div className="w-[4px] h-[4px] bg-white rounded-full" />
-                  <span className="text-white/60 font-inter text-[10px] font-medium leading-[120%] tracking-[-0.03em] uppercase">
+                  <span className="text-white/60  text-[10px] font-medium leading-[120%] tracking-[-0.03em] uppercase">
                     {item.date}
                   </span>
                 </div>
@@ -81,8 +81,8 @@ const UpcomingWebinars = () => {
                   {item.title}
                 </h3>
 
-                {/* Description */}
-                <p className="text-white/60 font-inter text-[16px] sm:text-[17px] md:text-[18px] leading-[160%] tracking-[-0.02em] text-justify">
+                {/* Descriptio */}
+                <p className="text-white/60  text-[16px] sm:text-[17px] md:text-[18px] leading-[160%] tracking-[-0.02em] text-justify">
                   {item.excerpt}
                 </p>
               </div>

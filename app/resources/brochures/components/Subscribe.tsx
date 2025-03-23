@@ -29,7 +29,7 @@ const SubscribeCTA = () => {
           <h2 className="text-white font-poppins text-[32px] md:text-[48px] leading-[130%] tracking-[-0.02em]">
             Get the Latest Cyber Insights Delivered
           </h2>
-          <p className="text-white/60  text-[16px] leading-[160%] tracking-[-0.02em] max-w-[460px]">
+          <p className="text-white/60 text-[16px] leading-[160%] tracking-[-0.02em] max-w-[460px]">
             At a ipsum bibendum non massa. Tristique tristique odio sed eget eget mauris non et.
             Aliquam erat neque ornare sed facilisis.
           </p>
