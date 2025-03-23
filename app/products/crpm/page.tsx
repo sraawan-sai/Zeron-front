@@ -28,11 +28,11 @@ const crpm = () => {
 
       <Testimonial />
       <Resources />
+      <FAQSection faqs={CRPMFAQ} />
       <Banner
         imageLeft="/icons/feature/f3.svg"
         imageRight="/icons/feature/f3.svg"
       />
-      <FAQSection faqs={CRPMFAQ} />
       <ContactForm title="Get in Touch - Strengthen Your Cyber Resilience" />
     </div>
   );

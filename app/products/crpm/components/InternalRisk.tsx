@@ -68,7 +68,7 @@ const InternalRisk = () => {
       <CustomSection>
         <div className="w-full h-full grid grid-cols-1 lg:grid-cols-[1fr_3fr] py-32">
           <div className=""></div>
-          <div className="w-full flex flex-col items-center">
+          <div className="w-full flex flex-col items-center justify-center">
             <p className="font-medium text-[1.5rem] leading-[52px] tracking-[-1px]">
               Internal Risk | Zeron Defense
             </p>
@@ -85,9 +85,9 @@ const InternalRisk = () => {
                 <p className="mt-8 text-[3rem] leading-[52px] tracking-[-1px] text-center max-w-[700px]">
                   {activeRisk.mainTitle}
                 </p>
-                <p className="mt-2 text-[#E4E2DF]/70 text-[1.25rem] leading-[24px] max-w-[1000px] text-center">
+                {/* <p className="mt-2 text-[#E4E2DF]/70 text-[1.25rem] leading-[24px] max-w-[1000px] text-center">
                   {activeRisk.subTitle}
-                </p>
+                </p> */}
                 <p className="mt-2 text-[#E4E2DF]/70 text-[1.25rem] leading-[24px] max-w-[1000px] text-center">
                   {activeRisk.description}
                 </p>
