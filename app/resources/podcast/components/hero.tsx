@@ -92,12 +92,12 @@ const Hero = () => {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.3 }}
         transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
-        className="w-full lg:w-auto flex justify-center items-center lg:absolute lg:right-[40px] lg:top-1/2 lg:-translate-y-1/2 px-4 lg:px-0 mt-12 sm:mt-16 md:mt-20 lg:mt-0"
+        className="w-full lg:w-auto flex justify-center items-center lg:absolute lg:right-[50px] lg:top-80 lg:-translate-y-1/2 px-4 lg:px-0 mt-12 sm:mt-16 md:mt-20 lg:mt-0"
       >
         <img
-          src="/images/webinar/webinarhero.png"
+          src="/images/podcast/hero.png"
           alt="Visual"
-          className="max-w-[280px] sm:max-w-[350px] md:max-w-[420px] lg:max-w-[550px] h-auto object-contain"
+          className="max-w-[380px] sm:max-w-[450px] md:max-w-[420px] lg:max-w-[650px] h-auto object-contain"
         />
       </motion.div>
     </div>

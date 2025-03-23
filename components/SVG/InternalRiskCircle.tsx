@@ -66,7 +66,7 @@ const InternalRiskCircle = ({
                   stroke="url(#paint0_linear_1638_8755)"
                   strokeWidth="17.4429"
                   strokeDasharray="1.45 8.17"
-                  className="animate-dash"
+                  className="animate-dash-reverse"
                 />
               </g>
             </g>

@@ -2,11 +2,11 @@ import Link from "next/link";
 
 const ResourcesDropdown = () => {
   const resourceLinks = [
-    { label: "Podcast", href: "/" },
-    { label: "Webinars", href: "/" },
-    { label: "Brochures", href: "/" },
-    { label: "White Paper", href: "/" },
-    { label: "Research Paper", href: "/" },
+    { label: "Podcast", href: "/resources/podcast" },
+    { label: "Webinars", href: "/resources/webinar" },
+    { label: "Brochures", href: "/resources/brochures" },
+    { label: "White Paper", href: "/resources/white-papers" },
+    { label: "Research Paper", href: "/resources/research-papers" },
     { label: "Case Studies", href: "/" },
     { label: "FAQ", href: "/" },
   ];

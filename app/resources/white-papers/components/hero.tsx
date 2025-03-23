@@ -19,7 +19,7 @@ const Hero = () => {
         className="w-full lg:w-[608px] flex flex-col justify-center items-start gap-4 lg:gap-[6px] mt-6 lg:mt-0 px-2 lg:px-0 lg:absolute lg:left-[111px] lg:top-[calc(52%-162.5px+50px)]"
       >
         {/* Tagline & Date */}
-        <div className="flex flex-wrap items-center gap-2 lg:gap-[9.2px] w-full lg:w-[291px]">
+        {/* <div className="flex flex-wrap items-center gap-2 lg:gap-[9.2px] w-full lg:w-[291px]">
           <span className="text-[#4285F4] font-poppins font-medium text-sm lg:text-[13.8px] leading-[120%] tracking-[-0.03em] capitalize">
             Upcoming
           </span>
@@ -31,7 +31,7 @@ const Hero = () => {
           <span className="text-white font-poppins font-medium text-sm lg:text-[13.8px] leading-[120%] tracking-[-0.03em] capitalize">
             26 January 2026
           </span>
-        </div>
+        </div> */}
 
         {/* Heading */}
         <h1 className="text-white font-medium text-[32px] lg:text-[46px] leading-[42px] lg:leading-[66px] tracking-[-0.0625rem] font-poppins">
@@ -49,7 +49,7 @@ const Hero = () => {
         </p>
 
         {/* Button */}
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -83,7 +83,7 @@ const Hero = () => {
             href="/"
             className="w-[144px] h-[56px] px-[24px] rounded-[8px] bg-gradient-to-r from-[#1C76FD] to-[#5721F0]"
           />
-        </motion.div>
+        </motion.div> */}
       </motion.div>
 
       {/* Right Image with Fade-Up */}
@@ -92,10 +92,10 @@ const Hero = () => {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.3 }}
         transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
-        className="w-full lg:w-auto flex justify-center items-center lg:absolute lg:right-[40px] lg:top-1/2 lg:-translate-y-1/2 px-4 lg:px-0 mt-12 sm:mt-16 md:mt-20 lg:mt-0"
+        className="w-full lg:w-auto flex justify-center items-center lg:absolute lg:right-[60px] lg:top-1/2 lg:-translate-y-1/2 px-2 h-[50%] lg:px-0 mt-12 sm:mt-16 md:mt-20 lg:mt-0"
       >
         <img
-          src="/images/webinar/webinarhero.png"
+          src="/images/whitepapers/hero.png"
           alt="Visual"
           className="max-w-[280px] sm:max-w-[350px] md:max-w-[420px] lg:max-w-[550px] h-auto object-contain"
         />

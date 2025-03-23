@@ -81,7 +81,7 @@ const UpcomingWebinars = () => {
                   {item.title}
                 </h3>
 
-                {/* Descriptio */}
+                {/* Description */}
                 <p className="text-white/60  text-[16px] sm:text-[17px] md:text-[18px] leading-[160%] tracking-[-0.02em] text-justify">
                   {item.excerpt}
                 </p>

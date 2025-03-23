@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React from "react";
 
 const CyberRiskOverview: React.FC = () => {
@@ -21,7 +22,7 @@ const CyberRiskOverview: React.FC = () => {
   ];
 
   return (
-    <section className="relative w-full min-h-screen flex flex-col justify-center items-center bg-[#0A0118] px-6 2xl:px-24 py-16">
+    <section className="relative w-full flex flex-col justify-center items-center bg-[#0A0118] px-6 2xl:px-24 py-22.5">
       {/* Background Overlay */}
       <div
         className="absolute inset-0 z-0 bg-cover bg-center"
@@ -32,11 +33,17 @@ const CyberRiskOverview: React.FC = () => {
       ></div>
 
       {/* Content Wrapper */}
-      <div className="relative z-10 flex flex-col items-center gap-8 text-center">
-        <p className="text-2xl font-medium tracking-[-1px]"> CRPM Overview</p>
+      <div className="relative z-10 flex flex-col items-center gap-4 text-center">
+        <p className="text-2xl font-medium tracking-[-1px] mb-4">
+          {" "}
+          CRPM Overview
+        </p>
         <h2 className="text-white text-[3rem] leading-[52px] tracking-[-1px]">
           Master Your Cyber Risk Universe with Precision
         </h2>
+        <p className="text-[#E4E2DF] text-[1.125rem] max-w-[1050px] leading-[24px]">
+          Lorem Ipsum | Lorem Ipsum | Lorem Ipsum
+        </p>
         <p className="text-[#E4E2DF]/70 text-[1.125rem] max-w-[1050px] leading-[24px]">
           Cybersecurity isn’t just about defense—it’s about informed decisions.
           Zeron’s CRPM delivers a 360° view of your risk posture, integrating
@@ -50,19 +57,21 @@ const CyberRiskOverview: React.FC = () => {
           {cards.map((card, idx) => (
             <div
               key={idx}
-              className="w-full max-w-[370px] flex flex-col items-center text-center px-6 py-8 gap-6 bg-white/10 rounded-lg backdrop-blur-xl shadow-lg"
+              className="w-full max-w-[370px] flex flex-col items-center text-center px-7 py-19 gap-6 bg-white/10 rounded-lg backdrop-blur-lg shadow-lg"
             >
               <div className="w-24 h-24 flex justify-center items-center rounded-full shadow-md">
-                <img
+                <Image
                   src={card.icon}
                   alt={card.title}
+                  width={96}
+                  height={96}
                   className="w-20 h-20 object-contain"
                 />
               </div>
-              <h3 className="text-white text-2xl font-semibold">
+              <h3 className="text-white text-[1.5rem] font-semibold leading-[130%]">
                 {card.title}
               </h3>
-              <p className="text-[#E4E2DF] leading-[26px]]">
+              <p className="text-[#E4E2DF] leading-[26px]">
                 {card.description}
               </p>
             </div>

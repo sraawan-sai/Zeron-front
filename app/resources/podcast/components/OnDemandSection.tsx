@@ -13,7 +13,7 @@ const onDemandData = [
     title: 'Lorem Ipsum is simply dummy text of the printing demi text',
     excerpt:
       "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
-    image: '/images/webinar/1.jpg',
+    image: '/images/lineargradientbg.png',
     videoUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
   },
   {
@@ -22,7 +22,7 @@ const onDemandData = [
     title: 'Lorem Ipsum is simply dummy text of the printing demi text',
     excerpt:
       "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
-    image: '/images/webinar/2.jpg',
+    image: '/images/lineargradientbg.png',
     videoUrl: 'https://www.youtube.com/watch?v=tgbNymZ7vqY',
   },
   {
@@ -31,7 +31,7 @@ const onDemandData = [
     title: 'Lorem Ipsum is simply dummy text of the printing demi text',
     excerpt:
       "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
-    image: '/images/webinar/3.jpg',
+    image: '/images/lineargradientbg.png',
     videoUrl: 'https://www.youtube.com/watch?v=ysz5S6PUM-U',
   },
   {
@@ -40,7 +40,7 @@ const onDemandData = [
     title: 'Lorem Ipsum is simply dummy text of the printing demi text',
     excerpt:
       "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
-    image: '/images/webinar/4.jpg',
+    image: '/images/lineargradientbg.png',
     videoUrl: 'https://www.youtube.com/watch?v=jNQXAC9IVRw',
   },
   {
@@ -124,19 +124,61 @@ const OnDemandSection = () => {
               className="w-full flex flex-col p-[16px] gap-[28px] border border-white/35 rounded-[16px]"
             >
               {/* Image */}
-              <div className="relative w-full h-[250px] rounded-[8px] overflow-hidden">
-                <Image
-                  src={item.image}
-                  alt="On-Demand Thumbnail"
-                  fill
-                  className="object-cover rounded-[8px]"
-                />
-              </div>
+{/* Image with Play Icon Overlay */}
+<div className="relative w-full h-[250px] rounded-[8px] overflow-hidden group cursor-pointer" onClick={() => setActiveVideo(item.videoUrl)}>
+  <Image
+    src={item.image}
+    alt="On-Demand Thumbnail"
+    fill
+    className="object-cover rounded-[8px]"
+  />
+  {/* Play Icon Overlay */}
+  <div className="absolute inset-0 flex items-center justify-center">
+  <svg width="130" height="130" viewBox="0 0 130 130" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <g filter="url(#playIconFilter)">
+    <rect x="10" y="8" width="110" height="110" rx="55" fill="white" fillOpacity="0.1" shapeRendering="crispEdges" />
+    <rect x="10.5" y="8.5" width="109" height="109" rx="54.5" stroke="white" shapeRendering="crispEdges" />
+    <path d="M81 63L57 76.8564V49.1436L81 63Z" fill="white" />
+  </g>
+  <defs>
+    <filter
+      id="playIconFilter"
+      x="-5"
+      y="-7"
+      width="140"
+      height="140"
+      filterUnits="userSpaceOnUse"
+      colorInterpolationFilters="sRGB"
+    >
+      <feFlood floodOpacity="0" result="BackgroundImageFix" />
+      <feColorMatrix
+        in="SourceAlpha"
+        type="matrix"
+        values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+        result="hardAlpha"
+      />
+      <feOffset dy="2" />
+      <feGaussianBlur stdDeviation="5" />
+      <feComposite in2="hardAlpha" operator="out" />
+      <feColorMatrix
+        type="matrix"
+        values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.1 0"
+      />
+      <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow" />
+      <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape" />
+    </filter>
+  </defs>
+</svg>
+
+
+  </div>
+</div>
+
 
               {/* Content */}
               <div className="w-full flex flex-col gap-[10px]">
                 <div className="flex items-center gap-[12px]">
-                  <span className="text-[#0F6CBD] text-[15px] font-medium leading-[120%] tracking-[-0.03em] uppercase">
+                  <span className="text-[#0F6CBD]  text-[15px] font-medium leading-[120%] tracking-[-0.03em] uppercase">
                     On-Demand
                   </span>
                   <div className="w-[6px] h-[6px] bg-white rounded-full" />
