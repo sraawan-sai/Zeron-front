@@ -19,7 +19,7 @@ const SocialMediaSection = () => {
     >
       {/* Title */}
       <div className="text-center max-w-[884px]">
-        <h2 className="text-white text-[32px] md:text-[48px] leading-[58px] font-inter tracking-[-1px]">
+        <h2 className="text-white text-[32px] md:text-[48px] leading-[58px]  tracking-[-1px]">
           Join us in social media
         </h2>
         <p className="mt-2 text-[#E4E2DF]/70 text-[16px] md:text-[18px] font-poppins leading-[27px]">

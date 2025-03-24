@@ -136,11 +136,11 @@ const OnDemandSection = () => {
               {/* Content */}
               <div className="w-full flex flex-col gap-[10px]">
                 <div className="flex items-center gap-[12px]">
-                  <span className="text-[#0F6CBD] font-inter text-[15px] font-medium leading-[120%] tracking-[-0.03em] uppercase">
+                  <span className="text-[#0F6CBD] text-[15px] font-medium leading-[120%] tracking-[-0.03em] uppercase">
                     On-Demand
                   </span>
                   <div className="w-[6px] h-[6px] bg-white rounded-full" />
-                  <span className="text-white/60 font-inter text-[15px] font-medium leading-[120%] tracking-[-0.03em] uppercase">
+                  <span className="text-white/60  text-[15px] font-medium leading-[120%] tracking-[-0.03em] uppercase">
                     {item.date}
                   </span>
                 </div>
@@ -149,7 +149,7 @@ const OnDemandSection = () => {
                   {item.title}
                 </h3>
 
-                <p className="text-white/60 font-inter text-[16px] md:text-[18px] leading-[160%] tracking-[-0.02em] text-justify pb-[28px]">
+                <p className="text-white/60  text-[16px] md:text-[18px] leading-[160%] tracking-[-0.02em] text-justify pb-[28px]">
                   {item.excerpt}
                 </p>
 
