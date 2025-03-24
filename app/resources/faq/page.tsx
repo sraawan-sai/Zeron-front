@@ -1,4 +1,7 @@
+
 import ResourcesSection from "../case-studies/components/Other";
+import CyberRiskCTA from "./components/banner";
+
 import FaqSectionsExtended from "./components/extended";
 import FaqSection from "./components/faq1";
 import FaqSectionTwo from "./components/faq2";
@@ -11,7 +14,8 @@ const  FAQPage = () => {
       <FaqSection/>
       <FaqSectionTwo/>
       <FaqSectionsExtended/>
-      <ResourcesSection/>
+      <CyberRiskCTA/>
+     <ResourcesSection/>
 
        
     </div>
