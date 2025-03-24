@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { ChevronDown } from 'lucide-react';
+import { FaChevronDown } from "react-icons/fa";
 import { motion, AnimatePresence } from 'framer-motion';
 
 const faqs = [
@@ -75,7 +75,7 @@ export default function FaqSectionTwo() {
                   animate={{ rotate: isOpen ? 180 : 0 }}
                   transition={{ duration: 0.3 }}
                 >
-                  <ChevronDown size={24} className={isOpen ? 'text-white' : 'text-white/60'} />
+                  <FaChevronDown size={24} className={isOpen ? 'text-white' : 'text-white/60'} />
                 </motion.div>
               </button>
 

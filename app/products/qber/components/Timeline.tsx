@@ -1,6 +1,8 @@
 "use client";
 
-import BlueStars from "@/components/Layout/BlueStars";
+import "@/styles/stars.css";
+
+// import BlueStars from "@/components/Layout/BlueStars";
 import CustomSection from "@/components/Layout/CustomSection";
 import Image from "next/image";
 import React, { useState, useEffect, useRef } from "react";
@@ -194,7 +196,10 @@ const Timeline = () => {
           <div className="absolute w-[100vw] min-h-screen top-0 clip-trap  bg-gradient-to-t from-[#0A0118] to-[#0A0118]/40 -z-1" />
           <div className="absolute w-[100vw] min-h-screen top-0 clip-trap -z-2">
             <section className="relative">
-              <BlueStars />
+              {/* <BlueStars /> */}
+              <div id="stars"></div>
+              <div id="stars2"></div>
+              <div id="stars3"></div>
             </section>
           </div>
           <div className="absolute bottom-0 w-full">

@@ -30,6 +30,7 @@ const CRPMCircle = () => {
           stroke="url(#paint0_linear_1652_8995)"
           strokeWidth="9.4412"
           strokeDasharray="0.78 4.42"
+          className="animate-dash-reverse"
         />
         <g filter="url(#filter1_d_1652_8995)">
           <circle

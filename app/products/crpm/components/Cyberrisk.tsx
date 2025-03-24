@@ -34,7 +34,7 @@ const CyberRiskProcess: React.FC = () => {
             key={idx}
             className="flex flex-col items-center justify-center text-center px-4 py-8 gap-6 bg-white/10 backdrop-blur-xl rounded-2xl shadow-lg w-full max-w-[400px] min-h-[220px]"
           >
-             <h3 className="text-white text-xl lg:text-2xl font-semibold leading-snug drop-shadow-md">
+            <h3 className="text-white text-xl lg:text-2xl font-semibold leading-snug drop-shadow-md">
               {step.title}
             </h3>
             <p className="text-gray-300 text-base leading-relaxed drop-shadow-md">
@@ -42,38 +42,18 @@ const CyberRiskProcess: React.FC = () => {
             </p>
           </div>
         ))}
+        {/* Background Curve Image */}
+        <div className="absolute inset-0 w-full h-full -z-1">
+          <div className="relative w-full h-full">
+            <Image
+              src="/images/cyberrisk.png"
+              alt=""
+              fill={true}
+              className="w-full object-cover object-center lg:object-[50%_35%] -z-1"
+            />
+          </div>
+        </div>
       </div>
-
-      {/* Background Curve Image */}
-      <div className="absolute inset-0 w-full h-full -z-1">
-
-
-
-<div className="relative w-full h-full">
-
-
-  <Image
-
-
-    src="/images/cyberrisk.png"
-
-
-    alt=""
-
-
-    fill={true}
-
-
-    className="w-full object-cover object-center lg:object-[50%_35%] -z-1"
-
-
-  />
-
-
-</div>
-
-
-</div>
     </section>
   );
 };
