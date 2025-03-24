@@ -57,29 +57,30 @@ const ComplianceFeatures = () => {
       </h2>
 
       {/* Features */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-10 z-10 max-w-7xl w-full">
+      <div className="relative z-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
         {features.map((feature, idx) => (
           <div
             key={idx}
-            className="h-full flex flex-col items-center justify-center text-center px-3 py-21 gap-4"
+            className="max-w-[380px] flex flex-col items-center text-center px-2 py-8 gap-6  backdrop-blur-xl rounded-2xl shadow-lg"
           >
-            <div className="flex flex-col items-center gap-8">
+            {/* Icon */}
+            <div className="w-20 h-20 flex justify-center items-center">
               <Image
                 src={feature.image}
                 alt={feature.title}
                 width={100}
-                height={80}
-                className="w-full max-w-[100px] h-full max-h-[80px] object-contain object-center"
+                height={100}
+                className="w-full h-full object-contain"
               />
-              <h3 className="text-white text-xl md:text-2xl font-semibold tracking-[-2%] leading-[130%]">
-                {feature.title}
-              </h3>
             </div>
-            <div className="flex-grow max-w-[290px]">
-              <p className="text-gray-400 text-base leading-relaxed">
-                {feature.description}
-              </p>
-            </div>
+            {/* Title */}
+            <h3 className="text-white text-xl md:text-2xl font-semibold leading-[130%] tracking-[-2%]">
+              {feature.title}
+            </h3>
+            {/* Description */}
+            <p className="text-[#E4E2DF]/60 text-[1.125rem] leading-[26px]">
+              {feature.description}
+            </p>
           </div>
         ))}
       </div>

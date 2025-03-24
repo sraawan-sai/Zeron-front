@@ -1,10 +1,10 @@
 export const riskGroups = [
     {
       circleTitle: "Defense",
-      mainTitle: "Insider Threat Detection",
+      mainTitle: "Strengthen Your Security from Within",
       subTitle: "Detect anomalies in user behavior",
       description:
-        "Internal vulnerabilities can be just as damaging as external threats. Our internal risk modules help you monitor, assess, and mitigate insider threats, misconfigurations, and security gaps within your",
+        "Internal vulnerabilities can be just as damaging as external threats. Our internal risk modules help you monitor, assess, and mitigate insider threats, misconfigurations, and security gaps within your infrastructure.",
       list: [
         {
           icon: "/icons/diamondIcon.png",
@@ -28,73 +28,73 @@ export const riskGroups = [
     },
     {
       circleTitle: "Protection",
-      mainTitle: "Access Control Management",
+      mainTitle: "Stay Ahead of Emerging Threats",
       subTitle: "Control and manage access permissions",
       description:
-        "Ensure least privilege access and prevent unauthorized activities.",
+        "External risks evolve rapidly, exposing your organization to cyberattacks. Our solutions provide real-time threat intelligence and visibility into your digital perimeter to minimize attack vectors.",
       list: [
         {
           icon: "/icons/diamondIcon.png",
-          title: "User Access Reviews",
-          description: "Conduct regular reviews of user permissions.",
+          title: "Attack Surface Discovery",
+          description: "Identify all publicly exposed assets, including shadow IT.",
         },
         {
           icon: "/icons/diamondIcon.png",
-          title: "Multi-factor Authentication",
-          description: "Implement MFA to secure critical access points.",
+          title: "Threat Intelligence Feeds",
+          description: "Continuously monitor and analyze external cyber threats.",
         },
         {
           icon: "/icons/diamondIcon.png",
-          title: "Role-based Access Control",
-          description: "Define roles to manage access effectively.",
+          title: "Vulnerability Prioritization",
+          description: "Automate risk assessment to focus on the most critical threats.",
         },
       ],
     },
     {
       circleTitle: "Monitoring",
-      mainTitle: "Configuration Risk Monitoring",
+      mainTitle: "Simplify Compliance & Reduce Risk Exposure",
       subTitle: "Identify misconfigurations",
       description:
-        "Detect and remediate misconfigurations across your security stack.",
+        "Regulatory requirements are complex and ever-changing. Our compliance risk modules help you stay aligned with industry standards, ensuring continuous compliance without operational friction.",
       list: [
         {
           icon: "/icons/diamondIcon.png",
-          title: "Configuration Audits",
-          description: "Perform regular audits of system configurations.",
+          title: "Automated Compliance Audits",
+          description: "Continuously map controls to regulations and frameworks.",
         },
         {
           icon: "/icons/diamondIcon.png",
-          title: "Compliance Checks",
-          description: "Ensure systems meet security and compliance standards.",
+          title: "Risk-Based Compliance Scoring",
+          description: "Quantify compliance posture and prioritize remediation.",
         },
         {
           icon: "/icons/diamondIcon.png",
-          title: "Automated Remediation",
-          description: "Automatically correct configuration deviations.",
+          title: "Regulatory Gap Analysis",
+          description: "Identify and close gaps across multiple compliance standards.",
         },
       ],
     },
     {
       circleTitle: "Compliance",
-      mainTitle: "Data Privacy Compliance",
+      mainTitle: "Gain Full Visibility into Third-Party Risk",
       subTitle: "Enforce data protection policies",
       description:
-        "Monitor and enforce data protection policies to ensure regulatory compliance.",
+        "Your security is only as strong as your weakest link. Vendor Pulse empowers you with deep insights into third-party security risks, ensuring your supply chain remains resilient.",
       list: [
         {
           icon: "/icons/diamondIcon.png",
-          title: "Data Classification",
-          description: "Classify data based on sensitivity and risk.",
+          title: "Third-Party Risk Assessment",
+          description: "Continuously evaluate vendor security posture.",
         },
         {
           icon: "/icons/diamondIcon.png",
-          title: "Policy Enforcement",
-          description: "Ensure data handling policies are followed.",
+          title: "Continuous Risk Monitoring",
+          description: "Get real-time alerts on vendor-related threats.",
         },
         {
           icon: "/icons/diamondIcon.png",
-          title: "Regulatory Reporting",
-          description: "Generate reports to demonstrate compliance.",
+          title: "Automated Risk Scoring",
+          description: "Rank vendors based on security impact to your business.",
         },
       ],
     },

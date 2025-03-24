@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronDown } from 'lucide-react';
+import { FaChevronDown } from "react-icons/fa";
 
 const faqData = [
   {
@@ -115,7 +115,7 @@ export default function FaqSectionsExtended() {
                       animate={{ rotate: isOpen ? 180 : 0 }}
                       transition={{ duration: 0.3 }}
                     >
-                      <ChevronDown
+                      <FaChevronDown
                         size={24}
                         className={isOpen ? 'text-white' : 'text-white/60'}
                       />

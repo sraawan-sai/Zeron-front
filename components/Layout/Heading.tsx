@@ -26,7 +26,7 @@ HeadingProps) {
   return (
     <div className="w-full flex flex-col items-center justify-center text-center gap-4">
       <p
-        className={`${titleCN} text-[1.75rem] xs:text-[2rem] md:text-[2.875rem] leading-[34px] xs:leading-[40px] font-medium tracking-[-1px]`}
+        className={`${titleCN} text-[1.75rem] xs:text-[2rem] md:text-[2.875rem] leading-[34px] xs:leading-[40px] md:leading-[50px] font-medium tracking-[-1px]`}
       >
         {title}
       </p>

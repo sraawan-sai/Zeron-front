@@ -9,7 +9,7 @@ import StarsCanvas from "@/components/Layout/Stars";
 
 const Hero = () => {
   const [, setScale] = useState(1);
-  // const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
   useEffect(() => {
     const handleScroll = () => {
@@ -24,16 +24,16 @@ const Hero = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // useEffect(() => {
-  //   const handleMouseMove = (e: MouseEvent) => {
-  //     const x = (e.clientX - window.innerWidth / 2) / 100;
-  //     const y = (e.clientY - window.innerHeight / 2) / 100;
-  //     setMousePosition({ x, y });
-  //   };
+  useEffect(() => {
+    const handleMouseMove = (e: MouseEvent) => {
+      const x = (e.clientX - window.innerWidth / 2) / 100;
+      const y = (e.clientY - window.innerHeight / 2) / 100;
+      setMousePosition({ x, y });
+    };
 
-  //   window.addEventListener("mousemove", handleMouseMove);
-  //   return () => window.removeEventListener("mousemove", handleMouseMove);
-  // }, []);
+    window.addEventListener("mousemove", handleMouseMove);
+    return () => window.removeEventListener("mousemove", handleMouseMove);
+  }, []);
 
   return (
     <div className="w-full min-h-screen relative overflow-hidden">
@@ -122,7 +122,14 @@ const Hero = () => {
             className="px-5 py-2 text-[1rem] font-medium rounded-md cursor-pointer bg-linear-to-r from-[#1C76FD] to-[#5721F0]"
           />
         </motion.div>
-        <motion.div className="absolute bottom-20 w-full left-0 flex items-center justify-center">
+        <motion.div
+          style={{
+            transform: `translate(${mousePosition.x * 3}px, ${
+              mousePosition.y * 3
+            }px)`,
+          }}
+          className="absolute bottom-20 w-full left-0 flex items-center justify-center mix-blend-soft-light"
+        >
           <Image
             src="/images/products/vendor/VendorPulse.svg"
             alt=""
