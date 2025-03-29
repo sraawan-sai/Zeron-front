@@ -2,11 +2,13 @@ import BlogCard from "./postCard";
 import { FaSearch } from "react-icons/fa";
 
 interface Post {
-  id: number;
-  image: string;
+  documentId: number;
+  image: {
+    url:string
+  };
   title: string;
   category: string;
-  date: string;
+  currentDate: string;
 }
 
 interface MoreBlogProps {
@@ -15,6 +17,7 @@ interface MoreBlogProps {
 
 const MoreBlog: React.FC<MoreBlogProps> = ({ posts }) => {
   const blogPosts = posts.map((post) => ({ ...post, category: "Blogs" }));
+  console.log(blogPosts, "blogPosts"); // Log directly here
 
   return (
     <div className="relative w-full flex flex-col py-20">
@@ -34,11 +37,12 @@ const MoreBlog: React.FC<MoreBlogProps> = ({ posts }) => {
       <div className="mt-12 grid grid-cols-2 md:grid-cols-3 2xl:grid-cols-4 gap-x-6 gap-y-12">
         {blogPosts.map((post) => (
           <BlogCard
-            key={post.id}
-            image={post.image}
+            key={post.documentId}
+            image={post.image.url}
+            documentId={post.documentId}
             title={post.title}
             category={post.category}
-            date={post.date}
+            date={post.currentDate}
           />
         ))}
       </div>

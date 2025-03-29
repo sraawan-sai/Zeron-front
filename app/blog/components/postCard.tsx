@@ -1,10 +1,12 @@
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 interface BlogCardProps {
   image: string;
   title: string;
   category: string;
   date: string;
+  documentId : number;
 }
 
 const BlogCard: React.FC<BlogCardProps> = ({
@@ -12,14 +14,24 @@ const BlogCard: React.FC<BlogCardProps> = ({
   title,
   category,
   date,
+  documentId
+
 }) => {
+  const router = useRouter();
+  const API_URL = "http://localhost:1337";
+  const handleRedirect = () => {
+    router.push(`/blog/${documentId}`);
+  };
   return (
-    <div className="flex flex-col ">
+    <div onClick={handleRedirect} className="flex flex-col ">
       <div className="w-full h-[120px] xs:h-[250px] bg-white/20 rounded-[8px] relative">
         <Image
-          src={image}
+          src={image.startsWith('http') 
+            ? image 
+            : `${API_URL}${image}`}
           alt={title}
           fill={true}
+          unoptimized
           className="object-cover object-center rounded-[8px]"
         />
       </div>
