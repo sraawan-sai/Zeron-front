@@ -21,7 +21,7 @@ interface PopularPostsProps {
 }
 
 const PopularPosts: React.FC<PopularPostsProps> = ({ posts }) => {
-  const API_URL = "http://localhost:1337";
+  const API_URL = "https://zeron-backend.onrender.com";
   const featuredPost = posts[0];
   const gridPosts = posts.slice(1);
   const router = useRouter();
@@ -37,7 +37,7 @@ const PopularPosts: React.FC<PopularPostsProps> = ({ posts }) => {
         <div className="mt-14 w-full flex flex-col md:flex-row gap-10">
           <div className="bg-white/20 w-full h-[360px] 2xl:h-[440px] rounded-[8px] relative">
             <Image
-              src={featuredPost.image.url.startsWith('http') 
+              src={featuredPost.image.url.startsWith('https') 
                 ? featuredPost.image.url 
                 : `${API_URL}${featuredPost.image.url}`}
               alt={featuredPost.title}

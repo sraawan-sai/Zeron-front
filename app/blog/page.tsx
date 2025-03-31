@@ -15,10 +15,10 @@ export default function Blogs() {
   const fetchData = async () => {
     try {
       const popularResponse = await fetch(
-        "http://localhost:1337/api/blogcards?filters[isPopular][$eq]=true&populate=image&populate=category"
+        "https://zeron-backend.onrender.com/api/blogcards?filters[isPopular][$eq]=true&populate=image&populate=category"
       );
       const categoryResponse = await fetch(
-        "http://localhost:1337/api/blogcards?filters[category][name][$eq]=blog&populate=image&populate=category"
+        "https://zeron-backend.onrender.com/api/blogcards?filters[category][name][$eq]=blog&populate=image&populate=category"
       );
 
       const popularResult = await popularResponse.json();

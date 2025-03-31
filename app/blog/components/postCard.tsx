@@ -18,7 +18,7 @@ const BlogCard: React.FC<BlogCardProps> = ({
 
 }) => {
   const router = useRouter();
-  const API_URL = "http://localhost:1337";
+  const API_URL = "https://zeron-backend.onrender.com" //"http://localhost:1337";
   const handleRedirect = () => {
     router.push(`/blog/${documentId}`);
   };
@@ -26,7 +26,7 @@ const BlogCard: React.FC<BlogCardProps> = ({
     <div onClick={handleRedirect} className="flex flex-col ">
       <div className="w-full h-[120px] xs:h-[250px] bg-white/20 rounded-[8px] relative">
         <Image
-          src={image.startsWith('http') 
+          src={image.startsWith('https') 
             ? image 
             : `${API_URL}${image}`}
           alt={title}

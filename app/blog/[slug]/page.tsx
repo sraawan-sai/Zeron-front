@@ -22,13 +22,15 @@ const BlogDetails = () => {
   const { slug } = useParams(); // Correctly get the blog ID
 
   const [blogData, setBlogData] = useState<BlogPost | null>(null);
-  const API_URL = "http://localhost:1337";
+  //const API_URL = "http://localhost:1337"; //local api
+  const API_URL = "https://zeron-backend.onrender.com"  //render api
+
 
   useEffect(() => {
     const fetchBlogDetails = async () => {
       try {
         const response = await fetch(
-          `http://localhost:1337/api/blogcards/${slug}?populate=category&populate=image`
+          `https://zeron-backend.onrender.com/api/blogcards/${slug}?populate=category&populate=image`
         );
         const result = await response.json();
         setBlogData(result.data);
@@ -58,7 +60,7 @@ const BlogDetails = () => {
         <div className="p-8 relative w-full h-[400px]">
           <Image
             src={
-              blogData.image.url.startsWith("http")
+              blogData.image.url.startsWith("https")
                 ? blogData.image.url
                 : `${API_URL}${blogData.image.url}`
             }
